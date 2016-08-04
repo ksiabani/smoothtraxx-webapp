@@ -1,0 +1,28 @@
+{
+  "name": "smoothtraxx-webapp",
+  "authors": [
+    "Kostas Siabanis <kostas.siabanis@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.1",
+    "angular-material": "~1.0.8",
+    "angular-ui-router": "~0.2.18",
+    "material-design-icons": "~2.2.3",
+    "angular-resource": "~1.5.5"
+  }
+}

@@ -1,0 +1,114 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
+            <i class="material-icons">menu</i>
+        </md-button>
+        <h2>
+            <span>Smoothtraxx</span>
+        </h2>
+        <span flex=""></span>
+        <md-button class="md-icon-button" aria-label="Share">
+            <i class="material-icons">share</i>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+            <i class="material-icons">more_vert</i>
+        </md-button>
+    </div>
+</md-toolbar>
+
+
+<md-sidenav md-component-id="menu" class="md-sidenav-left">
+    My menu
+</md-sidenav>
+
+<md-content layout="row" layout-padding>
+
+    <div flex="1" layout="column" layout-align="start center">
+        <md-card>
+            <md-card-header>
+                <md-card-avatar>
+                    <i class="material-icons">radio</i>
+                </md-card-avatar>
+                <md-card-header-text>
+                    <span class="md-title">Now playing on</span>
+                    <span class="md-subhead">Soulful House</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
+            <md-card-content>
+                <h1 class="md-body-1">{{vm.slf.title}}</h1>
+                <h2 class="md-caption">{{vm.slf.artist}}</h2>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
+                <md-button>Close</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+    <div flex="1" layout="column" layout-align="start center">
+        <md-card>
+            <md-card-header>
+                <md-card-avatar>
+                    <i class="material-icons">radio</i>
+                </md-card-avatar>
+                <md-card-header-text>
+                    <span class="md-title">Now playing on</span>
+                    <span class="md-subhead">Chillout</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{vm.chl.coverUrl}}" class="md-card-image" alt="">
+            <md-card-content>
+                <h1 class="md-body-1">{{vm.chl.title}}</h1>
+                <h2 class="md-caption">{{vm.chl.artist}}</h2>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="vm.showPlayer($event, 'chl')">Tune in</md-button>
+                <md-button>Close</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+</md-content>
+
+<!--<h3 layout-padding>Playlists</h3>-->
+
+<!--<md-content layout="row" layout-padding>-->
+
+    <!--<div flex="1" layout="column" layout-align="start center">-->
+        <!--<md-card>-->
+            <!--<img src="https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/000a474600ff8f2f8dcec2002d015595.jpg"-->
+                 <!--class="md-card-image" alt="">-->
+            <!--<md-card-actions layout="row" layout-align="end center">-->
+                <!--<md-button class="md-icon-button" aria-label="Favorite">-->
+                    <!--<md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>-->
+                <!--</md-button>-->
+                <!--<md-button class="md-icon-button" aria-label="Settings">-->
+                    <!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
+                <!--</md-button>-->
+                <!--<md-button class="md-icon-button" aria-label="Share">-->
+                    <!--<md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>-->
+                <!--</md-button>-->
+            <!--</md-card-actions>-->
+        <!--</md-card>-->
+    <!--</div>-->
+
+    <!--<div flex="1" layout="column" layout-align="start center">-->
+        <!--<md-card>-->
+            <!--<img src="https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/000a474600ff8f2f8dcec2002d015595.jpg"-->
+                 <!--class="md-card-image" alt="">-->
+            <!--<md-card-actions layout="row" layout-align="end center">-->
+                <!--<md-button class="md-icon-button" aria-label="Favorite">-->
+                    <!--<md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>-->
+                <!--</md-button>-->
+                <!--<md-button class="md-icon-button" aria-label="Settings">-->
+                    <!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
+                <!--</md-button>-->
+                <!--<md-button class="md-icon-button" aria-label="Share">-->
+                    <!--<md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>-->
+                <!--</md-button>-->
+            <!--</md-card-actions>-->
+        <!--</md-card>-->
+    <!--</div>-->
+
+<!--</md-content>-->

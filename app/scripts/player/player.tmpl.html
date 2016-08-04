@@ -1,0 +1,32 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <i class="material-icons">radio</i>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">Now playing on</span>
+            <span class="md-subhead">{{vm.radioChannel}}</span>
+        </md-card-header-text>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="vm.closePlayer()" class="md-icon-button" aria-label="Share">
+                <i class="material-icons">keyboard_arrow_down</i>
+            </md-button>
+        </md-card-actions>
+    </md-card-header>
+    <img ng-src="{{vm.nowPlaying.coverUrl}}" class="md-card-image" alt="">
+    <md-card-content>
+        <h1 class="md-body-1">{{vm.nowPlaying.title}}</h1>
+        <h2 class="md-caption">{{vm.nowPlaying.artist}}</h2>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-icon-button" aria-label="Show some love">
+            <i class="material-icons">favorite</i>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Vote for">
+            <i class="material-icons">thumb_up</i>
+        </md-button>
+        <md-button ng-click="vm.voteDown()" class="md-icon-button" aria-label="Vote against">
+            <i class="material-icons">thumb_down</i>
+        </md-button>
+    </md-card-actions>
+</md-card>
