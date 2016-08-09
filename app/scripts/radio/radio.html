@@ -1,0 +1,216 @@
+<md-toolbar>
+
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
+      <i class="material-icons">arrow_back</i>
+    </md-button>
+    <h2>
+      <span>Now playing on Soulful House Radio</span>
+    </h2>
+    <span flex=""></span>
+
+
+    <md-button class="md-icon-button" aria-label="Share">
+      <i class="material-icons">share</i>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="More">
+      <i class="material-icons">more_vert</i>
+    </md-button>
+  </div>
+</md-toolbar>
+
+<div flex layout="row" layout-align="start center" class="smx-radio-hero">
+  <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
+  <div class="smx-radio-hero-details">
+    <div class="md-title">Sheila Ford - Why can't you see</div>
+    <div class="md-display-2">Why can't you see</div>
+    <div class="md-subhead">Quantize Recordings</div>
+    <md-button class="md-icon-button" aria-label="Share">
+      <i class="material-icons">favorite</i>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="More">
+      <i class="material-icons">share</i>
+    </md-button>
+  </div>
+  <md-button class="md-fab md-primary" aria-label="">
+    <md-icon>
+      <i class="material-icons">play_arrow</i>
+    </md-icon>
+  </md-button>
+</div>
+
+<md-sidenav md-component-id="menu" class="md-sidenav-left">
+  My menu
+</md-sidenav>
+
+<md-content layout-padding layout="row" flex-xs="100" flex-gt-sm="80" flex-offset-gt-sm="10" layout-align="start center">
+  <md-tabs md-dynamic-height md-border-bottom class="smx-radio-tabs">
+    <md-tab label="Coming up">
+      <md-content class="md-padding">
+        <md-list flex>
+          <!--<md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>-->
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+              <div class="md-secondary">
+                <p>30 likes</p>
+                <md-icon ng-click="null" aria-label="a button" class="">
+                  <i class="material-icons">play_circle_outline</i>
+                </md-icon>
+              </div>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          </md-list>
+      </md-content>
+    </md-tab>
+    <md-tab label="Recently played">
+      <md-content class="md-padding">
+        <md-list flex>
+          <!--<md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>-->
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+              <div class="md-secondary">
+                <p>30 likes</p>
+                <md-icon ng-click="null" aria-label="a button" class="">
+                  <i class="material-icons">play_circle_outline</i>
+                </md-icon>
+              </div>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Why can't you see</h3>
+              <h4>Sheila Ford - Why can't you see</h4>
+              <p>Quantize Recordings</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </md-content>
+    </md-tab>
+    <md-tab label="History">
+      <md-content class="md-padding">
+        <md-content class="md-padding">
+          <md-list flex>
+            <!--<md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>-->
+            <md-list-item class="md-2-line">
+              <md-icon aria-label="a button" class="md-avatar-icon">
+                <i class="material-icons">play_arrow</i>
+              </md-icon>
+              <div class="md-list-item-text" layout="column">
+                <h3>Played on Soulful House Radio</h3>
+                <h4>An hour ago</h4>
+              </div>
+            </md-list-item>
+            <md-list-item class="md-2-line">
+              <md-icon aria-label="a button" class="md-avatar-icon">
+                <i class="material-icons">play_arrow</i>
+              </md-icon>
+              <div class="md-list-item-text" layout="column">
+                <h3>Played on Deep House Radio</h3>
+                <h4>Yesterday</h4>
+              </div>
+            </md-list-item>
+            <md-list-item class="md-2-line">
+              <md-icon aria-label="a button" class="md-avatar-icon">
+                <i class="material-icons">play_arrow</i>
+              </md-icon>
+              <div class="md-list-item-text" layout="column">
+                <h3>Played on Soulful House Radio</h3>
+                <h4>Two months ago</h4>
+              </div>
+            </md-list-item>
+            <md-list-item class="md-2-line">
+              <md-icon aria-label="a button" class="md-avatar-icon">
+                <i class="material-icons">library_add</i>
+              </md-icon>
+              <div class="md-list-item-text" layout="column">
+                <h3>Added to library</h3>
+                <h4>Two months ago</h4>
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </md-content>
+    </md-tab>
+  </md-tabs>
+</md-content>

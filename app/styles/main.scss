@@ -8,6 +8,10 @@
   padding: 0.2em 0;
 }
 
+
+//Material icons
+//http://google.github.io/material-design-icons/
+//
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -45,12 +49,26 @@
   font-feature-settings: 'liga';
 }
 
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
 //Basics
+//
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
 
 body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
+  //font-family: 'Roboto', sans-serif;
 }
 
 //helpers
@@ -65,25 +83,51 @@ body {
 //  background: url('/images/background.jpeg');
 //  background-size: cover;
 //}
+
+// TODO: Do I need this?
 md-card md-card-content {
   padding: 8px;
 }
 
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
-  background-color: transparent;
-  color: rgba(204, 204, 204, 1);
+  //background-color: transparent;
+  //color: rgba(204, 204, 204, 1);
+}
+
+md-toolbar, .md-toolbar-tools {
+  min-height: 56px;
+  height: 56px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
 }
 
 .material-icons {
-  color: rgba(204, 204, 204, 1);
+  //color: rgba(204, 204, 204, 1);
+  //color: white;
 }
+
+//.material-icons-inverse {
+//  color: black;
+//}
 
 md-content:nth-of-type(even) {
   background-color: #F5F5F5;
 }
 
+md-menu-bar button {
+  //font-size: 0.9;
+  color: white;
+}
+
 //SMX namespace
 
+//helpers
+.smx-helper-font-weight-100 {
+  font-weight: 100;
+}
+
+//home page
 .smx-headline {
   font-family: 'Roboto', sans-serif;
   min-height: 350px;
@@ -118,7 +162,6 @@ md-content:nth-of-type(even) {
   background-color: #F5F5F5;
 }
 
-
 // this is how I control .smx-horizontal-card img height
 // you might need to add more media queries later
 //@media (max-width: 599px) {
@@ -150,10 +193,9 @@ md-content:nth-of-type(even) {
   padding-left: 8px;
 }
 
-
 //
 .smx-collage {
-  max-height : 800px;
+  max-height: 800px;
 }
 
 .smx-collage img {
@@ -161,20 +203,342 @@ md-content:nth-of-type(even) {
   width: 100%;
 }
 
-//section {
-//  margin : 2px !important;
-//  padding: 2px !important;
-//  padding-left : 1px !important;
-//  padding-right: 1px !important;
+//400,300,100,500,700,900
+// radio page
+.smx-radio-hero {
+  min-height: 350px;
+  background: url('https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/127cab8db80a945e05f1cc21a9e8c26f.jpeg');
+  background-size: 5000% 5000%;
+  background-position: center center;
+  margin-top: -60px;
+  color: white;
+  font-size: 2em;
+  position: relative;
+}
+
+.smx-radio-hero .md-display-2 {
+  font-weight: 300;
+}
+
+.smx-radio-hero .md-title {
+  margin: 0;
+  line-height: 1.2em;
+}
+
+.smx-radio-hero img {
+  margin-left: 50px;
+  height: 200px;
+}
+
+.smx-radio-hero-details {
+  margin-left: 50px;
+}
+
+.smx-radio-hero .md-fab.md-primary {
+  position: absolute;
+  bottom: -35px;
+  right: 35px;
+  z-index: 2;
+}
+
+.smx-radio-tabs {
+  width: 100%;
+}
+
+//radios page
+//.smx-radios-hero {
+//  min-height: 200px;
+//  background: url('https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/127cab8db80a945e05f1cc21a9e8c26f.jpeg');
+//  background-size: 5000% 5000%;
+//  background-position: center center;
+//  margin-top: -60px;
+//  color: white;
+//  font-size: 2em;
+//  position: relative;
 //}
-//section >  div {
-//  min-height : 100px;
-//  background-color : #c14543;
-//  margin : 2px !important;
+//
+//.smx-horizontal-radio-card {
+//  max-height: 350px;
+//}
+//
+//.smx-horizontal-radio-card img {
+//  height: auto;
+//  width: 100%;
+//  margin-top: 5px;
+//  //margin: auto;
+//  padding-left: 8px;
+//}
+//
+//.smx-radio-list-content {
+//  margin-top: -100px;
+//  background: transparent;
 //}
 
-//.block1 {  min-height : 200px}
-//.block5 {  min-height : 200px}
-//.block6 {  min-height : 270px}
-//.block7 {  min-height : 230px}
-//.block8 {  min-height : 300px}
+//soulful
+.smx-radios-soulful {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  margin: 3px;
+  //background: rgba(254,246,254,1);
+  //background: linear-gradient(to bottom, rgba(254,246,254,1) 0%, rgba(251,177,229,1) 50%, rgba(253,144,217,1) 51%, rgba(255,128,217,1) 100%);
+
+  background: rgb(203, 96, 179);
+  background: -moz-linear-gradient(-45deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  background: linear-gradient(135deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cb60b3', endColorstr='#db36a4', GradientType=1);
+
+}
+
+.smx-radios-soulful div {
+  height: 25%;
+}
+
+.smx-radios-soulful img {
+  width: auto;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.smx-radios-soulful div:first-child {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  z-index: 1;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.smx-radios-soulful div:first-child h1 {
+  margin-bottom: 5px;
+}
+
+.smx-radios-soulful div:first-child p {
+  margin-top: 5px;
+  width: 300px;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+//deep
+
+.smx-radios-deep {
+  position: relative;
+  height: 247px;
+  overflow: hidden;
+  margin: 3px;
+
+  background: rgb(173, 43, 125);
+  background: -moz-linear-gradient(45deg, rgba(173, 43, 125, 1) 0%, rgba(93, 0, 119, 1) 46%, rgba(165, 61, 132, 1) 76%, rgba(203, 96, 179, 1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(173, 43, 125, 1) 0%, rgba(93, 0, 119, 1) 46%, rgba(165, 61, 132, 1) 76%, rgba(203, 96, 179, 1) 100%);
+  background: linear-gradient(45deg, rgba(173, 43, 125, 1) 0%, rgba(93, 0, 119, 1) 46%, rgba(165, 61, 132, 1) 76%, rgba(203, 96, 179, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ad2b7d', endColorstr='#cb60b3', GradientType=1);
+
+}
+
+.smx-radios-deep div {
+  height: 50%;
+}
+
+.smx-radios-deep img {
+  width: auto;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.smx-radios-deep div:first-child {
+  position: absolute;
+  top: 20%;
+  color: white;
+  z-index: 1;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.smx-radios-deep div:first-child h1 {
+  margin-bottom: 5px;
+}
+
+.smx-radios-soulful div:first-child p {
+  margin-top: 5px;
+  width: 400px;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+//tech
+
+.smx-radios-tech {
+  position: relative;
+  height: 247px;
+  overflow: hidden;
+  margin: 3px;
+
+  background: rgb(176, 61, 247);
+  background: -moz-linear-gradient(left, rgba(176, 61, 247, 1) 0%, rgba(93, 0, 119, 1) 46%, rgba(154, 84, 229, 1) 76%, rgba(138, 113, 237, 1) 100%);
+  background: -webkit-linear-gradient(left, rgba(176, 61, 247, 1) 0%, rgba(93, 0, 119, 1) 46%, rgba(154, 84, 229, 1) 76%, rgba(138, 113, 237, 1) 100%);
+  background: linear-gradient(to right, rgba(176, 61, 247, 1) 0%, rgba(93, 0, 119, 1) 46%, rgba(154, 84, 229, 1) 76%, rgba(138, 113, 237, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b03df7', endColorstr='#8a71ed', GradientType=1);
+
+}
+
+.smx-radios-tech div {
+  height: 50%;
+}
+
+.smx-radios-tech img {
+  width: auto;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.smx-radios-tech div:first-child {
+  position: absolute;
+  bottom: 50px;
+  color: white;
+  z-index: 1;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.smx-radios-tech div:first-child h1 {
+  margin-bottom: 5px;
+}
+
+.smx-radios-tech div:first-child p {
+  margin-top: 5px;
+  width: 400px;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+//chill
+.smx-radios-chill {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  margin: 3px;
+  //background: rgba(254,246,254,1);
+  //background: linear-gradient(to bottom, rgba(254,246,254,1) 0%, rgba(251,177,229,1) 50%, rgba(253,144,217,1) 51%, rgba(255,128,217,1) 100%);
+
+  background: rgb(203, 96, 179);
+  background: -moz-linear-gradient(-45deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  background: linear-gradient(135deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cb60b3', endColorstr='#db36a4', GradientType=1);
+
+}
+
+.smx-radios-chill div {
+  height: 50%;
+}
+
+.smx-radios-chill img {
+  width: auto;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.smx-radios-chill div:first-child {
+  position: absolute;
+  bottom: 30%;
+  color: white;
+  z-index: 1;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.smx-radios-chill div:first-child h1 {
+  margin-bottom: 5px;
+}
+
+.smx-radios-chill div:first-child p {
+  margin-top: 5px;
+  width: 300px;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+//Progressive
+.smx-radios-progressive {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  margin: 3px;
+  //background: rgba(254,246,254,1);
+  //background: linear-gradient(to bottom, rgba(254,246,254,1) 0%, rgba(251,177,229,1) 50%, rgba(253,144,217,1) 51%, rgba(255,128,217,1) 100%);
+
+  background: rgb(203, 96, 179);
+  background: -moz-linear-gradient(-45deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  background: linear-gradient(135deg, rgba(203, 96, 179, 1) 0%, rgba(193, 70, 161, 1) 35%, rgba(168, 0, 119, 1) 59%, rgba(219, 54, 164, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cb60b3', endColorstr='#db36a4', GradientType=1);
+
+}
+
+.smx-radios-progressive div {
+  height: 50%;
+}
+
+.smx-radios-progressive img {
+  width: auto;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.smx-radios-progressive div:first-child {
+  position: absolute;
+  bottom: 30%;
+  color: white;
+  z-index: 1;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.smx-radios-progressive div:first-child h1 {
+  margin-bottom: 5px;
+}
+
+.smx-radios-progressive div:first-child p {
+  margin-top: 5px;
+  width: 300px;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+.smx-radios {
+  padding: 0 16px;
+}
+
+.smx-page-title {
+  font-weight: 100;
+  font-size: 2em;
+  //padding: 8px;
+}
+
+//400,300,100,500,700,900
+
+section {
+  height: 100%;
+}
+
+.md-sidenav-left {
+  width: 300px;
+}
+
+.smx-sidenav {
+  height: 100%;
+  background: #fafafa;
+  color: rgba(42, 42, 42, 0.7);
+  font-size: 14px;
+}
+
+.smx-sidenav i {
+  padding: 8px 16px 8px 8px;
+}
+
+.smx-sidenav md-divider {
+  margin: 12px 0;
+}
+
