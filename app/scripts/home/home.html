@@ -1,414 +1,569 @@
-<md-toolbar>
+<md-toolbar md-whiteframe="4">
   <div class="md-toolbar-tools">
-
-    <!--<md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">-->
-      <!--<i class="material-icons">menu</i>-->
-    <!--</md-button>-->
-    <!--<h2>-->
-      <!--<span>Smoothtraxx</span>-->
-    <!--</h2>-->
-
-    <md-menu-bar>
-      <md-menu>
-        <button>
-          Smoothtraxx
-        </button>
-      </md-menu>
-      <md-menu>
-        <button>
-          Now Playing
-        </button>
-      </md-menu>
-      <md-menu>
-        <button>
-          Top Traxx
-        </button>
-      </md-menu>
-      <md-menu>
-        <button>
-          Recently Added
-        </button>
-      </md-menu>
-    </md-menu-bar>
-
-    <span flex></span>
-
-    <md-button class="md-icon-button" aria-label="Share">
-      <i class="material-icons">share</i>
+    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
+      <i class="material-icons md-dark">menu</i>
     </md-button>
-    <md-button class="md-icon-button" aria-label="More">
-      <i class="material-icons">account_circle</i>
+    <h2>
+      <span>Smoothtraxx</span>
+    </h2>
+    <span flex=""></span>
+    <md-button class="md-icon-button" aria-label="Share">
+      <i class="material-icons md-dark">share</i>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="Search">
+      <i class="material-icons md-dark">search</i>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="Account">
+      <i class="material-icons md-dark">account_circle</i>
     </md-button>
   </div>
 </md-toolbar>
 
-<div flex layout="column" layout-align="center center" class="smx-headline">
-  <h1>Smoothtraxx</h1>
-  <h4>Where soulful house lives</h4>
-</div>
+<section layout="row">
 
-<md-sidenav md-component-id="menu" class="md-sidenav-left">
-  My menu
-</md-sidenav>
-
-<div layout="row" layout-align="space-between" class="smx-section">
-  <h3 flex-offset-gt-md="10" flex-gt-md="60" layout-padding>Now playing on radio</h3>
-  <h3 flex-gt-md="20" layout-padding><a href="#">VIEW ALL</a></h3>
-</div>
-
-<md-content layout="row">
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="20" flex-offset-gt-md="10" layout-align="start center">
-    <md-card>
-      <md-card-header>
-        <md-card-avatar>
+  <md-sidenav
+    class="md-sidenav-left"
+    md-component-id="menu"
+    md-is-locked-open="$mdMedia('gt-lg')"
+    md-disable-backdrop
+    md-whiteframe="4">
+    <md-content class="smx-sidenav">
+      <md-list>
+        <md-list-item ui-sref="home">
+          <i class="material-icons">home</i>
+          <p>Home</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item ng-click="null">
           <i class="material-icons">radio</i>
-        </md-card-avatar>
-        <md-card-header-text>
-          <span class="md-title">Now playing on</span>
-          <span class="md-subhead">Soulful House</span>
-        </md-card-header-text>
-      </md-card-header>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <!--<md-card-actions layout="row" layout-align="end center">-->
-      <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
-      <!--<md-button>Close</md-button>-->
-      <!--</md-card-actions>-->
-    </md-card>
-  </div>
+          <p>Radio</p>
+        </md-list-item>
+        <md-list-item ng-click="null">
+          <i class="material-icons">star</i>
+          <p>Top Traxx</p>
+        </md-list-item>
+        <md-list-item ng-click="null">
+          <i class="material-icons">new_releases</i>
+          <p>Recently Added</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item ng-click="null">
+          <i class="material-icons">favorite_border</i>
+          <p>Favourites</p>
+        </md-list-item>
+        <md-list-item ng-click="null">
+          <i class="material-icons">info</i>
+          <p>About</p>
+        </md-list-item>
+        <md-list-item ng-click="null">
+          <i class="material-icons">feedback</i>
+          <p>Send feedback</p>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
 
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="20" layout-align="start center">
-    <md-card>
-      <md-card-header>
-        <md-card-avatar>
-          <i class="material-icons">radio</i>
-        </md-card-avatar>
-        <md-card-header-text>
-          <span class="md-title">Now playing on</span>
-          <span class="md-subhead">Chillout</span>
-        </md-card-header-text>
-      </md-card-header>
-      <img ng-src="{{vm.chl.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.chl.title}}</h1>
-        <h2 class="md-caption">{{vm.chl.artist}}</h2>
-      </md-card-content>
-      <!--<md-card-actions layout="row" layout-align="end center">-->
-      <!--<md-button ng-click="vm.showPlayer($event, 'chl')">Tune in</md-button>-->
-      <!--<md-button>Close</md-button>-->
-      <!--</md-card-actions>-->
-    </md-card>
-  </div>
+  <md-content flex layout="column">
 
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="20" layout-align="start center">
-    <md-card>
-      <md-card-header>
-        <md-card-avatar>
-          <i class="material-icons">radio</i>
-        </md-card-avatar>
-        <md-card-header-text>
-          <span class="md-title">Now playing on</span>
-          <span class="md-subhead">Chillout</span>
-        </md-card-header-text>
-      </md-card-header>
-      <img ng-src="{{vm.chl.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.chl.title}}</h1>
-        <h2 class="md-caption">{{vm.chl.artist}}</h2>
-      </md-card-content>
-      <!--<md-card-actions layout="row" layout-align="end center">-->
-      <!--<md-button ng-click="vm.showPlayer($event, 'chl')">Tune in</md-button>-->
-      <!--<md-button>Close</md-button>-->
-      <!--</md-card-actions>-->
-    </md-card>
-  </div>
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="20" layout-align="start center">
-    <md-card>
-      <md-card-header>
-        <md-card-avatar>
-          <i class="material-icons">radio</i>
-        </md-card-avatar>
-        <md-card-header-text>
-          <span class="md-title">Now playing on</span>
-          <span class="md-subhead">Chillout</span>
-        </md-card-header-text>
-      </md-card-header>
-      <img ng-src="{{vm.chl.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.chl.title}}</h1>
-        <h2 class="md-caption">{{vm.chl.artist}}</h2>
-      </md-card-content>
-      <!--<md-card-actions layout="row" layout-align="end center">-->
-      <!--<md-button ng-click="vm.showPlayer($event, 'chl')">Tune in</md-button>-->
-      <!--<md-button>Close</md-button>-->
-      <!--</md-card-actions>-->
-    </md-card>
-  </div>
-
-</md-content>
-
-<div layout="row" layout-align="space-between" class="smx-section">
-  <h3 flex-offset-gt-md="10" flex-gt-md="60" layout-padding>Top tracks</h3>
-  <h3 flex-gt-md="20" layout-padding><a href="#">VIEW ALL</a></h3>
-</div>
-
-<md-content layout="row">
-
-  <div layout="row" flex-offset-gt-md="10" flex-gt-md="80" layout-wrap>
-
-    <div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">
-      <md-card layout="row" class="smx-horizontal-card">
-        <div layout="row" flex-gt-md="40">
-          <img ng-src="{{vm.slf.coverUrl}}" alt="">
-        </div>
-        <md-card-content>
-          <h1 class="md-body-1">{{vm.slf.title}}</h1>
-          <h2 class="md-caption">{{vm.slf.artist}}</h2>
-        </md-card-content>
-      </md-card>
+    <div flex="40" layout="column" class="smx-home-hero">
+      <div>
+        <h1 class="md-display-4">Welcome house!</h1>
+        <p class="md-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div flex="25" layout="row" layout-align="start start">
+        <img src="{{vm.imgUrl}}04d65851dc50e26395066064258e8ad9.jpeg"/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}031d68c527e3bd87e5cfe6695a5670a2.png'/>
+        <img src='{{vm.imgUrl}}076d3d1ea81f4ff4e1f8e52423204dcf.jpeg'/>
+        <img src="{{vm.imgUrl}}04d65851dc50e26395066064258e8ad9.jpeg"/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}031d68c527e3bd87e5cfe6695a5670a2.png'/>
+        <img src='{{vm.imgUrl}}076d3d1ea81f4ff4e1f8e52423204dcf.jpeg'/>
+        <img src="{{vm.imgUrl}}04d65851dc50e26395066064258e8ad9.jpeg"/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}031d68c527e3bd87e5cfe6695a5670a2.png'/>
+        <img src='{{vm.imgUrl}}076d3d1ea81f4ff4e1f8e52423204dcf.jpeg'/>
+        <img src="{{vm.imgUrl}}04d65851dc50e26395066064258e8ad9.jpeg"/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}031d68c527e3bd87e5cfe6695a5670a2.png'/>
+        <img src='{{vm.imgUrl}}076d3d1ea81f4ff4e1f8e52423204dcf.jpeg'/>
+        <img src="{{vm.imgUrl}}04d65851dc50e26395066064258e8ad9.jpeg"/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}03d1fc6f4eaaff2bda3e527d0c28eadc.jpeg'/>
+        <img src='{{vm.imgUrl}}031d68c527e3bd87e5cfe6695a5670a2.png'/>
+        <img src='{{vm.imgUrl}}076d3d1ea81f4ff4e1f8e52423204dcf.jpeg'/>
+      </div>
+      <div flex="25" layout="row" layout-align="end end">
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}06124207eab441d3ccdcaa4b450064ee.jpg'/>
+        <img src='{{vm.imgUrl}}0532d42fdce8f06cc66429cce3b037e1.jpg'/>
+        <img src='{{vm.imgUrl}}051fc3d4c1bd33aca238c8d0df145bd1.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}06124207eab441d3ccdcaa4b450064ee.jpg'/>
+        <img src='{{vm.imgUrl}}0532d42fdce8f06cc66429cce3b037e1.jpg'/>
+        <img src='{{vm.imgUrl}}051fc3d4c1bd33aca238c8d0df145bd1.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}06124207eab441d3ccdcaa4b450064ee.jpg'/>
+        <img src='{{vm.imgUrl}}0532d42fdce8f06cc66429cce3b037e1.jpg'/>
+        <img src='{{vm.imgUrl}}051fc3d4c1bd33aca238c8d0df145bd1.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}063d774295fffb2bce82238d848aa009.jpeg'/>
+        <img src='{{vm.imgUrl}}06124207eab441d3ccdcaa4b450064ee.jpg'/>
+        <img src='{{vm.imgUrl}}0532d42fdce8f06cc66429cce3b037e1.jpg'/>
+        <img src='{{vm.imgUrl}}051fc3d4c1bd33aca238c8d0df145bd1.jpeg'/>
+      </div>
+      <div flex="25" layout="row" layout-align="start start">
+        <img src='{{vm.imgUrl}}05093cb9975d30c4f94ec1b9bf95a056.jpeg'/>
+        <img src='{{vm.imgUrl}}0726d3d8281d470051d50486134d1e60.jpeg'/>
+        <img src='{{vm.imgUrl}}03275d61bed5a555e62b5bde7dbc7e10.jpeg'/>
+        <img src='{{vm.imgUrl}}03307d3a3a64f5e90fd87d15aa2475d2.jpeg'/>
+        <img src='{{vm.imgUrl}}05093cb9975d30c4f94ec1b9bf95a056.jpeg'/>
+        <img src='{{vm.imgUrl}}0726d3d8281d470051d50486134d1e60.jpeg'/>
+        <img src='{{vm.imgUrl}}03275d61bed5a555e62b5bde7dbc7e10.jpeg'/>
+        <img src='{{vm.imgUrl}}03307d3a3a64f5e90fd87d15aa2475d2.jpeg'/>
+        <img src='{{vm.imgUrl}}05093cb9975d30c4f94ec1b9bf95a056.jpeg'/>
+        <img src='{{vm.imgUrl}}0726d3d8281d470051d50486134d1e60.jpeg'/>
+        <img src='{{vm.imgUrl}}03275d61bed5a555e62b5bde7dbc7e10.jpeg'/>
+        <img src='{{vm.imgUrl}}03307d3a3a64f5e90fd87d15aa2475d2.jpeg'/>
+        <img src='{{vm.imgUrl}}05093cb9975d30c4f94ec1b9bf95a056.jpeg'/>
+        <img src='{{vm.imgUrl}}0726d3d8281d470051d50486134d1e60.jpeg'/>
+        <img src='{{vm.imgUrl}}03275d61bed5a555e62b5bde7dbc7e10.jpeg'/>
+        <img src='{{vm.imgUrl}}03307d3a3a64f5e90fd87d15aa2475d2.jpeg'/>
+        <img src='{{vm.imgUrl}}05093cb9975d30c4f94ec1b9bf95a056.jpeg'/>
+        <img src='{{vm.imgUrl}}0726d3d8281d470051d50486134d1e60.jpeg'/>
+        <img src='{{vm.imgUrl}}03275d61bed5a555e62b5bde7dbc7e10.jpeg'/>
+        <img src='{{vm.imgUrl}}03307d3a3a64f5e90fd87d15aa2475d2.jpeg'/>
+      </div>
+      <div flex="25" layout="row" layout-align="end end">
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}000a474600ff8f2f8dcec2002d015595.jpg'/>
+        <img src='{{vm.imgUrl}}07cd8d0916f6f8cca704adb038df26b3.jpeg'/>
+        <img src='{{vm.imgUrl}}04ec4b1b1497397ec3aeb1f4ea8628e6.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}000a474600ff8f2f8dcec2002d015595.jpg'/>
+        <img src='{{vm.imgUrl}}07cd8d0916f6f8cca704adb038df26b3.jpeg'/>
+        <img src='{{vm.imgUrl}}04ec4b1b1497397ec3aeb1f4ea8628e6.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}000a474600ff8f2f8dcec2002d015595.jpg'/>
+        <img src='{{vm.imgUrl}}07cd8d0916f6f8cca704adb038df26b3.jpeg'/>
+        <img src='{{vm.imgUrl}}04ec4b1b1497397ec3aeb1f4ea8628e6.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}000a474600ff8f2f8dcec2002d015595.jpg'/>
+        <img src='{{vm.imgUrl}}07cd8d0916f6f8cca704adb038df26b3.jpeg'/>
+        <img src='{{vm.imgUrl}}04ec4b1b1497397ec3aeb1f4ea8628e6.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}000a474600ff8f2f8dcec2002d015595.jpg'/>
+        <img src='{{vm.imgUrl}}07cd8d0916f6f8cca704adb038df26b3.jpeg'/>
+        <img src='{{vm.imgUrl}}04ec4b1b1497397ec3aeb1f4ea8628e6.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}65a31de58a4013dd70f5e9fff9a7ab05.jpeg'/>
+        <img src='{{vm.imgUrl}}000a474600ff8f2f8dcec2002d015595.jpg'/>
+        <img src='{{vm.imgUrl}}07cd8d0916f6f8cca704adb038df26b3.jpeg'/>
+        <img src='{{vm.imgUrl}}04ec4b1b1497397ec3aeb1f4ea8628e6.jpeg'/>
+      </div>
     </div>
 
-    <div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">
-      <md-card layout="row" class="smx-horizontal-card">
-        <div layout="row" flex-gt-md="40">
-          <img ng-src="{{vm.slf.coverUrl}}" alt="">
+
+    <section layout="column" class="smx-home-now-playing">
+
+      <div layout="row" class="smx-home-section-title">
+        <h1 flex-gt-md="75" class="md-title smx-400">Now playing on radio</h1>
+        <!--<span flex-gt-md="25"><a href="#">VIEW ALL</a></span>-->
+      </div>
+
+      <div layout="row" layout-wrap>
+
+        <div flex flex-xs="50" flex-sm="33">
+          <md-card>
+            <md-card-header>
+              <md-card-avatar>
+                <i class="material-icons">radio</i>
+              </md-card-avatar>
+              <md-card-header-text>
+                <span class="md-title">Now playing on</span>
+                <span class="md-subhead">Soulful House</span>
+              </md-card-header-text>
+            </md-card-header>
+            <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
+            <md-card-content>
+              <h1 class="md-body-1">{{vm.slf.title}}</h1>
+              <h2 class="md-caption">{{vm.slf.artist}}</h2>
+            </md-card-content>
+            <md-card-actions>
+              <md-button class="md-accent" ng-click="null">Tune in</md-button>
+            </md-card-actions>
+          </md-card>
         </div>
-        <md-card-content>
-          <h1 class="md-body-1">{{vm.slf.title}}</h1>
-          <h2 class="md-caption">{{vm.slf.artist}}</h2>
-        </md-card-content>
-      </md-card>
-    </div>
 
-    <div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">
-      <md-card layout="row" class="smx-horizontal-card">
-        <div layout="row" flex-gt-md="40">
-          <img ng-src="{{vm.slf.coverUrl}}" alt="">
+        <div flex flex-xs="50" flex-sm="33">
+          <md-card>
+            <md-card-header>
+              <md-card-avatar>
+                <i class="material-icons">radio</i>
+              </md-card-avatar>
+              <md-card-header-text>
+                <span class="md-title">Now playing on</span>
+                <span class="md-subhead">Deep House</span>
+              </md-card-header-text>
+            </md-card-header>
+            <img src='{{vm.imgUrl}}07cd8d0916f6f8cca704adb038df26b3.jpeg' class="md-card-image" alt=""/>
+            <md-card-content>
+              <h1 class="md-body-1">{{vm.slf.title}}</h1>
+              <h2 class="md-caption">{{vm.slf.artist}}</h2>
+            </md-card-content>
+            <md-card-actions>
+              <md-button class="md-accent" ng-click="null">Tune in</md-button>
+            </md-card-actions>
+          </md-card>
         </div>
-        <md-card-content>
-          <h1 class="md-body-1">{{vm.slf.title}}</h1>
-          <h2 class="md-caption">{{vm.slf.artist}}</h2>
-        </md-card-content>
-      </md-card>
-    </div>
 
-    <div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">
-      <md-card layout="row" class="smx-horizontal-card">
-        <div layout="row" flex-gt-md="40">
-          <img ng-src="{{vm.slf.coverUrl}}" alt="">
+        <div flex flex-xs="50" flex-sm="33">
+          <md-card>
+            <md-card-header>
+              <md-card-avatar>
+                <i class="material-icons">radio</i>
+              </md-card-avatar>
+              <md-card-header-text>
+                <span class="md-title">Now playing on</span>
+                <span class="md-subhead">Chillout</span>
+              </md-card-header-text>
+            </md-card-header>
+            <img src='{{vm.imgUrl}}0532d42fdce8f06cc66429cce3b037e1.jpg' class="md-card-image" alt="">
+            <md-card-content>
+              <h1 class="md-body-1">{{vm.chl.title}}</h1>
+              <h2 class="md-caption">{{vm.chl.artist}}</h2>
+            </md-card-content>
+            <md-card-actions>
+              <md-button class="md-accent" ng-click="null">Tune in</md-button>
+            </md-card-actions>
+          </md-card>
         </div>
-        <md-card-content>
-          <h1 class="md-body-1">{{vm.slf.title}}</h1>
-          <h2 class="md-caption">{{vm.slf.artist}}</h2>
-        </md-card-content>
-      </md-card>
-    </div>
-
-    <div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">
-      <md-card layout="row" class="smx-horizontal-card">
-        <div layout="row" flex-gt-md="40">
-          <img ng-src="{{vm.slf.coverUrl}}" alt="">
+        <div flex hide-sm hide-md>
+          <md-card>
+            <md-card-header>
+              <md-card-avatar>
+                <i class="material-icons">radio</i>
+              </md-card-avatar>
+              <md-card-header-text>
+                <span class="md-title">Now playing on</span>
+                <span class="md-subhead">Chillout</span>
+              </md-card-header-text>
+            </md-card-header>
+            <img src="{{vm.imgUrl}}04d65851dc50e26395066064258e8ad9.jpeg" class="md-card-image" alt="">
+            <md-card-content>
+              <h1 class="md-body-1">{{vm.chl.title}}</h1>
+              <h2 class="md-caption">{{vm.chl.artist}}</h2>
+            </md-card-content>
+            <md-card-actions>
+              <md-button class="md-accent" ng-click="null">Tune in</md-button>
+            </md-card-actions>
+          </md-card>
         </div>
-        <md-card-content>
-          <h1 class="md-body-1">{{vm.slf.title}}</h1>
-          <h2 class="md-caption">{{vm.slf.artist}}</h2>
-        </md-card-content>
-      </md-card>
-    </div>
-
-    <div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">
-      <md-card layout="row" class="smx-horizontal-card">
-        <div layout="row" flex-gt-md="40">
-          <img ng-src="{{vm.slf.coverUrl}}" alt="">
+        <div flex hide-xs>
+          <md-card>
+            <md-card-header>
+              <md-card-avatar>
+                <i class="material-icons">radio</i>
+              </md-card-avatar>
+              <md-card-header-text>
+                <span class="md-title">Now playing on</span>
+                <span class="md-subhead">Chillout</span>
+              </md-card-header-text>
+            </md-card-header>
+            <img src='{{vm.imgUrl}}076d3d1ea81f4ff4e1f8e52423204dcf.jpeg' class="md-card-image" alt="">
+            <md-card-content>
+              <h1 class="md-body-1">{{vm.chl.title}}</h1>
+              <h2 class="md-caption">{{vm.chl.artist}}</h2>
+            </md-card-content>
+            <md-card-actions>
+              <md-button class="md-accent" ng-click="null">Tune in</md-button>
+            </md-card-actions>
+          </md-card>
         </div>
-        <md-card-content>
-          <h1 class="md-body-1">{{vm.slf.title}}</h1>
-          <h2 class="md-caption">{{vm.slf.artist}}</h2>
-        </md-card-content>
-      </md-card>
-    </div>
 
-  </div>
-
-</md-content>
-
-<div layout="row" layout-align="space-between" class="smx-section">
-  <h3 flex-offset-gt-md="10" flex-gt-md="60" layout-padding>New tracks</h3>
-  <h3 flex-gt-md="20" layout-padding><a href="#">VIEW ALL</a></h3>
-</div>
-
-<md-content layout="row">
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" flex-offset-gt-md="10" layout-align="start center">
-    <md-card>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
-        <md-button>Close</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">
-    <md-card>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
-        <md-button>Close</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">
-    <md-card>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
-        <md-button>Close</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">
-    <md-card>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
-        <md-button>Close</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">
-    <md-card>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
-        <md-button>Close</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">
-    <md-card>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
-        <md-button>Close</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">
-    <md-card>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
-        <md-button>Close</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-
-  <div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">
-    <md-card>
-      <img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">
-      <md-card-content>
-        <h1 class="md-body-1">{{vm.slf.title}}</h1>
-        <h2 class="md-caption">{{vm.slf.artist}}</h2>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>
-        <md-button>Close</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-
-</md-content>
+      </div>
 
 
-<div layout="row" layout-align="space-between" class="smx-section">
-  <h3 flex-offset-gt-md="10" flex-gt-md="60" layout-padding>Featured</h3>
+    </section>
+
+
+  </md-content>
+
+
+
+  <!--<div layout="row" layout-align="space-between" class="smx-section">-->
+  <!--<h3 flex-offset-gt-md="10" flex-gt-md="60" layout-padding>Top tracks</h3>-->
   <!--<h3 flex-gt-md="20" layout-padding><a href="#">VIEW ALL</a></h3>-->
-</div>
+  <!--</div>-->
 
-<md-content layout-fill>
+  <!--<md-content layout="row">-->
 
-  <div layout="row" flex-gt-md="80" flex-offset-gt-md="10" class="smx-collage">
+  <!--<div layout="row" flex-offset-gt-md="10" flex-gt-md="80" layout-wrap>-->
 
-    <div layout="column" flex-gt-md="50">
-      <div flex-gt-md="66" class="block1">
-        <img ng-src="{{vm.slf.coverUrl}}" alt="">
-      </div>
-      <div layout="row" flex-gt-md="33" class="block2">
-        <div flex>
-          <img ng-src="{{vm.slf.coverUrl}}" alt="">
-        </div>
-        <div flex>
-          <img ng-src="{{vm.slf.coverUrl}}" alt="">
-        </div>
-      </div>
-    </div>
+  <!--<div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">-->
+  <!--<md-card layout="row" class="smx-horizontal-card">-->
+  <!--<div layout="row" flex-gt-md="40">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--</md-card>-->
+  <!--</div>-->
 
-    <div layout="column" flex-gt-md="25">
-      <div flex-gt-md="33" class="block7">
-        <img ng-src="{{vm.slf.coverUrl}}" alt="">
-      </div>
-      <div flex-gt-md="33" class="block8">
-        <img ng-src="{{vm.slf.coverUrl}}" alt="">
-      </div>
-      <div flex-gt-md="33" class="block8">
-        <img ng-src="{{vm.slf.coverUrl}}" alt="">
-      </div>
-    </div>
+  <!--<div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">-->
+  <!--<md-card layout="row" class="smx-horizontal-card">-->
+  <!--<div layout="row" flex-gt-md="40">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--</md-card>-->
+  <!--</div>-->
 
-    <div layout="column" flex-gt-md="25">
-      <div flex-gt-md="33" class="block7">
-        <img ng-src="{{vm.slf.coverUrl}}" alt="">
-      </div>
-      <div flex-gt-md="33" class="block8">
-        <img ng-src="{{vm.slf.coverUrl}}" alt="">
-      </div>
-      <div flex-gt-md="33" class="block8">
-        <img ng-src="{{vm.slf.coverUrl}}" alt="">
-      </div>
-    </div>
+  <!--<div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">-->
+  <!--<md-card layout="row" class="smx-horizontal-card">-->
+  <!--<div layout="row" flex-gt-md="40">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--</md-card>-->
+  <!--</div>-->
 
-  </div>
+  <!--<div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">-->
+  <!--<md-card layout="row" class="smx-horizontal-card">-->
+  <!--<div layout="row" flex-gt-md="40">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--</md-card>-->
+  <!--</div>-->
 
-</md-content>
+  <!--<div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">-->
+  <!--<md-card layout="row" class="smx-horizontal-card">-->
+  <!--<div layout="row" flex-gt-md="40">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--<div flex-xs="100" flex-sm="50" flex-gt-md="33" layout-align="start center">-->
+  <!--<md-card layout="row" class="smx-horizontal-card">-->
+  <!--<div layout="row" flex-gt-md="40">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--</div>-->
+
+  <!--</md-content>-->
+
+  <!--<div layout="row" layout-align="space-between" class="smx-section">-->
+  <!--<h3 flex-offset-gt-md="10" flex-gt-md="60" layout-padding>New tracks</h3>-->
+  <!--<h3 flex-gt-md="20" layout-padding><a href="#">VIEW ALL</a></h3>-->
+  <!--</div>-->
+
+  <!--<md-content layout="row">-->
+
+  <!--<div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" flex-offset-gt-md="10" layout-align="start center">-->
+  <!--<md-card>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions layout="row" layout-align="end center">-->
+  <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
+  <!--<md-button>Close</md-button>-->
+  <!--</md-card-actions>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--<div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">-->
+  <!--<md-card>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions layout="row" layout-align="end center">-->
+  <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
+  <!--<md-button>Close</md-button>-->
+  <!--</md-card-actions>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--<div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">-->
+  <!--<md-card>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions layout="row" layout-align="end center">-->
+  <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
+  <!--<md-button>Close</md-button>-->
+  <!--</md-card-actions>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--<div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">-->
+  <!--<md-card>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions layout="row" layout-align="end center">-->
+  <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
+  <!--<md-button>Close</md-button>-->
+  <!--</md-card-actions>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--<div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">-->
+  <!--<md-card>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions layout="row" layout-align="end center">-->
+  <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
+  <!--<md-button>Close</md-button>-->
+  <!--</md-card-actions>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--<div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">-->
+  <!--<md-card>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions layout="row" layout-align="end center">-->
+  <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
+  <!--<md-button>Close</md-button>-->
+  <!--</md-card-actions>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--<div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">-->
+  <!--<md-card>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions layout="row" layout-align="end center">-->
+  <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
+  <!--<md-button>Close</md-button>-->
+  <!--</md-card-actions>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--<div flex-xs="50" flex-gt-xs="50" flex-sm="50" flex-gt-md="15" layout-align="start center">-->
+  <!--<md-card>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-card-image" alt="">-->
+  <!--<md-card-content>-->
+  <!--<h1 class="md-body-1">{{vm.slf.title}}</h1>-->
+  <!--<h2 class="md-caption">{{vm.slf.artist}}</h2>-->
+  <!--</md-card-content>-->
+  <!--<md-card-actions layout="row" layout-align="end center">-->
+  <!--<md-button ng-click="vm.showPlayer($event, 'slf')">Tune in</md-button>-->
+  <!--<md-button>Close</md-button>-->
+  <!--</md-card-actions>-->
+  <!--</md-card>-->
+  <!--</div>-->
+
+  <!--</md-content>-->
 
 
+  <!--<div layout="row" layout-align="space-between" class="smx-section">-->
+  <!--<h3 flex-offset-gt-md="10" flex-gt-md="60" layout-padding>Featured</h3>-->
+  <!--&lt;!&ndash;<h3 flex-gt-md="20" layout-padding><a href="#">VIEW ALL</a></h3>&ndash;&gt;-->
+  <!--</div>-->
 
+  <!--<md-content layout-fill>-->
+
+  <!--<div layout="row" flex-gt-md="80" flex-offset-gt-md="10" class="smx-collage">-->
+
+  <!--<div layout="column" flex-gt-md="50">-->
+  <!--<div flex-gt-md="66" class="block1">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<div layout="row" flex-gt-md="33" class="block2">-->
+  <!--<div flex>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<div flex>-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<div layout="column" flex-gt-md="25">-->
+  <!--<div flex-gt-md="33" class="block7">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<div flex-gt-md="33" class="block8">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<div flex-gt-md="33" class="block8">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<div layout="column" flex-gt-md="25">-->
+  <!--<div flex-gt-md="33" class="block7">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<div flex-gt-md="33" class="block8">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--<div flex-gt-md="33" class="block8">-->
+  <!--<img ng-src="{{vm.slf.coverUrl}}" alt="">-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--</div>-->
+
+  <!--</md-content>-->
+
+
+</section>

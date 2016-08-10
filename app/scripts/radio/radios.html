@@ -1,5 +1,4 @@
 <md-toolbar md-whiteframe="4">
-
   <div class="md-toolbar-tools">
     <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
       <i class="material-icons md-dark">menu</i>
@@ -8,8 +7,6 @@
       <span>Smoothtraxx | Radio</span>
     </h2>
     <span flex=""></span>
-
-
     <md-button class="md-icon-button" aria-label="Share">
       <i class="material-icons md-dark">share</i>
     </md-button>
@@ -24,30 +21,13 @@
 
 <section layout="row">
 
-  <!--<md-sidenav md-component-id="menu" class="md-sidenav-left"-->
-  <!--md-is-locked-open="$mdMedia('gt-md')"-->
-  <!--md-disable-backdrop-->
-  <!--md-whiteframe="4">-->
-  <!--My menu-->
-  <!--</md-sidenav>-->
-
   <md-sidenav
     class="md-sidenav-left"
     md-component-id="menu"
-    md-is-locked-open="$mdMedia('gt-md')"
+    md-is-locked-open="$mdMedia('gt-lg')"
     md-disable-backdrop
     md-whiteframe="4">
-    <!--<md-toolbar class="md-theme-indigo">-->
-    <!--<h1 class="md-toolbar-tools">Sidenav Left</h1>-->
-    <!--</md-toolbar>-->
     <md-content class="smx-sidenav">
-      <!--<md-button ng-click="close()" class="md-primary" hide-gt-md>-->
-      <!--Close Sidenav Left-->
-      <!--</md-button>-->
-      <!--<p hide show-gt-md>-->
-      <!--This sidenav is locked open on your device. To go back to the default behavior,-->
-      <!--narrow your display.-->
-      <!--</p>-->
       <md-list>
         <md-list-item ui-sref="home">
           <i class="material-icons">home</i>
@@ -80,12 +60,10 @@
           <p>Send feedback</p>
         </md-list-item>
       </md-list>
-
-
     </md-content>
   </md-sidenav>
 
-  <md-content class="smx-radios" flex>
+  <md-content flex class="smx-radios">
 
     <h1 flex-gt-md="80" flex-offset-gt-md="10" class="md-display-1 smx-page-title">Pick your Radio</h1>
 

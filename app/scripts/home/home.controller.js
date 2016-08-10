@@ -33,6 +33,9 @@
 
         var vm = this;
 
+
+      vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
+
         vm.openMenu = openMenu;
         vm.showPlayer = showPlayer;
         vm.chlFullTitle = '';
@@ -48,7 +51,7 @@
         function showPlayer($event, radioChannel) {
 
             var nowPlayingInfo;
-            
+
             switch (radioChannel) {
                 case 'chl':
                     nowPlayingInfo = vm.chl;
