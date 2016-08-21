@@ -24,7 +24,7 @@
   <md-sidenav
     class="md-sidenav-left"
     md-component-id="menu"
-    md-is-locked-open="$mdMedia('gt-lg')"
+    md-is-locked-open="$mdMedia('gt-md')"
     md-disable-backdrop
     md-whiteframe="4">
     <md-content class="smx-sidenav">
@@ -34,28 +34,28 @@
           <p>Home</p>
         </md-list-item>
         <md-divider></md-divider>
-        <md-list-item ng-click="null">
+        <md-list-item ui-sref="radios">
           <i class="material-icons">radio</i>
           <p>Radio</p>
         </md-list-item>
-        <md-list-item ng-click="null">
+        <md-list-item ui-sref="home">
           <i class="material-icons">star</i>
-          <p>Top Traxx</p>
+          <p>Top Tracks</p>
         </md-list-item>
-        <md-list-item ng-click="null">
+        <md-list-item ui-sref="home">
           <i class="material-icons">new_releases</i>
           <p>Recently Added</p>
         </md-list-item>
         <md-divider></md-divider>
-        <md-list-item ng-click="null">
+        <md-list-item ui-sref="home">
           <i class="material-icons">favorite_border</i>
           <p>Favourites</p>
         </md-list-item>
-        <md-list-item ng-click="null">
+        <md-list-item ui-sref="home">
           <i class="material-icons">info</i>
           <p>About</p>
         </md-list-item>
-        <md-list-item ng-click="null">
+        <md-list-item ui-sref="home">
           <i class="material-icons">feedback</i>
           <p>Send feedback</p>
         </md-list-item>
@@ -72,7 +72,7 @@
     <div layout="row" flex-gt-md="80" flex-offset-gt-md="10" layout-no-wrap>
 
       <!--column 1-->
-      <div flex="60" layout="column" class="smx-radios-soulful">
+      <a ui-sref="radio" flex="60" layout="column" class="smx-radios-soulful">
 
         <div>
           <h2 class="md-display-1">Soulful House</h2>
@@ -108,7 +108,7 @@
           <img src='{{vm.imgUrl}}04ec4b1b1497397ec3aeb1f4ea8628e6.jpeg'/>
         </div>
 
-      </div>
+      </a>
 
 
       <!--column 2-->

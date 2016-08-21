@@ -2,6 +2,7 @@
     'use strict';
 
     angular.module('app.home', [
-        'app.core'
+        'app.core',
+        'app.player'
     ]);
 })();

@@ -34,28 +34,50 @@
         var vm = this;
 
 
-      vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
+        vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
 
         vm.openMenu = openMenu;
+        vm.openSettings = openSettings;
         vm.showPlayer = showPlayer;
         vm.chlFullTitle = '';
         vm.slfFullTitle = '';
-        vm.chl = homeResolve.chl;
+        // vm.chl = homeResolve.chl;
         vm.slf = homeResolve.slf;
+        vm.isBuffering = true;
+        vm.isPlaying = false;
+        vm.play = vm.play;
+        vm.pause = vm.pause;
 
-        $interval(checkNowPlaying, 5000);
+        $interval(checkNowPlaying, 3000);
 
         //console.log(homeResolve);
+        // vm.audio = angular.element(document.getElementsByTagName('audio')[0]);
+        vm.audio = document.getElementsByTagName('audio')[0];
 
-        //
+        vm.audio.addEventListener("canplay", function() {
+            vm.isBuffering = false;
+            vm.isPlaying = true;
+        }, false);
+
+
+        vm.play = function() {
+            vm.audio.play();
+            vm.isPlaying = true;
+        };
+
+        vm.pause = function() {
+            vm.audio.pause();
+            vm.isPlaying = false;
+        };
+
         function showPlayer($event, radioChannel) {
 
             var nowPlayingInfo;
 
             switch (radioChannel) {
-                case 'chl':
-                    nowPlayingInfo = vm.chl;
-                    break;
+                // case 'chl':
+                //     nowPlayingInfo = vm.chl;
+                //     break;
                 case 'slf':
                     nowPlayingInfo = vm.slf;
                     break;
@@ -63,32 +85,36 @@
                     break;
             }
 
-            $mdDialog.show({
-                parent: angular.element(document.body),
-                targetEvent: $event,
-                templateUrl: '/scripts/player/player.tmpl.html',
-                locals: {
-                    radioChannel: radioChannel,
-                    nowPlaying: nowPlayingInfo
-                },
-                controller: 'PlayerController as vm',
-                fullscreen: true
-            });
+            // $mdDialog.show({
+            //     parent: angular.element(document.body),
+            //     targetEvent: $event,
+            //     templateUrl: '/scripts/player/player.tmpl.html',
+            //     locals: {
+            //         radioChannel: radioChannel,
+            //         nowPlaying: nowPlayingInfo
+            //     },
+            //     controller: 'PlayerController as vm',
+            //     fullscreen: true
+            // });
 
         }
 
         function openMenu() {
-            $mdSidenav('menu').toggle();
+            $mdSidenav('sidenav').toggle();
+        }
+
+        function openSettings() {
+            $mdSidenav('settingsnav').toggle();
         }
 
         function checkNowPlaying() {
 
             Icecast.nowPlaying().then(function (data) {
 
-                if (vm.chlFullTitle !== data.icestats.source[0].title) {
-                    vm.chlFullTitle = data.icestats.source[0].title;
-                    getTrackInfo('chl', vm.chlFullTitle);
-                }
+                // if (vm.chlFullTitle !== data.icestats.source[0].title) {
+                //     vm.chlFullTitle = data.icestats.source[0].title;
+                //     getTrackInfo('chl', vm.chlFullTitle);
+                // }
 
                 if (vm.slfFullTitle !== data.icestats.source[1].title) {
                     vm.slfFullTitle = data.icestats.source[1].title;
@@ -106,16 +132,20 @@
 
             Track.trackInfo(fullTitleArr[0], fullTitleArr[1], fullTitleArr[2]).then(function (info) {
 
-                coverUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/' + info[0].cover;
+                if (info[0]) {
+                    coverUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/' + info[0].cover;
+                }
 
                 switch (radioChannel) {
-                    case 'chl':
-                        vm.chl = info[0];
-                        vm.chl.coverUrl = coverUrl;
-                        break;
+                    // case 'chl':
+                    //     vm.chl = info[0];
+                    //     vm.chl.coverUrl = coverUrl;
+                    //     break;
                     case 'slf':
                         vm.slf = info[0];
-                        vm.slf.coverUrl = coverUrl;
+                        if (info[0]) {
+                            vm.slf.coverUrl = coverUrl;
+                        }
                         break;
                     default:
                         break;

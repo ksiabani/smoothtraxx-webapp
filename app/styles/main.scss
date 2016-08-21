@@ -85,10 +85,15 @@
 
 //Basics
 //
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
+//@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
 
-body {
+body, html {
   //font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  background-color: #212121;
+  //background-color: black;
+  //z-index: 0;
 }
 
 //Override defaults
@@ -100,21 +105,24 @@ body {
 //}
 
 // TODO: Do I need this?
-md-card md-card-content {
-  padding: 8px;
-}
+//md-card md-card-content {
+//  padding: 8px;
+//}
 
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
-  //background-color: transparent;
+  background-color: transparent !important;
   //color: rgba(204, 204, 204, 1);
+  //z-index: 0 !important;
 }
 
 md-toolbar, .md-toolbar-tools {
+  position: relative;
   min-height: 56px;
   height: 56px;
-  background-color: white;
-  color: rgba(0, 0, 0, 0.8);
-  z-index: 61;
+  //background-color: white;
+  //color: rgba(0, 0, 0, 0.8);
+  //z-index: 0 !important;
+  background-color: transparent !important;
 }
 
 .material-icons {
@@ -149,8 +157,165 @@ md-menu-bar button {
   font-weight: 100;
 }
 
+.smx-300 {
+  font-weight: 300;
+}
+
 .smx-400 {
   font-weight: 400;
+}
+
+.smx-no-wrap {
+  white-space: nowrap;
+  //width: 100%;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.smx-z-index-1 {
+  z-index: 1;
+}
+
+//padding
+.smx-no-padding {
+  padding: 0 !important;
+}
+
+.smx-padding-8 {
+  padding: 8px !important;
+}
+
+.smx-padding-16 {
+  padding: 16px !important;
+}
+
+.smx-padding-24 {
+  padding: 24px !important;
+}
+
+.smx-top-padding-8 {
+  padding-top: 8px !important;
+}
+
+.smx-x-padding-8 {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.smx-x-padding-16 {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.smx-x-padding-24 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+.smx-y-padding-8 {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.smx-y-padding-16 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+.smx-y-padding-24 {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+//margin
+.smx-no-margin {
+  margin: 0 !important;
+}
+
+.smx-margin-8 {
+  margin: 8px !important;
+}
+
+.smx-margin-16 {
+  margin: 16px !important;
+}
+
+.smx-margin-24 {
+  margin: 24px !important;
+}
+
+.smx-top-margin-8 {
+  margin-top: 8px !important;
+}
+
+.smx-top-margin-24 {
+  margin-top: 24px !important;
+}
+
+.smx-x-margin-8 {
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+}
+
+.smx-x-margin-16 {
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+}
+
+.smx-x-margin-24 {
+  margin-left: 24px !important;
+  margin-right: 24px !important;
+}
+
+.smx-y-margin-8 {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+.smx-y-margin-16 {
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+}
+
+.smx-y-margin-24 {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+}
+
+
+//background colors
+.smx-background-light-grey {
+  background-color: #F5F5F5;
+}
+
+.smx-background-grey {
+  background-color: #EEEEEE;
+}
+
+.smx-background-dark-grey {
+  background-color: #37474F;
+}
+
+//text colors
+.smx-color-white {
+  color: white;
+}
+
+.smx-color-light-grey {
+  color: #F5F5F5;
+}
+
+.smx-color-grey {
+  color: #EEEEEE;
+}
+
+.smx-color-light-black {
+  color: rgba(0,0,0,0.54);
+}
+
+//do i need this?
+.smx-pull-right {
+  float: right !important;
 }
 
 .smx-helper-border {
@@ -232,69 +397,49 @@ md-menu-bar button {
   padding-right: 10%;
 }
 
-//smx-home-hero height
-//@media screen and (min-width: 481px) {
-//  .smx-home-hero {
-//    padding-top: 32%;
-//  }
-//}
-
-//@media screen and (min-width: 1279px) {
-//  .smx-home-now-playing div:nth-child(2) {
-//    padding-left: 16px;
-//  }
-//}
-
-@media screen and (min-width: 1279px) {
-  .smx-home-now-playing,
-  .smx-home-top-traxx {
-    padding-left: 12.5%;
-    padding-right: 12.5%;
-  }
+.smx-home-hero img:hover {
+  margin-top: -5px;
+  margin-left: -5px;
+  height: calc(100% + 10px);
+  //opacity: 0.3;
+  //z-index: 1;
+  transition: all 0.2s ease-out;
 }
 
-.smx-home-section-title {
-  padding: 8px;
+
+// todo: dont use md-card directly, use a helper instead
+.smx-home-top-tracks md-card {
+  position: relative;
+  background-color: #263238;
+  color: white;
 }
 
-//.smx-section h1 {
-//  font-weight: 400;
-//}
+.smx-home-top-tracks md-card:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-//todo: change me
-.smx-section:nth-of-type(even) {
-  background-color: #F5F5F5;
+  background: -moz-linear-gradient(left,  rgba(38,50,56,0) 80%, rgba(38,50,56,1) 96%);
+  background: -webkit-linear-gradient(left,  rgba(38,50,56,0) 80%,rgba(38,50,56,1) 96%);
+  background: linear-gradient(to right,  rgba(38,50,56,0) 80%,rgba(38,50,56,1) 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00263238', endColorstr='#263238',GradientType=1 );
+
 }
-
-// this is how I control .smx-horizontal-card img height
-// you might need to add more media queries later
-//@media (max-width: 599px) {
-//  .smx-horizontal-card {
-//    max-height: 40vw;
-//  }
-//}
-//
-//@media (max-width: 959px) and (min-width: 600px) {
-//  .smx-horizontal-card {
-//    max-height: 20vw;
-//  }
-//}
-//
-//@media (min-width: 960px) {
-//  .smx-horizontal-card {
-//    max-height: 10vw;
-//  }
-//}
 
 .smx-horizontal-card {
-  max-height: 100px;
+  min-height: 100px;
 }
 
 .smx-horizontal-card img {
-  height: auto;
-  width: 100%;
-  margin: auto;
-  padding-left: 8px;
+  //width: 100px;
+  height: 100%;
+  min-height: 150px;
+  min-width: 150px !important;
+  //margin: auto;
+  //padding-left: 8px;
 }
 
 //
@@ -309,41 +454,145 @@ md-menu-bar button {
 
 //400,300,100,500,700,900
 // radio page
+//.smx-radio-hero {
+//  min-height: 350px;
+//  //background: url('https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/127cab8db80a945e05f1cc21a9e8c26f.jpeg');
+//  //background-size: 5000% 5000%;
+//  //background-position: center center;
+//  //margin-top: -60px;
+//  color: white;
+//  font-size: 2em;
+//  position: relative;
+//}
+//
+//.smx-radio-hero div {
+//  height: 33%;
+//}
+//
+//.smx-radio-hero .md-display-2 {
+//  font-weight: 300;
+//}
+//
+//.smx-radio-hero .md-title {
+//  margin: 0;
+//  line-height: 1.2em;
+//}
+///////
 .smx-radio-hero {
-  min-height: 350px;
-  background: url('https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/127cab8db80a945e05f1cc21a9e8c26f.jpeg');
-  background-size: 5000% 5000%;
-  background-position: center center;
-  margin-top: -60px;
-  color: white;
-  font-size: 2em;
   position: relative;
+  //height: 350px;
+  width: 100%;
+  height: 100%;
+  color: #f5f5f5;
+  //overflow: hidden;
+  //padding: 24px;
+  //background: linear-gradient(to right, rgba(88, 99, 124, 1) 0%, rgba(57, 69, 97, 1) 100%);
+  //background: rgb(88, 99, 124);
+  //background-color: rgba(0, 0, 0, .8);
+  //background-color: #F5F5F5;
+  z-index: 1;
 }
 
-.smx-radio-hero .md-display-2 {
-  font-weight: 300;
-}
-
-.smx-radio-hero .md-title {
-  margin: 0;
-  line-height: 1.2em;
-}
-
-.smx-radio-hero img {
-  margin-left: 50px;
-  height: 200px;
-}
-
-.smx-radio-hero-details {
-  margin-left: 50px;
-}
-
-.smx-radio-hero .md-fab.md-primary {
+.smx-radio-hero:after {
+  content: '';
   position: absolute;
-  bottom: -35px;
-  right: 35px;
-  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //background: rgb(88, 99, 124);
+  //background: linear-gradient(to right, rgba(88, 99, 124, 1) 0%, rgba(57, 69, 97, 1) 100%);
+  //background-color: red;
+  z-index: -1;
+  opacity: 0.4;
+
+  background: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.34) 21%, rgba(0,0,0,0) 44%);
+  background: -webkit-linear-gradient(-45deg,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.34) 21%,rgba(0,0,0,0) 44%);
+  background: linear-gradient(135deg,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.34) 21%,rgba(0,0,0,0) 44%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+
 }
+
+//.smx-radio-hero div {
+  //height: 100%;
+  //width: 100%;
+//}
+
+.smx-radio-hero-cover img{
+  width: 100%;
+  height: auto;
+}
+
+//.smx-radio-hero div:first-child {
+//.smx-radio-hero-details {
+//  //position: absolute;
+//  //top: 30%;
+//  //width: 100%;
+//  //height: 200px;
+//  //color: white;
+//  z-index: 1;
+//  //text-align: center;
+//}
+
+//.smx-radio-hero div:nth-child(2) {
+.smx-radio-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  filter: blur(35px);
+  z-index: -1;
+}
+
+//.smx-radio-hero div:first-child h1 {
+//  margin: 0 auto 5px auto;
+//  font-weight: 400;
+//}
+//
+//.smx-radio-hero div:first-child p {
+//  word-wrap: break-word;
+//  padding-left: 10%;
+//  padding-right: 10%;
+//}
+
+//.smx-radio-hero div:nth-child(2) img:nth-child(2) {
+//  margin-top: -10px;
+//  margin-left: -10px;
+//  height: calc(100% + 20px);
+//  opacity: 1;
+//  z-index: 1;
+//}
+//
+//
+//.smx-radio-hero img:hover {
+//  margin-top: -5px;
+//  margin-left: -5px;
+//  height: calc(100% + 10px);
+//  //opacity: 0.3;
+//  //z-index: 1;
+//  transition: all 0.2s ease-out;
+//}
+////////////
+
+//.smx-radio-hero img {
+//  margin-left: 50px;
+//  height: 200px;
+//}
+
+//.smx-radio-hero-details {
+//  margin-left: 50px;
+//}
+//
+//.smx-radio-hero .md-fab.md-primary {
+//  position: absolute;
+//  bottom: -35px;
+//  right: 35px;
+//  z-index: 2;
+//}
 
 .smx-radio-tabs {
   width: 100%;
@@ -631,10 +880,11 @@ section {
   width: 300px;
 }
 
-.smx-sidenav {
+.smx-sidenav,
+.smx-settingsnav {
   height: 100%;
-  background: #fafafa;
-  color: rgba(42, 42, 42, 0.7);
+  background-color: #1C1C1F;
+  //color: rgba(42, 42, 42, 0.7);
   font-size: 14px;
 }
 
@@ -646,3 +896,239 @@ section {
   margin: 12px 0;
 }
 
+
+
+// track page
+
+.smx-track-hero {
+  position: relative;
+  height: 350px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.smx-track-hero div {
+  height: 100%;
+}
+
+.smx-track-hero img {
+  width: auto;
+  height: 100%;
+}
+
+.smx-track-detais {
+  //margin-top: 50px;
+  //margin-left: 30px;
+}
+
+.smx-track-details h1 {
+  margin-bottom: 12px;
+}
+
+.smx-track-details h2 {
+  margin-top: 0;
+}
+
+.smx-track-content {
+  margin: 24px;
+  border-top: 1px solid #e0e0e0;
+}
+
+
+// radio view
+
+//.smx-radio-coming-up md-card {
+//  position: relative;
+//  color: white;
+//}
+//
+//.smx-radio-coming-up md-card-content {
+//  position: absolute;
+//  bottom: 0;
+//  background-color: rgba(38, 50, 56, 0.4);
+//  height: 60px; //only temp
+//}
+
+.smx-radio-hero .smx-scroller {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 24px);
+}
+
+// smx one namespace
+
+//#player {
+//  //position: relative;
+//  //margin-top: -56px;
+//  height: calc(100vh + 56px);
+//  background-color: #212121;
+//}
+
+//300,400,600,700,800
+
+.smx-player {
+  position: absolute;
+  top: 0;
+  padding: 0 10vw;
+  height: calc(100vh - 53px);
+  width: 100vw;
+}
+
+.smx-player-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  //height: calc(100vh + 56px);
+  height: calc(100vh);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  filter: blur(15px);
+  z-index: 1;
+  opacity: 0.2;
+}
+
+.smx-player-cover {
+  z-index: 1;
+  //border: 1px solid white;
+  width: 100%;
+  height: auto;
+}
+
+.smx-player-cover img {
+  height: auto;
+  width: auto;
+}
+
+.smx-header-text {
+  font-weight: 300;
+  margin-top: -6px;
+}
+
+.smx-header-text h1 {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.smx-header-text span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.smx-player-info {
+  //border: 1px solid white;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+.smx-player-controls,
+.smx-player-duration {
+  width: 100%;
+}
+
+.smx-player-duration {
+  font-size: 0.6rem;
+  color: grey;
+}
+
+.smx-player-duration-bar {
+  position: relative;
+  border-top: 2px solid grey;
+  width: 75%;
+}
+
+.smx-player-duration-bar-played {
+  position: absolute;
+  top: -2px;
+  border-top: 2px solid white;
+  width: 30%;
+}
+
+.smx-player-duration-bar-cursor {
+  position: absolute;
+  top: -4px;
+  left: 30%;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+}
+
+@media all and (orientation: landscape) {
+
+  .smx-player {
+    padding: 0 5vw 16px 5vw;
+  }
+
+  .smx-player-cover {
+    width: 50%;
+    min-height: 100%;
+    //Add padding both sides to keep the image square
+    //This is calculated by subtracting the viewport height
+    //(minus toolbar height minus .smx-player bottom padding)
+    //from the width of the div (which is always 45vw)
+    padding-left: calc((45vw - (100vh - 53px - 16px))/2);
+    padding-right: calc((45vw - (100vh - 53px - 16px))/2);
+  }
+
+  .smx-player-info {
+    width: 50%;
+    min-height: 100%;
+  }
+
+}
+
+.smx-play-button-circle {
+  position: relative;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  top-margin: 5px;
+  //z-index: 0;
+}
+
+.smx-play-button {
+  position: absolute;
+  top: 10px;
+  left: 11px;
+  //z-index: 1;
+}
+
+.smx-loading-button {
+  position: absolute;
+  top: -32px;
+  left: -33px;
+  //z-index: 0;
+}
+
+.smx-player-title-actions {
+  width: 100%;
+}
+
+//300,400,600,700,800
+
+.smx-player-title {
+  height: 48px;
+}
+
+.smx-player-title h2{
+  font-size: 0.8em;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.smx-player-title span{
+  font-size: 0.8em;
+  font-weight: 300;
+  margin: 0;
+}
+
+//.smx-player-title h3{
+//  font-size: 0.7em;
+//  font-weight: 600;
+//  margin: 4px 0;
+//}

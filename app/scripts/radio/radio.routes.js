@@ -7,8 +7,8 @@
 
       $stateProvider
         .state('radio', {
-          url: '/radio',
-          templateUrl: '/scripts/radio/radio.html',
+          url: '/radio/soulful',
+          templateUrl: '/scripts/radio/radio-view.html',
           controller: 'RadioController',
           controllerAs: 'vm',
           resolve: {
@@ -16,8 +16,17 @@
           }
         })
         .state('radios', {
-          url: '/radios',
-          templateUrl: '/scripts/radio/radios.html',
+          url: '/radio',
+          templateUrl: '/scripts/radio/radio-list.html',
+          controller: 'RadioController',
+          controllerAs: 'vm',
+          resolve: {
+            homeResolve: getTrackInfo
+          }
+        })
+        .state('track', {
+          url: '/track',
+          templateUrl: '/scripts/radio/track.html',
           controller: 'RadioController',
           controllerAs: 'vm',
           resolve: {

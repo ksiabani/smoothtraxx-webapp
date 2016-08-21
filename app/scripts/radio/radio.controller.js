@@ -40,7 +40,7 @@
     vm.chl = homeResolve.chl;
     vm.slf = homeResolve.slf;
 
-    
+
     vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
 
     vm.covers = [
@@ -61,7 +61,7 @@
       'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/000a474600ff8f2f8dcec2002d015595.jpg'
     ];
 
-    $interval(checkNowPlaying, 5000);
+    $interval(checkNowPlaying, 30000);
 
     //console.log(homeResolve);
 
