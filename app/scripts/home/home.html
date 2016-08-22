@@ -3,16 +3,16 @@
     <md-toolbar>
         <div layout-align="space-between" class="md-toolbar-tools">
             <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
-                <i class="material-icons">menu</i>
+                <i class="material-icons md-36">keyboard_arrow_down</i>
             </md-button>
             <div flex="60" layout="column" layout-align="center center" class="smx-header-text">
                 <h1 class="smx-no-wrap">Now playing {{vm.slf.artist}}</h1>
                 <span>in Soulful House</span>
             </div>
-            <!--<span flex></span>-->
-            <md-button class="md-icon-button" aria-label="Settings">
-                <i class="material-icons" ui-sref="settings">settings</i>
-            </md-button>
+            <span></span>
+            <!--<md-button class="md-icon-button" aria-label="Settings">-->
+                <!--<i class="material-icons" ui-sref="settings">graphic_eq</i>-->
+            <!--</md-button>-->
         </div>
     </md-toolbar>
 
@@ -73,7 +73,7 @@
                         <div layout="row" layout-align="space-between center"
                              class="smx-player-controls smx-y-margin-16">
                             <a><i class="material-icons md-light md-24" href>favorite_border</i></a>
-                            <a><i class="material-icons md-light md-24" href>star_border</i></a>
+                            <a><i class="material-icons md-light md-24" href>bookmark_border</i></a>
                             <div class="smx-play-button-circle">
                                 <i ng-click="vm.play()" ng-hide="vm.isPlaying || vm.isBuffering" class="material-icons md-light md-36 smx-play-button">play_arrow</i>
                                 <i ng-click="vm.pause()" ng-show="vm.isPlaying" class="material-icons md-light md-36 smx-play-button">pause</i>
