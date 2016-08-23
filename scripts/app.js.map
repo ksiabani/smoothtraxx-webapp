@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":[],"mappings":";;AAAA,CAAC,YAAY;AACT;;AAEA,YAAQ,MAAR,CAAe,KAAf,EAAsB,CAClB,UADkB,EAElB,UAFkB,EAGlB,cAHkB,CAAtB;AAMH,CATD","file":"app.js","sourcesContent":["(function () {\n    'use strict';\n\n    angular.module('app', [\n        'app.core',\n        'app.home',\n        'app.settings'\n    ]);\n\n})();\n"],"sourceRoot":"/source/"}
