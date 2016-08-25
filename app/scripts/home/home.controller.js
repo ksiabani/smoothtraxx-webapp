@@ -54,7 +54,7 @@
         // vm.audio = angular.element(document.getElementsByTagName('audio')[0]);
         vm.audio = document.getElementsByTagName('audio')[0];
 
-        vm.audio.addEventListener("canplay", function() {
+        vm.audio.addEventListener('canplay', function() {
             vm.isBuffering = false;
             vm.isPlaying = true;
         }, false);
