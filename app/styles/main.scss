@@ -92,12 +92,17 @@ md-toolbar, .md-toolbar-tools {
   position: relative;
   min-height: 56px;
   height: 56px;
-  background-color: transparent !important;
+  //background-color: transparent !important;
+  background-color: #1C1C1F !important;
 }
 
 @media screen and (max-width: 1279px) {
   md-sidenav {
-    padding-top: 55px;
+    //padding-top: 15px;
+  }
+  md-list-item.md-2-line,
+  md-list-item.md-2-line > .md-no-style {
+    min-height: 1px !important;
   }
 }
 
@@ -269,7 +274,7 @@ md-toolbar, .md-toolbar-tools {
 .smx-player {
   position: absolute;
   top: 0;
-  padding: 0 10vw;
+  //padding: 0 10vw;
   height: calc(100vh - 53px);
   width: 100vw;
 }
@@ -292,18 +297,23 @@ md-toolbar, .md-toolbar-tools {
 .smx-player-cover {
   z-index: 1;
   //border: 1px solid white;
+  padding: 0 calc((55vh - 50vw)/2);
   width: 100%;
   height: auto;
+  background: transparent;
 }
 
 .smx-player-cover img {
-  height: auto;
   width: auto;
+  height: 100%;
+  margin-right: calc((55vh - 50vw)/2 - 5px);
+  //margin-left: 4vw;
+  opacity: 0.8;
 }
 
 .smx-header-text {
   font-weight: 300;
-  margin-top: -6px;
+  //margin-top: -6px;
 }
 
 .smx-header-text h1 {

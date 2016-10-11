@@ -1,24 +1,16 @@
 <div layout="column" style="height:100%">
 
   <md-toolbar>
-    <div layout-align="space-between" class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Menu" ui-sref="home">
         <i class="material-icons">arrow_back</i>
       </md-button>
-      <div flex="60" layout="column" layout-align="center center" class="smx-header-text">
-        <h1 class="smx-no-wrap">Now playing {{vm.slf.artist}}</h1>
-        <span>in Soulful House</span>
-      </div>
-      <span></span>
-      <md-button class="md-icon-button" aria-label="Settings">
-        <i class="material-icons" ui-sref="settings">graphic_eq</i>
-      </md-button>
+      <h2>
+        <span>Home</span>
+      </h2>
     </div>
   </md-toolbar>
 
-
-  <div class="smx-player-background"
-       style="background-image: url('{{vm.slf.coverUrl}}')"></div>
 
   <md-sidenav
           class="md-sidenav-left"
@@ -47,54 +39,30 @@
 
   <md-content flex layout="column" style="height:100%">
 
-    <audio src="http://broadcast.smoothtraxx.gr:8000/ds128" autoplay></audio>
-
-    <div layout="column" layout-align="center center" layout-wrap class="smx-player">
-
-      <div flex-xs="65" layout="column" layout-align="start center" class="smx-player-cover">
-        <img ng-src="{{vm.slf.coverUrl}}"/>
-      </div>
-
-      <div flex-xs="35" layout="column" layout-align="space-between center" class="smx-player-info">
-
-        <div layout="row" layout-align="space-between center"
-             class="smx-player-duration smx-y-margin-8">
-          <span>2:41</span>
-          <div class="smx-player-duration-bar">
-            <div class="smx-player-duration-bar-played"></div>
-            <div class="smx-player-duration-bar-cursor"></div>
-          </div>
-          <span>7:11</span>
+    <md-list flex>
+      <!--<md-subheader class="md-no-sticky">Basics</md-subheader>-->
+      <!--<md-list-item class="md-3-line" ng-click="null">-->
+        <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />-->
+        <!--<div class="md-list-item-text" layout="column">-->
+          <!--<h3> item.who </h3>-->
+          <!--<h4> item.what </h4>-->
+          <!--<p> item.notes </p>-->
+        <!--</div>-->
+      <!--</md-list-item>-->
+      <!--<md-divider ></md-divider>-->
+      <md-subheader class="md-no-sticky">Basics</md-subheader>
+      <md-list-item class="md-2-line">
+        <!--<img ng-src="{{vm.slf.coverUrl}}" class="md-avatar" alt="" />-->
+        <div class="md-list-item-text">
+          <h3> Pick your style </h3>
+          <p>Deep & Soulful</p>
         </div>
-
-        <div layout="row" layout-align="space-between center"
-             class="smx-player-controls smx-y-margin-16">
-          <a><i class="material-icons md-light md-24" href>favorite_border</i></a>
-          <a><i class="material-icons md-light md-24" href>bookmark_border</i></a>
-          <div class="smx-play-button-circle">
-            <i ng-click="vm.play()" ng-hide="vm.isPlaying || vm.isBuffering"
-               class="material-icons md-light md-36 smx-play-button">play_arrow</i>
-            <i ng-click="vm.pause()" ng-show="vm.isPlaying"
-               class="material-icons md-light md-36 smx-play-button">pause</i>
-            <div ng-if="vm.isBuffering" layout="row" layout-sm="column" layout-align="space-around"
-                 class="smx-loading-button">
-              <md-progress-circular md-mode="indeterminate"
-                                    md-diameter="123"></md-progress-circular>
-            </div>
-          </div>
-          <a><i class="material-icons md-light md-24" href>share</i></a>
-          <a><i class="material-icons md-light md-24" href>more_vert</i></a>
-        </div>
-
-
-        <div layout="column" layout-align="center center" class="smx-player-title smx-y-margin-8">
-          <h2 class="smx-no-wrap">{{vm.slf.title}}</h2>
-          <span class="smx-no-wrap">{{vm.slf.artist}}</span>
-        </div>
-
-      </div>
-
-    </div>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <p> Allow use of offline content </p>
+        <md-switch class="md-secondary" ng-model="vm.enabled"></md-switch>
+      </md-list-item>
+      <md-divider ></md-divider>
 
 
   </md-content>

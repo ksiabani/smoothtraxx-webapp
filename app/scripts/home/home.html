@@ -1,71 +1,135 @@
 <div layout="column" style="height:100%">
 
     <md-toolbar>
-        <div layout-align="space-between" class="md-toolbar-tools">
+        <div layout-align="space-between center" class="md-toolbar-tools">
+            <!--<div class="md-toolbar-tools">-->
             <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
                 <i class="material-icons">menu</i>
             </md-button>
-            <div flex="60" layout="column" layout-align="center center" class="smx-header-text">
-                <h1 class="smx-no-wrap">Now playing {{vm.slf.artist}}</h1>
-                <span>in Soulful House</span>
-            </div>
+            <!--<div flex="60" layout="column" layout-align="center center" class="smx-header-text">-->
+            <!--<h1 class="smx-no-wrap">Now playing {{vm.slf.artist}}</h1>-->
+            <!--<span>in Soulful House</span>-->
+            <!--</div>-->
+            <h2 flex>
+                <span>Now Playing</span>
+            </h2>
             <span></span>
             <md-button class="md-icon-button" aria-label="Settings">
-                <i class="material-icons" ui-sref="settings">graphic_eq</i>
+                <i class="material-icons" ui-sref="settings">more_vert</i>
             </md-button>
         </div>
     </md-toolbar>
 
-
     <div class="smx-player-background"
          style="background-image: url('{{vm.slf.coverUrl}}')"></div>
 
+    <!--<md-sidenav-->
+            <!--class="md-sidenav-left"-->
+            <!--md-component-id="sidenav_"-->
+            <!--md-is-locked-open="$mdMedia('gt-md')"-->
+            <!--md-disable-backdrop-->
+            <!--md-whiteframe="4">-->
+        <!--<md-content class="smx-sidenav">-->
+            <!--<md-list>-->
+                <!--&lt;!&ndash;<md-divider></md-divider>&ndash;&gt;-->
+                <!--<md-list-item ui-sref="home">-->
+                    <!--<i class="material-icons">favorite_border</i>-->
+                    <!--<p>Favourites</p>-->
+                <!--</md-list-item>-->
+                <!--<md-list-item ui-sref="home">-->
+                    <!--<i class="material-icons">info</i>-->
+                    <!--<p>About</p>-->
+                <!--</md-list-item>-->
+                <!--<md-list-item ui-sref="home">-->
+                    <!--<i class="material-icons">feedback</i>-->
+                    <!--<p>Send feedback</p>-->
+                <!--</md-list-item>-->
+            <!--</md-list>-->
+        <!--</md-content>-->
+    <!--</md-sidenav>-->
+
     <md-sidenav
-            class="md-sidenav-left"
+            layout="column"
+            class="smx-sidenav"
+            md-whiteframe-z2
+            md-navigation-drawer
             md-component-id="sidenav"
-            md-is-locked-open="$mdMedia('gt-md')"
-            md-disable-backdrop
-            md-whiteframe="4">
-        <md-content class="smx-sidenav">
-            <md-list>
-                <!--<md-divider></md-divider>-->
-                <md-list-item ui-sref="home">
+            md-is-locked-open="$mdMedia('gt-md')">
+        <!--<md-toolbar class="md-hue-2">-->
+        <!--<span flex></span>-->
+        <!--<div layout="row" layout-align="start center">-->
+        <!--<md-icon class="md-avatar" md-svg-icon="avatars:svg-1"></md-icon>-->
+        <!--<span flex></span>-->
+        <!--</div>-->
+        <!--<span flex></span>-->
+        <!--<div class="md-body-2">Firstname Lastname</div>-->
+        <!--<div class="md-body-1">email@domainname.com</div>-->
+        <!--</md-toolbar>-->
+        <md-toolbar>
+            <div layout-align="space-between center" class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
+                    <i class="material-icons">fingerprint</i>
+                </md-button>
+                <h2 flex>
+                    <span>Smoothtraxx</span>
+                </h2>
+                <span></span>
+                <md-button class="md-icon-button" aria-label="Settings">
+                    <i class="material-icons" ui-sref="settings">grid_on</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-list>
+            <md-list-item class="md-2-line" role="link" ng-click="toggleSidenav('sidenav')">
+                <md-icon>
                     <i class="material-icons">favorite_border</i>
-                    <p>Favourites</p>
-                </md-list-item>
-                <md-list-item ui-sref="home">
+                </md-icon>
+                <div class="md-list-item-text">
+                    <p class="md-body-2 smx-color-grey">Favorites</p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-2-line" role="link" ng-click="toggleSidenav('left')">
+                <md-icon>
                     <i class="material-icons">info</i>
-                    <p>About</p>
-                </md-list-item>
-                <md-list-item ui-sref="home">
+                </md-icon>
+                <div class="md-list-item-text">
+                    <span class="md-body-2 smx-color-grey">About</span>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-2-line" role="link" ng-click="toggleSidenav('left')">
+                <md-icon>
                     <i class="material-icons">feedback</i>
-                    <p>Send feedback</p>
-                </md-list-item>
-            </md-list>
-        </md-content>
+                </md-icon>
+                <div class="md-list-item-text">
+                    <span class="md-body-2 smx-color-grey">Send feedback</span>
+                </div>
+            </md-list-item>
+        </md-list>
     </md-sidenav>
 
     <md-content flex layout="column" style="height:100%">
 
-        <audio src="http://broadcast.smoothtraxx.gr:8000/ds128" autoplay></audio>
+        <audio src="http://broadcast.smoothtraxx.gr:8000/ds128"></audio>
 
         <div layout="column" layout-align="center center" layout-wrap class="smx-player">
 
-            <div flex-xs="65" layout="column" layout-align="start center" class="smx-player-cover">
+            <md-content flex-xs="55" layout="row" layout-align="start center" class="smx-player-cover">
                 <img ng-src="{{vm.slf.coverUrl}}"/>
-            </div>
+                <img ng-src="https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/000a474600ff8f2f8dcec2002d015595.jpg"/>
+                <!--<img ng-src="{{vm.slf.coverUrl}}"/>-->
+            </md-content>
 
             <div flex-xs="35" layout="column" layout-align="space-between center" class="smx-player-info">
 
-                <div layout="row" layout-align="space-between center"
-                     class="smx-player-duration smx-y-margin-8">
-                    <span>2:41</span>
-                    <div class="smx-player-duration-bar">
-                        <div class="smx-player-duration-bar-played"></div>
-                        <div class="smx-player-duration-bar-cursor"></div>
-                    </div>
-                    <span>7:11</span>
-                </div>
+                <!--<div layout="row" layout-align="space-between center"-->
+                <!--class="smx-player-duration smx-y-margin-8">-->
+                <!--<span>2:41</span>-->
+                <!--<div class="smx-player-duration-bar">-->
+                <!--<div class="smx-player-duration-bar-played"></div>-->
+                <!--<div class="smx-player-duration-bar-cursor"></div>-->
+                <!--</div>-->
+                <!--<span>7:11</span>-->
+                <!--</div>-->
 
                 <div layout="row" layout-align="space-between center"
                      class="smx-player-controls smx-y-margin-16">
@@ -100,28 +164,28 @@
     </md-content>
 
 
-    <md-sidenav
-            class="md-sidenav-right md-whiteframe-4dp"
-            md-component-id="settingsnav"
-            md-is-locked-open="$mdMedia('gt-md')"
-            md-disable-backdrop
-            md-whiteframe="4">
-        <md-content class="smx-settingsnav" layout-padding>
-            <md-list-item ui-sref="home">
-                <i class="material-icons">favorite_border</i>
-                <p>Favourites</p>
-            </md-list-item>
-            <md-list-item ui-sref="home">
-                <i class="material-icons">info</i>
-                <p>About</p>
-            </md-list-item>
-            <md-list-item ui-sref="home">
-                <i class="material-icons">feedback</i>
-                <p>Send feedback</p>
-            </md-list-item>
-            </md-list>
-        </md-content>
-    </md-sidenav>
+    <!--<md-sidenav-->
+    <!--class="md-sidenav-right md-whiteframe-4dp"-->
+    <!--md-component-id="settingsnav"-->
+    <!--md-is-locked-open="$mdMedia('gt-md')"-->
+    <!--md-disable-backdrop-->
+    <!--md-whiteframe="4">-->
+    <!--<md-content layout-padding>-->
+    <!--<md-list-item ui-sref="home">-->
+    <!--<i class="material-icons">favorite_border</i>-->
+    <!--<p>Favourites</p>-->
+    <!--</md-list-item>-->
+    <!--<md-list-item ui-sref="home">-->
+    <!--<i class="material-icons">info</i>-->
+    <!--<p>About</p>-->
+    <!--</md-list-item>-->
+    <!--<md-list-item ui-sref="home">-->
+    <!--<i class="material-icons">feedback</i>-->
+    <!--<p>Send feedback</p>-->
+    <!--</md-list-item>-->
+    <!--</md-list>-->
+    <!--</md-content>-->
+    <!--</md-sidenav>-->
 
 
 </div>
