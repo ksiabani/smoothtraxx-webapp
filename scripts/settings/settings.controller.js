@@ -18,11 +18,13 @@
         // vm.openSettings = openSettings;
         // vm.showPlayer = showPlayer;
         // vm.chlFullTitle = '';
-        // vm.slfFullTitle = '';
+        vm.slfFullTitle = '';
         // vm.chl = homeResolve.chl;
         // vm.slf = homeResolve.slf;
 
-        // $interval(checkNowPlaying, 30000);
+        vm.enabled = true;
+
+        $interval(checkNowPlaying, 30000);
 
         //console.log(homeResolve);
 
