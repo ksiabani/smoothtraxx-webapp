@@ -55,56 +55,82 @@
             md-navigation-drawer
             md-component-id="sidenav"
             md-is-locked-open="$mdMedia('gt-md')">
-        <!--<md-toolbar class="md-hue-2">-->
-        <!--<span flex></span>-->
-        <!--<div layout="row" layout-align="start center">-->
-        <!--<md-icon class="md-avatar" md-svg-icon="avatars:svg-1"></md-icon>-->
-        <!--<span flex></span>-->
-        <!--</div>-->
-        <!--<span flex></span>-->
-        <!--<div class="md-body-2">Firstname Lastname</div>-->
-        <!--<div class="md-body-1">email@domainname.com</div>-->
-        <!--</md-toolbar>-->
-        <md-toolbar>
-            <div layout-align="space-between center" class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
-                    <i class="material-icons">fingerprint</i>
-                </md-button>
-                <h2 flex>
-                    <span>Smoothtraxx</span>
-                </h2>
-                <span></span>
-                <md-button class="md-icon-button" aria-label="Settings">
-                    <i class="material-icons" ui-sref="settings">grid_on</i>
-                </md-button>
-            </div>
-        </md-toolbar>
-        <md-list>
-            <md-list-item class="md-2-line" role="link" ng-click="toggleSidenav('sidenav')">
-                <md-icon>
-                    <i class="material-icons">favorite_border</i>
-                </md-icon>
-                <div class="md-list-item-text">
-                    <p class="md-body-2 smx-color-grey">Favorites</p>
+        <md-content ng-hide="vm.showStyles">
+            <md-toolbar>
+                <div layout-align="space-between center" class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
+                        <i class="material-icons">fingerprint</i>
+                    </md-button>
+                    <h2 flex>
+                        <span>Smoothtraxx</span>
+                    </h2>
+                    <span></span>
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        <i class="material-icons" ng-click="vm.toggleStyles()">view_list</i>
+                    </md-button>
                 </div>
-            </md-list-item>
-            <md-list-item class="md-2-line" role="link" ng-click="toggleSidenav('left')">
-                <md-icon>
-                    <i class="material-icons">info</i>
-                </md-icon>
-                <div class="md-list-item-text">
-                    <span class="md-body-2 smx-color-grey">About</span>
+            </md-toolbar>
+            <md-list>
+                <md-list-item class="md-2-line" role="link" ng-click="vm.openMenu()">
+                    <md-icon>
+                        <i class="material-icons">favorite_border</i>
+                    </md-icon>
+                    <div class="md-list-item-text">
+                        <p class="md-body-2 smx-color-grey">Favorites</p>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" role="link" ng-click="vm.openMenu()">
+                    <md-icon>
+                        <i class="material-icons">info</i>
+                    </md-icon>
+                    <div class="md-list-item-text">
+                        <span class="md-body-2 smx-color-grey">About</span>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" role="link" ng-click="vm.openMenu()">
+                    <md-icon>
+                        <i class="material-icons">feedback</i>
+                    </md-icon>
+                    <div class="md-list-item-text">
+                        <span class="md-body-2 smx-color-grey">Send feedback</span>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content>
+        <md-content ng-show="vm.showStyles">
+            <md-toolbar>
+                <div layout-align="space-between center" class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.openMenu()">
+                        <i class="material-icons">library_music</i>
+                    </md-button>
+                    <h2 flex>
+                        <span>Choose styles</span>
+                    </h2>
+                    <span></span>
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        <i class="material-icons" ng-click="vm.toggleStyles()">close</i>
+                    </md-button>
                 </div>
-            </md-list-item>
-            <md-list-item class="md-2-line" role="link" ng-click="toggleSidenav('left')">
-                <md-icon>
-                    <i class="material-icons">feedback</i>
-                </md-icon>
-                <div class="md-list-item-text">
-                    <span class="md-body-2 smx-color-grey">Send feedback</span>
-                </div>
-            </md-list-item>
-        </md-list>
+            </md-toolbar>
+            <md-list>
+                <md-list-item>
+                    <p>Soulful House</p>
+                    <md-checkbox class="md-secondary"></md-checkbox>
+                </md-list-item>
+                <md-list-item>
+                    <p>Deep House</p>
+                    <md-checkbox class="md-secondary"></md-checkbox>
+                </md-list-item>
+                <md-list-item>
+                    <p>Chill Out/ Lounge</p>
+                    <md-checkbox class="md-secondary"></md-checkbox>
+                </md-list-item>
+                <md-list-item>
+                    <p>Classic House</p>
+                    <md-checkbox class="md-secondary"></md-checkbox>
+                </md-list-item>
+            </md-list>
+        </md-content>
     </md-sidenav>
 
     <md-content flex layout="column" style="height:100%">

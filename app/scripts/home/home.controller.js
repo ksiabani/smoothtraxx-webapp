@@ -47,6 +47,8 @@
         vm.isPlaying = false;
         vm.play = vm.play;
         vm.pause = vm.pause;
+        vm.showStyles = false;
+        vm.toggleStyles = toggleStyles;
 
         $interval(checkNowPlaying, 3000);
 
@@ -105,6 +107,10 @@
 
         function openSettings() {
             $mdSidenav('settingsnav').toggle();
+        }
+
+        function toggleStyles() {
+            vm.showStyles = !vm.showStyles;
         }
 
         function checkNowPlaying() {
