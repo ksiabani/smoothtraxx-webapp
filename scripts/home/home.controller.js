@@ -5,10 +5,28 @@
 
     angular.module('app.home').controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', '$timeout', '$mdSidenav', '$log', '$interval', '$sce', '$mdDialog', '$mdMedia', 'Icecast', 'Track', 'homeResolve'];
+    HomeController.$inject = ['$scope', '$timeout',
+    // '$mdSidenav',
+    '$log', '$interval', '$sce', '$document',
+    // '$mdDialog',
+    // '$mdMedia',
+    'Icecast', 'Track', 'homeResolve'];
 
     /* @ngInject */
-    function HomeController($scope, $timeout, $mdSidenav, $log, $interval, $sce, $mdDialog, $mdMedia, Icecast, Track, homeResolve) {
+    function HomeController($scope, $timeout,
+    // $mdSidenav,
+    $log, $interval, $sce, $document,
+    // $mdDialog,
+    // $mdMedia,
+    Icecast, Track, homeResolve) {
+
+        // For MDL to work
+        // http://stackoverflow.com/questions/31278781/material-design-lite-integration-with-angularjs
+        $scope.$on('$viewContentLoaded', function () {
+            $timeout(function () {
+                componentHandler.upgradeAllRegistered();
+            });
+        });
 
         var vm = this;
 
@@ -28,16 +46,20 @@
         vm.showStyles = false;
         vm.toggleStyles = toggleStyles;
 
+        // vm.fullScreen = fullScreen;
+
+
         $interval(checkNowPlaying, 3000);
 
         //console.log(homeResolve);
         // vm.audio = angular.element(document.getElementsByTagName('audio')[0]);
         vm.audio = document.getElementsByTagName('audio')[0];
 
-        vm.audio.addEventListener('canplay', function () {
-            vm.isBuffering = false;
-            vm.isPlaying = true;
-        }, false);
+        // vm.audio.addEventListener('canplay', function() {
+        //     vm.isBuffering = false;
+        //     vm.isPlaying = true;
+        // }, false);
+
 
         vm.play = function () {
             vm.audio.play();
@@ -48,6 +70,11 @@
             vm.audio.pause();
             vm.isPlaying = false;
         };
+
+        function fullScreen(element) {
+            console.log('hi!');
+            element.requestFullscreen();
+        }
 
         function showPlayer($event, radioChannel) {
 
