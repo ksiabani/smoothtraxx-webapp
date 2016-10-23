@@ -2,17 +2,21 @@
 <html>
 <head>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
-  <meta name="theme-color" content="#212121">
+  <!--<meta name="theme-color" content="#212121">-->
 
   <!--Roboto font and Material Design icons-->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">-->
+  <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css" />
   <!-- endbower -->
   <!-- endbuild -->
+
+  <!--Mdl needs this to show icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -20,15 +24,18 @@
 
 <div ui-view style="height:100%;"></div>
 
+<script src="/bower_components/screenfull/dist/screenfull.min.js"></script>
+
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-aria/angular-aria.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-material/angular-material.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/angular-scroll/angular-scroll.js"></script>
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/bower_components/angular-resource/angular-resource.js"></script>
+<script src="/bower_components/angular-touch/angular-touch.js"></script>
+<script src="/bower_components/angular-scroll/angular-scroll.js"></script>
+<script src="/bower_components/material-design-lite/material.min.js"></script>
+<script src="/bower_components/angular-screenfull/dist/angular-screenfull.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -60,3 +67,4 @@
 
 </body>
 </html>
+
