@@ -12,6 +12,8 @@
     // '$mdMedia',
     'Icecast', 'Track', 'homeResolve'];
 
+    //TODO: is it safe to use document to choose DOM elements in comparison to angular.element
+
     /* @ngInject */
     function HomeController($scope, $timeout,
     // $mdSidenav,
@@ -29,6 +31,11 @@
         });
 
         var vm = this;
+        var snackbarContainer = document.querySelector('#snackbar');
+        var handler = function handler(event) {
+            // showSnackbarButton.style.backgroundColor = '';
+            vm.voteDownDisabled = false;
+        };
 
         vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
 
@@ -45,6 +52,9 @@
         vm.pause = vm.pause;
         vm.showStyles = false;
         vm.toggleStyles = toggleStyles;
+
+        vm.showSnackbar = showSnackbar;
+        vm.voteDownDisabled = false;
 
         // vm.fullScreen = fullScreen;
 
@@ -71,9 +81,18 @@
             vm.isPlaying = false;
         };
 
-        function fullScreen(element) {
-            console.log('hi!');
-            element.requestFullscreen();
+        function showSnackbar() {
+
+            if (vm.voteDownDisabled) return;
+
+            var data = {
+                message: 'Track was voted down',
+                timeout: 2000,
+                actionHandler: handler,
+                actionText: 'Undo'
+            };
+            snackbarContainer.MaterialSnackbar.showSnackbar(data);
+            vm.voteDownDisabled = true;
         }
 
         function showPlayer($event, radioChannel) {
