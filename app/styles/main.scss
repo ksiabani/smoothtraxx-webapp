@@ -2,9 +2,26 @@
 @import "bower_components/sass-mediaqueries/_media-queries.scss";
 // endbower
 
+//TODO: check z-indexes
+
 body, html {
   height: 100%;
   background-color: #212121;
+}
+
+
+//@media screen and (max-width: 1024px) {
+//  .mdl-layout__header {
+//    display: block;
+//  }
+//
+//  .mdl-layout__header * {
+//    display: none;
+//  }
+//}
+
+#snackbar {
+  z-index: 30000;
 }
 
 .smx-player {
@@ -22,11 +39,6 @@ body, html {
     //width: 70vw;
     height: 70vw;
   }
-
-  //.mdl-snackbar {
-  //  transform: none;
-  //  background: transparent;
-  //}
 
   &__background {
     position: absolute;

@@ -68,7 +68,7 @@
             </div>
         </div>
     </main>
-    <div id="demo-toast-example" class="mdl-snackbar smx-player__menu">
+    <div class="mdl-snackbar smx-player__menu">
         <div class="mdl-snackbar__text smx-player__menu__items">
             <button class="mdl-button mdl-button--icon mdl-js-ripple-effect">
                 <i class="material-icons">favorite_border</i>
@@ -83,7 +83,24 @@
                     ngsf-toggle-fullscreen>
                 <i class="material-icons">fullscreen</i>
             </button>
+
+            <!-- Right aligned menu on top of button  -->
+            <button id="more-menu"
+                    class="mdl-button mdl-js-button mdl-button--icon mdl-snackbar__action">
+                <i class="material-icons">more_vert</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+                data-mdl-for="more-menu">
+                <li class="mdl-menu__item">Report track</li>
+                <li class="mdl-menu__item">Edit track</li>
+                <li ng-disabled="vm.voteDownDisabled" class="mdl-menu__item" ng-click="vm.showSnackbar()">Vote down</li>
+            </ul>
         </div>
+    </div>
+    <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
     </div>
 </div>
 
