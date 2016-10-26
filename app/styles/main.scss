@@ -37,7 +37,9 @@ body, html {
 
   .mdl-card__title {
     //width: 70vw;
-    height: 70vw;
+    //height: 85vw;
+    height: calc(100vh - 200px);
+    max-height: calc(95vw);
   }
 
   &__background {
@@ -57,18 +59,20 @@ body, html {
     width: 100%;
     white-space: nowrap;
     //overflow-x: auto;
-    transform: translateX(-74vw);
-    transition: transform 0.25s ease-in-out;
+    //transform: translateX(-74vw);
+    //transition: transform 0.25s ease-in-out;
+    display: flex;
+    justify-content: center;
   }
 
   &__card {
-    display: inline-block;
+    //display: inline-block;
     background-color: rgba(0, 0, 0, 0.4);
 
     &.mdl-card {
-      width: 70vw;
-      //height: 70vw;
-      margin: 20vw 6vw;
+      width: calc(100vh - 200px);
+      max-width: calc(95vw);
+      margin-top: 60px;
     }
 
     .mdl-card__supporting-text {
