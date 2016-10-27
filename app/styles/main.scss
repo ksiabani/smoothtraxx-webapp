@@ -53,7 +53,7 @@ body, html {
     background-size: cover;
     background-position: 50% 50%;
     filter: blur(15px);
-    opacity: 0.6;
+    opacity: 0;
   }
 
   &__cards {
@@ -75,7 +75,7 @@ body, html {
     &.mdl-card {
       width: calc(100vh - 200px);
       max-width: calc(95vw);
-      margin-top: 60px;
+      margin-top: 55px;
       display: flex;
       justify-content: space-between;
       align-items: center;
