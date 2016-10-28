@@ -55,6 +55,7 @@
 
         vm.showSnackbar = showSnackbar;
         vm.voteDownDisabled = false;
+        vm.rightDrawerIsVisible = false;
 
         // vm.fullScreen = fullScreen;
 
