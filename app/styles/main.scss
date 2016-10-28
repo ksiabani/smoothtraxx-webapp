@@ -6,35 +6,74 @@
 
 body, html {
   height: 100%;
-  background-color: #212121;
+  background-color: black; //#212121;
   font-family: 'Open Sans', sans-serif;
 }
-
-
-//@media screen and (max-width: 1024px) {
-//  .mdl-layout__header {
-//    display: block;
-//  }
-//
-//  .mdl-layout__header * {
-//    display: none;
-//  }
-//}
 
 #snackbar {
   z-index: 30000;
 }
 
-.smx-player {
+.smx-layout {
+
+  .check {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    display: block;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    font-family: Helvetica,Arial,sans-serif;
+    margin: 4px;
+    z-index: 4;
+  }
 
   .mdl-layout__header,
   .mdl-layout__drawer-button {
     color: white;
   }
 
-  .mdl-card {
+  .mdl-layout__drawer--right {
+    width: 100vw;
+    height: calc(100vh - 55px);
+    top: 55px;
+    right: 0;
+    border-right: 1px solid black;
+    background: black;
+    transform: translateX(200vw);
+    color: white;
 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-height: 100%;
+    position: absolute;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    overflow: visible;
+    overflow-y: auto;
+    z-index: 5;
   }
+
+  .mdl-layout__drawer--right.is-visible {
+    transform: translateX(0);
+  }
+
+}
+
+.smx-player {
 
   .mdl-card__title {
     //width: 70vw;
@@ -53,7 +92,18 @@ body, html {
     background-size: cover;
     background-position: 50% 50%;
     filter: blur(15px);
-    opacity: 0;
+    opacity: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: calc(100vh);
+      width: 100%;
+      background: linear-gradient(to bottom,  rgba(0,0,0,1) 50%,rgba(0,0,0,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+    }
   }
 
   &__cards {
@@ -122,6 +172,71 @@ body, html {
       justify-content: space-around;
       padding-left: calc(15vw);
       padding-right: calc(15vw);
+      width: 100%;
+      z-index: 20000;
+
+      @include min-screen(768px) {
+        min-width: 100%; // prevent toast from shrinking in larger screens, e.g. ipad
+      }
+
+    }
+
+  }
+
+}
+
+.smx-drawer {
+
+  &.mdl-layout__drawer {
+    top: 55px;
+    width: 100vw;
+    height: calc(100vh - 55px);
+    transform: translateX(-100vw);
+    background: black;
+    color: white;
+    border-right: 1px solid black;
+    //opacity: 0.9;
+    background: transparent;
+    z-index: 30000;
+
+    //display: flex;
+    //align-items: flex-start;
+
+    .mdl-list__item {
+      color: white;
+    }
+  }
+
+  &.mdl-layout__drawer.is-visible {
+    transform: translateX(0);
+  }
+
+  & ~ .mdl-layout__obfuscator.is-visible {
+    opacity: 0;
+  }
+
+  &__inner {
+    height: calc(100vh - 55px);
+    width: 100vw;
+    //width: calc(100vh - 200px);
+    //max-width: calc(97.5vw);
+    background: black;
+    opacity: 1;
+  }
+
+  &__menu {
+    transform: none; // prevent toast from hiding
+    background: transparent; // make toast transparent
+    width: 100%;
+    left: 0; // prevent toast from shrinking in larger screens, e.g. ipad
+    z-index: 20000;
+
+    &__items {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 8px !important;
+      //padding-left: calc(15vw);
+      //padding-right: calc(15vw);
       width: 100%;
       z-index: 20000;
 
