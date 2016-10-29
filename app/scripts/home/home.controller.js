@@ -46,11 +46,14 @@
         });
 
         var vm = this;
+
+        //TODO: Must rename these two to sth most appropriate
         var snackbarContainer = document.querySelector('#snackbar');
         var handler = function(event) {
             // showSnackbarButton.style.backgroundColor = '';
             vm.voteDownDisabled = false;
         };
+
 
 
         vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
@@ -75,7 +78,9 @@
         vm.hideSidenav = hideSidenav;
 
 
-        // vm.fullScreen = fullScreen;
+
+
+
 
 
         $interval(checkNowPlaying, 3000);
@@ -124,6 +129,7 @@
             vm.voteDownDisabled = true;
 
         }
+
 
         function showPlayer($event, radioChannel) {
 

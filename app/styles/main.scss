@@ -3,10 +3,11 @@
 // endbower
 
 //TODO: check z-indexes
+//TODO: change font size to rem
 
 body, html {
   height: 100%;
-  background-color: black; //#212121;
+  background-color: #212121;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -39,13 +40,71 @@ body, html {
   }
 }
 
-
-
 /*
  *  Header
  */
 
-.smx-header {}
+.smx-header {
+}
+
+/*
+ *  Mini Player
+ */
+.smx-miniplayer {
+  transform: none; // prevent toast from hiding
+  //background: black; // make toast transparent
+  width: 100%;
+  left: 0; // prevent toast from shrinking in larger screens, e.g. ipad
+  z-index: 40000;
+  height: 48px;
+
+  color: white;
+  display: flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+
+  &__progress {
+    position: absolute;
+  }
+
+  &__cover {
+    height: 100%;
+    width: 48px;
+
+    img {
+      height: 100%;
+      width: auto;
+      padding: 2px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 10px;
+
+    &__title {
+      font-weight: 600;
+    }
+
+    &__artist {
+      font-weight: 300;
+    }
+  }
+
+  &__play-btn {
+    width: 56px;
+
+    .mdl-button {
+      color: white;
+    }
+  }
+
+}
 
 /*
  *  Player
@@ -235,7 +294,7 @@ body, html {
     cursor: pointer;
     font-size: 26px;
     line-height: 56px;
-    font-family: Helvetica,Arial,sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     margin: 4px;
     color: #fff;
   }
@@ -368,7 +427,7 @@ body, html {
     cursor: pointer;
     font-size: 26px;
     line-height: 56px;
-    font-family: Helvetica,Arial,sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     margin: 4px;
     color: #fff;
   }
@@ -410,7 +469,6 @@ body, html {
   z-index: 4;
 }
 
-
 //Material icons
 //.material-icons {
 //  font-family: 'Material Icons';
@@ -437,37 +495,37 @@ body, html {
 //  font-feature-settings: 'liga';
 //}
 //
-///* Rules for sizing the icon. */
-//.material-icons.md-18 {
-//  font-size: 18px;
-//}
-//
-//.material-icons.md-24 {
-//  font-size: 24px;
-//}
-//
-//.material-icons.md-36 {
-//  font-size: 36px;
-//}
-//
-//.material-icons.md-48 {
-//  font-size: 48px;
-//}
-//
-///* Rules for using icons as black on a light background. */
-//.material-icons.md-dark {
-//  color: rgba(0, 0, 0, 0.54);
-//}
-//
-//.material-icons.md-dark.md-inactive {
-//  color: rgba(0, 0, 0, 0.26);
-//}
-//
-///* Rules for using icons as white on a dark background. */
-//.material-icons.md-light {
-//  color: rgba(255, 255, 255, 1);
-//}
-//
-//.material-icons.md-light.md-inactive {
-//  color: rgba(255, 255, 255, 0.3);
-//}
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
