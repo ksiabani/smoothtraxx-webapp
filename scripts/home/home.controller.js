@@ -31,6 +31,8 @@
         });
 
         var vm = this;
+
+        //TODO: Must rename these two to sth most appropriate
         var snackbarContainer = document.querySelector('#snackbar');
         var handler = function handler(event) {
             // showSnackbarButton.style.backgroundColor = '';
@@ -57,9 +59,6 @@
         vm.voteDownDisabled = false;
         vm.genresDrawerIsVisible = false;
         vm.hideSidenav = hideSidenav;
-
-        // vm.fullScreen = fullScreen;
-
 
         $interval(checkNowPlaying, 3000);
 
