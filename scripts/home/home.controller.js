@@ -55,7 +55,8 @@
 
         vm.showSnackbar = showSnackbar;
         vm.voteDownDisabled = false;
-        vm.rightDrawerIsVisible = false;
+        vm.genresDrawerIsVisible = false;
+        vm.hideSidenav = hideSidenav;
 
         // vm.fullScreen = fullScreen;
 
@@ -81,6 +82,11 @@
             vm.audio.pause();
             vm.isPlaying = false;
         };
+
+        function hideSidenav() {
+            angular.element(document.querySelector('.smx-sidenav')).removeClass('is-visible');
+            angular.element(document.querySelector('.mdl-layout__obfuscator')).removeClass('is-visible');
+        }
 
         function showSnackbar() {
 
