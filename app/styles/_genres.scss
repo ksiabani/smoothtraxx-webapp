@@ -1,0 +1,120 @@
+/*
+ *  Genres & Moods
+ */
+
+.smx-genres {
+
+  &.mdl-layout__drawer--right {
+    width: 100vw;
+    height: calc(100vh);
+    top: 0;
+    right: 0;
+    border-right: 1px solid black;
+    background: black;
+    transform: translateX(200vw);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-height: 100%;
+    position: absolute;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    overflow: visible;
+    overflow-y: auto;
+    z-index: 30000;
+    opacity: 0.96;
+
+    &.is-visible {
+      transform: translateX(0);
+    }
+  }
+
+  .mdl-card {
+    width: 100%;
+    min-height: 40vw;
+    background: black;
+  }
+
+  .mdl-card__title {
+    color: #fff;
+    background-size: 150% auto;
+    background-position: center;
+    position: relative;
+    filter: contrast(110%) brightness(32%) saturate(130%) grayscale(34%) hue-rotate(80deg);
+  }
+
+  .mdl-card__title:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+
+    mix-blend-mode: screen;
+    background: linear-gradient(to bottom, rgba(62, 162, 253, 0.5) 10, rgba(70, 70, 70, 0.04));
+  }
+
+  .mdl-grid {
+    padding-top: 55px;
+  }
+
+  &__title {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+    i {
+      padding: 4px;
+    }
+
+    span {
+      padding: 4px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-shrink: 0;
+    display: block;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 4px;
+    color: #fff;
+  }
+
+  .smx-genre {
+
+    &__title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 8px;
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 1.1;
+    }
+  }
+
+}
