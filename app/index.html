@@ -1,70 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
-  <!--<meta name="theme-color" content="#212121">-->
-
-  <!--Roboto font and Material Design icons-->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-  <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-
-
-  <!-- build:css styles/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!--Mdl needs this to show icons-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-  <link rel="stylesheet" href="styles/main.css">
-</head>
-<body ng-app="app">
-
-<div ui-view style="height:100%;"></div>
-
-<script src="/bower_components/screenfull/dist/screenfull.min.js"></script>
-
-<!-- build:js scripts/vendor.js -->
-<!-- bower:js -->
-<script src="/bower_components/modernizr/modernizr.js"></script>
-<script src="/bower_components/angular/angular.js"></script>
-<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="/bower_components/angular-resource/angular-resource.js"></script>
-<script src="/bower_components/angular-touch/angular-touch.js"></script>
-<script src="/bower_components/angular-scroll/angular-scroll.js"></script>
-<script src="/bower_components/material-design-lite/material.min.js"></script>
-<script src="/bower_components/angular-screenfull/dist/angular-screenfull.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
-
-
-<!--app-->
-<script src="scripts/app.js"></script>
-<!--core-->
-<script src="scripts/core/core.module.js"></script>
-<!--<script src="/scripts/core/core.routes.js"></script>-->
-<!--player-->
-<!--<script src="/scripts/player/player.module.js"></script>-->
-<!--<script src="/scripts/player/player.controller.js"></script>-->
-<!--home-->
-<script src="scripts/home/home.module.js"></script>
-<script src="scripts/home/home.controller.js"></script>
-<script src="scripts/home/home.routes.js"></script>
-<!--settings-->
-<script src="scripts/settings/settings.module.js"></script>
-<script src="scripts/settings/settings.controller.js"></script>
-<script src="scripts/settings/settings.routes.js"></script>
-<!--radio-->
-<!--<script src="/scripts/radio/radio.module.js"></script>-->
-<!--<script src="/scripts/radio/radio.controller.js"></script>-->
-<!--<script src="/scripts/radio/radio.routes.js"></script>-->
-<!--services-->
-<script src="scripts/services/icecast.service.js"></script>
-<script src="scripts/services/track.service.js"></script>
-
-
-</body>
+  <head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- <meta name="theme-color" content="#212121">-->
+    <!-- Roboto font and Material Design icons-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <!-- build:css styles/vendor.css-->
+    <!-- bower:css-->
+    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
+    <!-- endbower-->
+    <!-- endbuild-->
+    <!-- Mdl needs this to show icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body ng-app="app">
+    <!--.mdl-layout.mdl-js-layout(ngsf-fullscreen='')-->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <!--.smx-logo-->
+      <!--header.smx-header.mdl-layout__header.mdl-layout__header--transparent-->
+      <!--    .mdl-layout__header-row-->
+      <!--        // Title-->
+      <!--        span.mdl-layout-title Title-->
+      <!--        // Add spacer, to align navigation to the right-->
+      <!--        .mdl-layout-spacer-->
+      <!--        // Navigation-->
+      <!--        nav.mdl-navigation-->
+      <!--            a.mdl-navigation__link(href='') Link-->
+      <!--            a.mdl-navigation__link(href='') Link-->
+      <!--            a.mdl-navigation__link(href='') Link-->
+      <!--            a.mdl-navigation__link(href='') Link-->
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row"><span class="mdl-layout-title">Home</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp"><i class="material-icons">search</i></label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" id="fixed-header-drawer-exp" type="text" name="sample">
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--.smx-sidenav.mdl-layout__drawer-->
+      <!--    .smx-sidenav__title-->
+      <!--        // <i class="material-icons">fingerprint</i>-->
+      <!--        span Menu-->
+      <!--    .smx-sidenav__close(ng-click='vm.hideSidenav()')-->
+      <!--        i.material-icons close-->
+      <!--    nav-->
+      <!--        ul.mdl-list-->
+      <!--            li.mdl-list__item-->
+      <!--                span.mdl-list__item-primary-content-->
+      <!--                    i.material-icons.mdl-list__item-icon home-->
+      <!--                    a(ui-sref='home') Home-->
+      <!--            li.mdl-list__item-->
+      <!--                span.mdl-list__item-primary-content-->
+      <!--                    i.material-icons.mdl-list__item-icon radio-->
+      <!--                    a(ui-sref='home') Radio-->
+      <!--            li.mdl-list__item-->
+      <!--                span.mdl-list__item-primary-content-->
+      <!--                    i.material-icons.mdl-list__item-icon library_music-->
+      <!--                    a(ui-sref='traxx') Your Music-->
+      <!--            li.mdl-list__item-->
+      <!--                span.mdl-list__item-primary-content-->
+      <!--                    i.material-icons.mdl-list__item-icon settings-->
+      <!--                    |                         Settings-->
+      <!--            li.mdl-list__item-->
+      <!--                span.mdl-list__item-primary-content-->
+      <!--                    i.material-icons.mdl-list__item-icon info-->
+      <!--                    |                         About-->
+      <!--            li.mdl-list__item-->
+      <!--                span.mdl-list__item-primary-content-->
+      <!--                    i.material-icons.mdl-list__item-icon feedback-->
+      <!--                    |                         Send Feeback-->
+      <!---->
+      <div class="mdl-layout__drawer"><span class="mdl-layout-title">Home</span>
+        <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a></nav>
+      </div>
+      <div ui-view="" style="display:flex; flex-direction:column; height:100%"></div>
+    </div>
+    <script src="/bower_components/screenfull/dist/screenfull.min.js"></script>
+    <!-- build:js scripts/vendor.js-->
+    <!-- bower:js-->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <script src="/bower_components/angular-screenfull/dist/angular-screenfull.js"></script>
+    <!-- endbower-->
+    <!-- endbuild-->
+    <!-- app-->
+    <script src="scripts/app.js"></script>
+    <!-- core-->
+    <script src="scripts/core/core.module.js"></script>
+    <!-- common-->
+    <script src="scripts/common/common.module.js"></script>
+    <!-- home-->
+    <script src="scripts/home/home.module.js"></script>
+    <script src="scripts/home/home.controller.js"></script>
+    <script src="scripts/home/home.routes.js"></script>
+    <!-- traxx-->
+    <script src="scripts/traxx/traxx.module.js"></script>
+    <script src="scripts/traxx/traxx.controller.js"></script>
+    <script src="scripts/traxx/traxx.routes.js"></script>
+    <!-- settings-->
+    <script src="scripts/settings/settings.module.js"></script>
+    <script src="scripts/settings/settings.controller.js"></script>
+    <script src="scripts/settings/settings.routes.js"></script>
+    <!-- services-->
+    <script src="scripts/services/icecast.service.js"></script>
+    <script src="scripts/services/track.service.js"></script>
+    <!-- directives-->
+    <script src="scripts/common/miniplayer/miniplayer.directive.js"></script>
+  </body>
 </html>
-

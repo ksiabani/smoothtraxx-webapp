@@ -1,0 +1,62 @@
+doctype html
+html
+    head
+        meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
+        // <meta name="theme-color" content="#212121">
+        // Roboto font and Material Design icons
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800', rel='stylesheet')
+        // <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        // build:css styles/vendor.css
+        // bower:css
+        link(rel='stylesheet', href='/bower_components/material-design-lite/material.min.css')
+        // endbower
+        // endbuild
+        // Mdl needs this to show icons
+        link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+        link(rel='stylesheet', href='styles/main.css')
+    body(ng-app='app')
+        //.mdl-layout.mdl-js-layout(ngsf-fullscreen='')
+        .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
+            //.smx-logo
+            block header
+            block sidenav
+            div(ui-view='', style='display:flex; flex-direction:column; height:100%')
+
+        script(src='/bower_components/screenfull/dist/screenfull.min.js')
+
+        // build:js scripts/vendor.js
+        // bower:js
+        script(src='/bower_components/modernizr/modernizr.js')
+        script(src='/bower_components/angular/angular.js')
+        script(src='/bower_components/angular-ui-router/release/angular-ui-router.js')
+        script(src='/bower_components/angular-resource/angular-resource.js')
+        script(src='/bower_components/angular-touch/angular-touch.js')
+        script(src='/bower_components/angular-scroll/angular-scroll.js')
+        script(src='/bower_components/material-design-lite/material.min.js')
+        script(src='/bower_components/angular-screenfull/dist/angular-screenfull.js')
+        // endbower
+        // endbuild
+
+        // app
+        script(src='scripts/app.js')
+        // core
+        script(src='scripts/core/core.module.js')
+        // common
+        script(src='scripts/common/common.module.js')
+        // home
+        script(src='scripts/home/home.module.js')
+        script(src='scripts/home/home.controller.js')
+        script(src='scripts/home/home.routes.js')
+        // traxx
+        script(src='scripts/traxx/traxx.module.js')
+        script(src='scripts/traxx/traxx.controller.js')
+        script(src='scripts/traxx/traxx.routes.js')
+        // settings
+        script(src='scripts/settings/settings.module.js')
+        script(src='scripts/settings/settings.controller.js')
+        script(src='scripts/settings/settings.routes.js')
+        // services
+        script(src='scripts/services/icecast.service.js')
+        script(src='scripts/services/track.service.js')
+        // directives
+        script(src='scripts/common/miniplayer/miniplayer.directive.js')
