@@ -4,7 +4,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- <meta name="theme-color" content="#212121">-->
     <!-- Roboto font and Material Design icons-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!--link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800', rel='stylesheet')-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
     <!-- build:css styles/vendor.css-->
     <!-- bower:css-->
@@ -76,9 +77,11 @@
       <!--                    |                         Send Feeback-->
       <!---->
       <div class="mdl-layout__drawer"><span class="mdl-layout-title">Home</span>
-        <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a></nav>
+        <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Home</a><a class="mdl-navigation__link" href="">Radio</a><a class="mdl-navigation__link" href="">New</a><a class="mdl-navigation__link" href="">Popular</a><a class="mdl-navigation__link" href="">Your Music</a><a class="mdl-navigation__link" href="">Settings</a><a class="mdl-navigation__link" href="">About</a><a class="mdl-navigation__link" href="">Send Feedback</a></nav>
       </div>
-      <div ui-view="" style="display:flex; flex-direction:column; height:100%"></div>
+      <main class="mdl-layout__content" style="height:100%">
+        <div ui-view style="height:100%"></div>
+      </main>
     </div>
     <script src="/bower_components/screenfull/dist/screenfull.min.js"></script>
     <!-- build:js scripts/vendor.js-->

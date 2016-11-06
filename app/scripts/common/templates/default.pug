@@ -4,7 +4,8 @@ html
         meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
         // <meta name="theme-color" content="#212121">
         // Roboto font and Material Design icons
-        link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800', rel='stylesheet')
+        //link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700', rel='stylesheet')
         // <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         // build:css styles/vendor.css
         // bower:css
@@ -20,7 +21,8 @@ html
             //.smx-logo
             block header
             block sidenav
-            div(ui-view='', style='display:flex; flex-direction:column; height:100%')
+            main.mdl-layout__content(style='height:100%')
+                div(ui-view, style='height:100%')
 
         script(src='/bower_components/screenfull/dist/screenfull.min.js')
 

@@ -1,20 +1,25 @@
 // bower:scss
 @import "bower_components/sass-mediaqueries/_media-queries.scss";
 // endbower
-
 @import "header";
 @import "sidenav";
+@import "home";
 @import "player";
 @import "miniplayer";
 @import "genres";
+
+
+//#e46a6b;
 
 //TODO: check z-indexes
 //TODO: change font size to rem
 
 body, html {
   height: 100%;
-  background-color: #212121;
-  font-family: 'Open Sans', sans-serif;
+  //background-color: #212121;
+  background-color: #121314;
+  //font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 //.browserupgrade {
@@ -35,6 +40,7 @@ body, html {
 .mdl-layout__header,
 .mdl-layout__drawer-button {
   color: white;
+  background-color: #222326;
 }
 
 .mdl-layout__drawer-button {
@@ -59,13 +65,98 @@ body, html {
   z-index: 3;
 }
 
+// Modifiers
+.mdl-list--smx-list {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
 
+  .mdl-list__item {
+    //font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 0;
+    margin-left: 16px;
+    color: white;
+    border-bottom: 1px solid #222326;
 
+    &--two-line {
+      font-size: 1.1rem;
+      font-weight: 400;
+      height: 50px;
+      color: white;
 
+      .mdl-list__item-primary-content {
+        .mdl-list__item-sub-title {
+          font-size: 1rem;
+          font-weight: 400;
+          letter-spacing: 0;
+          line-height: 20px;
+          color: #88898c; //from spotify
+          text-transform: capitalize;
+        }
+      }
+    }
 
+    &--three-line {
+      height: 65px;
 
+      .mdl-list__item-text-body{
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0;
+        //line-height: 20px;
+        color: #88898c; //from spotify
+        text-transform: capitalize;
+      }
+    }
 
+  }
 
+  .mdl-list__item-img {
+    float: left;
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    background-color: #757575;
+    font-size: 40px;
+    margin-right: 16px;
+  }
+
+  .mdl-list__item-secondary-action {
+    color: white;
+  }
+
+}
+
+//.smx-grid {
+//  width: 100%;
+//
+//  .smx-cell {
+//
+//  }
+//
+//  .smx-cell--3-col-phone {
+//    width: calc(33.3% - 16px);
+//  }
+//
+//}
+
+//?
+//.mdl-cell {
+//  margin: 0 !important;
+//}
+//
+////?
+//.mdl-card,
+//.mdl-card__media img{
+//  width: 100%;
+//  height: auto;
+//}
+//
+//.smx-cell--3-col {
+//  //padding: 3px;
+//  width: calc(33.3% - 6px);
+//}
 
 /*
  *  Genres button
@@ -84,7 +175,7 @@ body, html {
   cursor: pointer;
   font-size: 26px;
   line-height: 56px;
-  font-family: Helvetica, Arial, sans-serif;
+  //font-family: Helvetica, Arial, sans-serif;
   margin: 4px;
   z-index: 4;
 }
