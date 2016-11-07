@@ -143,6 +143,16 @@ body, html {
     }
   }
 
+  .mdl-list__item {
+    height: 44px;
+
+    &.is-active {
+      border-left: 5px solid #e46a6b;
+      padding-left: 11px;
+    }
+
+  }
+
   .mdl-navigation .mdl-navigation__link {
     color: white;
     padding: 8px 40px;
