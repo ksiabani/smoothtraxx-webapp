@@ -32,6 +32,26 @@
 <!--                    i.material-icons.mdl-list__item-icon feedback-->
 <!--                    |                         Send Feeback-->
 <!---->
-<div class="mdl-layout__drawer"><span class="mdl-layout-title">Home</span>
-  <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Home</a><a class="mdl-navigation__link" href="">Radio</a><a class="mdl-navigation__link" href="">New</a><a class="mdl-navigation__link" href="">Popular</a><a class="mdl-navigation__link" href="">Your Music</a><a class="mdl-navigation__link" href="">Settings</a><a class="mdl-navigation__link" href="">About</a><a class="mdl-navigation__link" href="">Send Feedback</a></nav>
+<div class="mdl-layout__drawer mdl-layout__drawer--smx-drawer">
+  <!--span.mdl-layout-title Home-->
+  <!--nav.mdl-navigation-->
+  <!--    a.mdl-navigation__link(href='') Home-->
+  <!--    a.mdl-navigation__link(href='') Radio-->
+  <!--    a.mdl-navigation__link(href='') New-->
+  <!--    a.mdl-navigation__link(href='') Popular-->
+  <!--    a.mdl-navigation__link(href='') Your Music-->
+  <!--    a.mdl-navigation__link(href='') Settings-->
+  <!--    a.mdl-navigation__link(href='') About-->
+  <!--    a.mdl-navigation__link(href='') Send Feedback-->
+  <nav class="ul mdl-list">
+    <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">home</i><a ui-sref="home">Home</a></span></li>
+    <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">radio</i><a ui-sref="home">Radio</a></span></li>
+    <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">new_releases</i><a ui-sref="traxx">New</a></span></li>
+    <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">trending_up</i><a ui-sref="traxx">Popular</a></span></li>
+    <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">library_music</i><a ui-sref="traxx">Your Music</a></span></li>
+    <li class="mdl-list__item-divider"></li>
+    <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">settings</i><a ui-sref="traxx">Settings</a></span></li>
+    <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">info</i><a ui-sref="traxx">About</a></span></li>
+    <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">feedback</i><a ui-sref="traxx">Send feedback</a></span></li>
+  </nav>
 </div>

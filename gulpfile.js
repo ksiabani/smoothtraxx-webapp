@@ -63,7 +63,7 @@ gulp.task('lint:test', () => {
 
 gulp.task('html', ['views', 'styles', 'scripts'], () => {
     // return gulp.src('app/**/*.html')
-    return gulp.src(['app/scripts/**/*.html', '.tmp/scripts/**/*.html'])
+    return gulp.src(['app/**/*.html', '.tmp/scripts/**/*.html'])
         .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
         .pipe($.if('*.js', $.uglify()))
         .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
