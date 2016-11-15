@@ -25,6 +25,7 @@
 
         var vm = this;
         vm.showFullPlayer = showFullPlayer;
+        vm.hideFullPlayer = hideFullPlayer;
         vm.covers= [
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b488229f3931d8843405bfc1998359bd.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b20af0e974b8ad98d04db3e655f39a25.jpeg',
@@ -42,6 +43,10 @@
         //
         function showFullPlayer() {
             $rootScope.playerIsFull = true;
+        }
+
+        function hideFullPlayer() {
+            $rootScope.playerIsFull = false;
         }
 
     }
