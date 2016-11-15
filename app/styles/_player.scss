@@ -11,7 +11,7 @@
   height: calc(100vh);
   max-height: calc(100vh);
   transition: all 0.2s ease-out;
-  background: #222326;
+  background: #121314;
 
   &__header {
     color: white;
@@ -46,9 +46,46 @@
     top: 0;
     left: 0;
     height: 48px;
-    //z-index: 2;
     width: 100%;
     background: #222326;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__play-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+      text-transform: capitalize;
+
+      &__title {
+        padding-top: 8px;
+      }
+
+      &__more {
+        padding-bottom: 8px;
+        //font-weight: 200;
+        color: #88898c;
+      }
+    }
+
+    &__more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px
+    }
   }
 
 }

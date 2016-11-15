@@ -1,14 +1,15 @@
 
 <div class="smx-player" ng-show="playerIsVisible" ng-class="{'is-full': playerIsFull}" ng-controller="PlayerController as vm">
-  <!--.mdl-layout.mdl-js-layout
-  header.mdl-layout__header
-      .mdl-layout-icon
-          .mdl-layout__header-row
-              .mdl-layout__title Title
-  -->
   <div class="smx-player__header">
     <div class="smx-player__header__icon" ng-click="vm.hideFullPlayer()"><i class="material-icons md-36">keyboard_arrow_down</i></div>
     <div class="smx-player__header__title">Now playing</div>
   </div>
-  <div class="smx-player-mini" ng-click="vm.showFullPlayer()" ng-hide="playerIsFull">Mini</div>
+  <div class="smx-player-mini" ng-click="vm.showFullPlayer()" ng-hide="playerIsFull">
+    <div class="smx-player-mini__play-btn"><i class="material-icons md-24">play_arrow</i></div>
+    <div class="smx-player-mini__info">
+      <div class="smx-player-mini__info__title">I would like</div>
+      <div class="smx-player-mini__info__more">Zara Larsson - I would like - Single</div>
+    </div>
+    <div class="smx-player-mini__more"><i class="material-icons md-24">more_vert</i></div>
+  </div>
 </div>
