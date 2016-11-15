@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- <meta name="theme-color" content="#212121">-->
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body ng-app="app">
+  <body>
     <!--.mdl-layout.mdl-js-layout(ngsf-fullscreen='')-->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <!--.smx-logo-->
@@ -43,6 +43,8 @@
     <script src="scripts/core/core.module.js"></script>
     <!-- common-->
     <script src="scripts/common/common.module.js"></script>
+    <script src="scripts/common/player/player.module.js"></script>
+    <script src="scripts/common/player/player.controller.js"></script>
     <!-- home-->
     <script src="scripts/home/home.module.js"></script>
     <script src="scripts/home/home.controller.js"></script>
@@ -59,6 +61,6 @@
     <script src="scripts/services/icecast.service.js"></script>
     <script src="scripts/services/track.service.js"></script>
     <!-- directives-->
-    <script src="scripts/common/miniplayer/miniplayer.directive.js"></script>
+    <!--script(src='scripts/common/player/player.directive.js')-->
   </body>
 </html>

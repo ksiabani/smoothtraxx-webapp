@@ -1,0 +1,13 @@
+.smx-player(ng-show="playerIsVisible"
+            ng-class="{'is-full': playerIsFull}"
+            ng-controller="PlayerController as vm")
+    //.mdl-layout.mdl-js-layout
+        header.mdl-layout__header
+            .mdl-layout-icon
+                .mdl-layout__header-row
+                    .mdl-layout__title Title
+    .smx-player__header
+        .smx-player__header__icon(ng-click="vm.hideFullPlayer()")
+            i.material-icons.md-36 keyboard_arrow_down
+        .smx-player__header__title Now playing
+    .smx-player-mini(ng-click="vm.showFullPlayer()", ng-hide="playerIsFull") Mini

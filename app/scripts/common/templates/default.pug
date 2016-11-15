@@ -1,5 +1,5 @@
 doctype html
-html
+html(ng-app='app')
     head
         meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
         // <meta name="theme-color" content="#212121">
@@ -15,7 +15,7 @@ html
         // Mdl needs this to show icons
         link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
         link(rel='stylesheet', href='styles/main.css')
-    body(ng-app='app')
+    body
         //.mdl-layout.mdl-js-layout(ngsf-fullscreen='')
         .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
             //.smx-logo
@@ -23,6 +23,7 @@ html
             block sidenav
             main.mdl-layout__content(style='height:100%')
                 div(ui-view, style='height:100%')
+            block player
 
         script(src='/bower_components/screenfull/dist/screenfull.min.js')
 
@@ -45,6 +46,8 @@ html
         script(src='scripts/core/core.module.js')
         // common
         script(src='scripts/common/common.module.js')
+        script(src='scripts/common/player/player.module.js')
+        script(src='scripts/common/player/player.controller.js')
         // home
         script(src='scripts/home/home.module.js')
         script(src='scripts/home/home.controller.js')
@@ -61,4 +64,4 @@ html
         script(src='scripts/services/icecast.service.js')
         script(src='scripts/services/track.service.js')
         // directives
-        script(src='scripts/common/miniplayer/miniplayer.directive.js')
+        //script(src='scripts/common/player/player.directive.js')

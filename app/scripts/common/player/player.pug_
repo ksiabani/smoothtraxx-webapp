@@ -1,0 +1,5 @@
+.smx-player(ng-show="playerIsVisible", ng-class="{'is-full': playerIsFull}")
+//.smx-player.mdl-snackbar(ng-class="{'is-full': vm.extPlayerIsVisible}")
+.smx-player-mini(ng-click="vm.showFullPlayer()") Mini
+//.smx-player-ext Ext
+.smx-player-more More

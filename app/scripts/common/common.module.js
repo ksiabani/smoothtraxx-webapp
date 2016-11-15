@@ -1,7 +1,8 @@
-(function() {
+(function () {
     'use strict';
 
-    angular.module('app.common', [
-        'app.core'
-    ]);
+    angular
+        .module('app.common', [
+            'app.core'
+        ]);
 })();

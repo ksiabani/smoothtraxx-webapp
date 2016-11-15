@@ -6,6 +6,7 @@
         .controller('HomeController', HomeController);
 
     HomeController.$inject = ['$scope',
+        '$rootScope',
         '$timeout',
         // '$mdSidenav',
         '$log',
@@ -24,6 +25,7 @@
 
     /* @ngInject */
     function HomeController($scope,
+                            $rootScope,
                             $timeout,
                             // $mdSidenav,
                             $log,
@@ -60,7 +62,7 @@
 
         vm.openMenu = openMenu;
         vm.openSettings = openSettings;
-        vm.showPlayer = showPlayer;
+        // vm.showPlayer = showPlayer;
         vm.chlFullTitle = '';
         vm.slfFullTitle = '';
         // vm.chl = homeResolve.chl;
@@ -76,6 +78,8 @@
         vm.voteDownDisabled = false;
         vm.genresDrawerIsVisible = false;
         vm.hideSidenav = hideSidenav;
+        vm.showPlayer = showPlayer;
+        $rootScope.playerIsFull = false; //player never full at startup
 
 
         vm.covers= [
@@ -117,6 +121,12 @@
             vm.isPlaying = false;
         };
 
+        function showPlayer() {
+            $rootScope.playerIsVisible = true;
+        }
+
+
+
         function hideSidenav() {
             angular
                 .element( document.querySelector('.smx-sidenav') )
@@ -143,34 +153,34 @@
         }
 
 
-        function showPlayer($event, radioChannel) {
-
-            var nowPlayingInfo;
-
-            switch (radioChannel) {
-                // case 'chl':
-                //     nowPlayingInfo = vm.chl;
-                //     break;
-                case 'slf':
-                    nowPlayingInfo = vm.slf;
-                    break;
-                default:
-                    break;
-            }
-
-            // $mdDialog.show({
-            //     parent: angular.element(document.body),
-            //     targetEvent: $event,
-            //     templateUrl: '/scripts/player/player.tmpl.html',
-            //     locals: {
-            //         radioChannel: radioChannel,
-            //         nowPlaying: nowPlayingInfo
-            //     },
-            //     controller: 'PlayerController as vm',
-            //     fullscreen: true
-            // });
-
-        }
+        // function showPlayer($event, radioChannel) {
+        //
+        //     var nowPlayingInfo;
+        //
+        //     switch (radioChannel) {
+        //         // case 'chl':
+        //         //     nowPlayingInfo = vm.chl;
+        //         //     break;
+        //         case 'slf':
+        //             nowPlayingInfo = vm.slf;
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        //
+        //     // $mdDialog.show({
+        //     //     parent: angular.element(document.body),
+        //     //     targetEvent: $event,
+        //     //     templateUrl: '/scripts/player/player.tmpl.html',
+        //     //     locals: {
+        //     //         radioChannel: radioChannel,
+        //     //         nowPlaying: nowPlayingInfo
+        //     //     },
+        //     //     controller: 'PlayerController as vm',
+        //     //     fullscreen: true
+        //     // });
+        //
+        // }
 
         function openMenu() {
             $mdSidenav('sidenav').toggle();

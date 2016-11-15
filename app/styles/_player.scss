@@ -1,115 +1,54 @@
 /*
- *  Player
+ *  The Player
  */
-
 .smx-player {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transform: translateY(calc(100vh - 48px));
+  z-index: 3;
+  height: calc(100vh);
+  max-height: calc(100vh);
+  transition: all 0.2s ease-out;
+  background: #222326;
 
-  .mdl-card__title {
-    //width: 70vw;
-    //height: 85vw;
-    height: calc(100vh - 200px);
-    max-height: calc(95vw);
-  }
-
-  &__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: calc(100vh);
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    filter: blur(15px);
-    opacity: 1;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: calc(100vh);
-      width: 100%;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
-    }
-  }
-
-  &__cards {
-    height: calc(100vh - 120px);
-    width: 100%;
-    white-space: nowrap;
-    //overflow-x: auto;
-    //transform: translateX(-74vw);
-    //transition: transform 0.25s ease-in-out;
+  &__header {
+    color: white;
+    background: transparent;
+    height: 56px;
     display: flex;
-    justify-content: center;
-  }
+    justify-content: flex-start;
+    align-items: center;
 
-  &__card {
-    //display: inline-block;
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 100%;
-
-    &.mdl-card {
-      width: calc(100vh - 200px);
-      max-width: calc(95vw);
-      margin-top: 55px;
+    &__icon {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-    }
-
-    .mdl-card__supporting-text {
-      text-align: center;
-      padding: 10px;
-      color: #fff;
-    }
-
-    & > .mdl-card__title {
-      color: #fff;
-      width: 100%;
+      width: 48px;
+      height: 48px;
     }
 
     &__title {
-      font-weight: 300;
+      float: left;
+      font-size: 1.4rem;
+      text-transform: capitalize;
     }
-
-    &__artist {
-      font-size: 0.9rem;
-      padding-top: 3px;
-    }
-
-    &__album {
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding-top: 3px;
-      color: lightpink;
-    }
-
   }
 
-  &__menu {
-    transform: none; // prevent toast from hiding
-    background: transparent; // make toast transparent
+  &.is-full {
+    transform: translateY(0);
+  }
+
+  &-mini {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 48px;
+    //z-index: 2;
     width: 100%;
-    left: 0; // prevent toast from shrinking in larger screens, e.g. ipad
-    z-index: 20000;
-
-    &__items {
-      display: flex;
-      justify-content: space-around;
-      padding-left: calc(15vw);
-      padding-right: calc(15vw);
-      width: 100%;
-      z-index: 20000;
-
-      @include min-screen(768px) {
-        min-width: 100%; // prevent toast from shrinking in larger screens, e.g. ipad
-      }
-
-    }
-
+    background: #222326;
   }
 
 }

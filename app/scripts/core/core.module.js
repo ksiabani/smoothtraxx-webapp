@@ -10,6 +10,16 @@
             // 'duScroll',
             'angularScreenfull'
         ])
+        .run(appRun);
+
+        appRun.$inject = ['$rootScope'];
+        function appRun($rootScope) {
+            $rootScope.playerIsVisible = false; //player always hidden at startup
+        }
+
+
+
+
     // .config(function($mdThemingProvider) {
     //   // $mdThemingProvider.theme('default').dark();
     //   // $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
@@ -23,6 +33,6 @@
     //         .backgroundPalette('grey',{'default': '900'})
     //         .dark();
     // })
-    ;
+
 
 })();

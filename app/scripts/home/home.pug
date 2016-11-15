@@ -2,7 +2,7 @@
     .smx-home-featured__info
         .smx-home-featured__info__title Now playing on radio
         .smx-home-featured__info__subtitle Belong - Ananda project
-        .smx-home-featured__info__btn
+        .smx-home-featured__info__btn(ng-click="vm.showPlayer()")
             span Listen now
             i.material-icons play_circle_filled
 .smx-home-new
@@ -120,4 +120,3 @@
             span.mdl-list__item-secondary-content
                 a.mdl-list__item-secondary-action(href='#')
                     i.material-icons more_vert
-

@@ -5,7 +5,6 @@
 @import "sidenav";
 @import "home";
 @import "player";
-@import "miniplayer";
 @import "genres";
 
 //#e46a6b;
@@ -186,6 +185,11 @@ body, html {
     padding-bottom: 8px;
   }
 
+}
+
+
+main {
+  //z-index: 6 !important; // So that player is above all
 }
 
 //.smx-grid {

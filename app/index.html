@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- <meta name="theme-color" content="#212121">-->
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body ng-app="app">
+  <body>
     <!--.mdl-layout.mdl-js-layout(ngsf-fullscreen='')-->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <!--.smx-logo-->
@@ -103,6 +103,19 @@
       <main class="mdl-layout__content" style="height:100%">
         <div ui-view style="height:100%"></div>
       </main>
+      <div class="smx-player" ng-show="playerIsVisible" ng-class="{'is-full': playerIsFull}" ng-controller="PlayerController as vm">
+        <!--.mdl-layout.mdl-js-layout
+        header.mdl-layout__header
+            .mdl-layout-icon
+                .mdl-layout__header-row
+                    .mdl-layout__title Title
+        -->
+        <div class="smx-player__header">
+          <div class="smx-player__header__icon" ng-click="vm.hideFullPlayer()"><i class="material-icons md-36">keyboard_arrow_down</i></div>
+          <div class="smx-player__header__title">Now playing</div>
+        </div>
+        <div class="smx-player-mini" ng-click="vm.showFullPlayer()" ng-hide="playerIsFull">Mini</div>
+      </div>
     </div>
     <script src="/bower_components/screenfull/dist/screenfull.min.js"></script>
     <!-- build:js scripts/vendor.js-->
@@ -123,6 +136,8 @@
     <script src="scripts/core/core.module.js"></script>
     <!-- common-->
     <script src="scripts/common/common.module.js"></script>
+    <script src="scripts/common/player/player.module.js"></script>
+    <script src="scripts/common/player/player.controller.js"></script>
     <!-- home-->
     <script src="scripts/home/home.module.js"></script>
     <script src="scripts/home/home.controller.js"></script>
@@ -139,6 +154,6 @@
     <script src="scripts/services/icecast.service.js"></script>
     <script src="scripts/services/track.service.js"></script>
     <!-- directives-->
-    <script src="scripts/common/miniplayer/miniplayer.directive.js"></script>
+    <!--script(src='scripts/common/player/player.directive.js')-->
   </body>
 </html>
