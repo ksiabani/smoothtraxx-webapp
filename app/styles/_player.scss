@@ -36,6 +36,37 @@
     }
   }
 
+  &__cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(60vh - 56px);
+    width: 100%;
+    //margin: 16px;
+    border: 1px solid red;
+
+    img {
+      width: auto;
+      height: 90%;
+      border-radius: 3px;
+    }
+  }
+
+  &__info {
+    height: calc(15vh);
+    border: 1px solid red;
+  }
+
+  &__controls {
+    height: calc(15vh);
+    border: 1px solid red;
+  }
+
+  &__playing-from {
+    height: calc(10vh);
+    border: 1px solid red;
+  }
+
   &.is-full {
     transform: translateY(0);
   }
