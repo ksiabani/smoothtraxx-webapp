@@ -8,8 +8,16 @@
     .smx-player__cover
         img(ng-src="{{vm.covers[0]}}")
     .smx-player__info
+        .smx-player__info__title Do it right (feat. Tkay maidza)
+        .smx-player__info__more Martin Solveig - Do it right (feat. Tkay maidza)
+        //.smx-player__info__meta Defected Recordings - Soulful House -2014
     .smx-player__controls
-    .smx-player__playing-from
+        i.material-icons.md-24 add
+        i.material-icons.md-24 skip_previous
+        i.material-icons.md-36 play_arrow
+        i.material-icons.md-24 skip_next
+        i.material-icons.md-24 more_vert
+    .smx-player__playing-from playing form soulfl house radio
     .smx-player-mini(ng-click="vm.showFullPlayer()", ng-hide="playerIsFull")
         .smx-player-mini__play-btn
             i.material-icons.md-24 play_arrow
