@@ -6,6 +6,7 @@
         'app.common',
         'app.player',
         'app.home',
+        'app.radio',
         'app.traxx',
         'app.settings'
     ]);

@@ -17,8 +17,8 @@ html(ng-app='app')
         link(rel='stylesheet', href='styles/main.css')
     body
         //.mdl-layout.mdl-js-layout(ngsf-fullscreen='')
-        .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
-            //.smx-logo
+        //.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
+        .mdl-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
             block header
             block sidenav
             main.mdl-layout__content(style='height:100%')
@@ -52,6 +52,10 @@ html(ng-app='app')
         script(src='scripts/home/home.module.js')
         script(src='scripts/home/home.controller.js')
         script(src='scripts/home/home.routes.js')
+        // home
+        script(src='scripts/radio/radio.module.js')
+        script(src='scripts/radio/radio.controller.js')
+        script(src='scripts/radio/radio.routes.js')
         // traxx
         script(src='scripts/traxx/traxx.module.js')
         script(src='scripts/traxx/traxx.controller.js')

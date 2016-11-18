@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('app.home')
-        .controller('HomeController', HomeController);
+        .module('app.radio')
+        .controller('RadioController', RadioController);
 
-    HomeController.$inject = ['$scope',
+    RadioController.$inject = ['$scope',
         '$rootScope',
         '$timeout',
         // '$mdSidenav',
@@ -16,15 +16,14 @@
         // '$mdDialog',
         // '$mdMedia',
         'Icecast',
-        'Track',
-        'homeResolve'
+        'Track'
     ];
 
 
     //TODO: is it safe to use document to choose DOM elements in comparison to angular.element
 
     /* @ngInject */
-    function HomeController($scope,
+    function RadioController($scope,
                             $rootScope,
                             $timeout,
                             // $mdSidenav,
@@ -35,8 +34,8 @@
                             // $mdDialog,
                             // $mdMedia,
                             Icecast,
-                            Track,
-                            homeResolve) {
+                            Track
+    ) {
 
 
         // For MDL to work
@@ -66,7 +65,7 @@
         vm.chlFullTitle = '';
         vm.slfFullTitle = '';
         // vm.chl = homeResolve.chl;
-        vm.slf = homeResolve.slf;
+        // vm.slf = homeResolve.slf;
         vm.isBuffering = true;
         vm.isPlaying = false;
         vm.play = vm.play;
@@ -81,6 +80,7 @@
         vm.showPlayer = showPlayer;
         $rootScope.playerIsFull = false; //player never full at startup
 
+
         vm.covers= [
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b488229f3931d8843405bfc1998359bd.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b20af0e974b8ad98d04db3e655f39a25.jpeg',
@@ -93,6 +93,9 @@
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/36bb368aafe7b2e40c90d16c056a722e.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/532089d6b7aff7b98b80eba86ff35dee.jpeg'
         ];
+
+
+
 
 
         $interval(checkNowPlaying, 3000);

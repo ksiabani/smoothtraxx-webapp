@@ -1,79 +1,33 @@
-//.smx-sidenav.mdl-layout__drawer
-//    .smx-sidenav__title
-//        // <i class="material-icons">fingerprint</i>
-//        span Menu
-//    .smx-sidenav__close(ng-click='vm.hideSidenav()')
-//        i.material-icons close
-//    nav
-//        ul.mdl-list
-//            li.mdl-list__item
-//                span.mdl-list__item-primary-content
-//                    i.material-icons.mdl-list__item-icon home
-//                    a(ui-sref='home') Home
-//            li.mdl-list__item
-//                span.mdl-list__item-primary-content
-//                    i.material-icons.mdl-list__item-icon radio
-//                    a(ui-sref='home') Radio
-//            li.mdl-list__item
-//                span.mdl-list__item-primary-content
-//                    i.material-icons.mdl-list__item-icon library_music
-//                    a(ui-sref='traxx') Your Music
-//            li.mdl-list__item
-//                span.mdl-list__item-primary-content
-//                    i.material-icons.mdl-list__item-icon settings
-//                    |                         Settings
-//            li.mdl-list__item
-//                span.mdl-list__item-primary-content
-//                    i.material-icons.mdl-list__item-icon info
-//                    |                         About
-//            li.mdl-list__item
-//                span.mdl-list__item-primary-content
-//                    i.material-icons.mdl-list__item-icon feedback
-//                    |                         Send Feeback
-//
-.mdl-layout__drawer.mdl-layout__drawer--smx-drawer
+.mdl-layout__drawer.mdl-layout__drawer--smx-drawer(ng-class="{'is-visible': sideNavIsVisible}")
     .mdl-layout__drawer--smx-drawer__logo
-    //span.mdl-layout-title Home
-    //nav.mdl-navigation
-    //    a.mdl-navigation__link(href='') Home
-    //    a.mdl-navigation__link(href='') Radio
-    //    a.mdl-navigation__link(href='') New
-    //    a.mdl-navigation__link(href='') Popular
-    //    a.mdl-navigation__link(href='') Your Music
-    //    a.mdl-navigation__link(href='') Settings
-    //    a.mdl-navigation__link(href='') About
-    //    a.mdl-navigation__link(href='') Send Feedback
     nav.ul.mdl-list
-        li.mdl-list__item.is-active
+        li.mdl-list__item
             span.mdl-list__item-primary-content
                 i.material-icons.mdl-list__item-icon home
-                a(ui-sref='home') Home
+                a(ui-sref='home', ng-click="sideNavIsVisible = !sideNavIsVisible") Home
         li.mdl-list__item
             span.mdl-list__item-primary-content
                 i.material-icons.mdl-list__item-icon radio
-                a(ui-sref='home') Radio
+                a(ui-sref='radio', ng-click="sideNavIsVisible = !sideNavIsVisible") Radio
         li.mdl-list__item
             span.mdl-list__item-primary-content
                 i.material-icons.mdl-list__item-icon new_releases
-                a(ui-sref='traxx') New
-        li.mdl-list__item
-            span.mdl-list__item-primary-content
-                i.material-icons.mdl-list__item-icon trending_up
-                a(ui-sref='traxx') Popular
+                a(ui-sref='home', ng-click="sideNavIsVisible = !sideNavIsVisible") New
         li.mdl-list__item
             span.mdl-list__item-primary-content
                 i.material-icons.mdl-list__item-icon library_music
-                a(ui-sref='traxx') Your Music
+                a(ui-sref='home', ng-click="sideNavIsVisible = !sideNavIsVisible") Your Music
         li.mdl-list__item-divider
         li.mdl-list__item
             span.mdl-list__item-primary-content
                 i.material-icons.mdl-list__item-icon settings
-                a(ui-sref='traxx') Settings
+                a(ui-sref='home', ng-click="sideNavIsVisible = !sideNavIsVisible") Settings
         li.mdl-list__item
             span.mdl-list__item-primary-content
                 i.material-icons.mdl-list__item-icon info
-                a(ui-sref='traxx') About
+                a(ui-sref='home', ng-click="sideNavIsVisible = !sideNavIsVisible") About
         li.mdl-list__item
             span.mdl-list__item-primary-content
                 i.material-icons.mdl-list__item-icon feedback
-                a(ui-sref='traxx') Send feedback
+                a(ui-sref='home', ng-click="sideNavIsVisible = !sideNavIsVisible") Send feedback
+.mdl-layout__obfuscator(ng-class="{'is-visible': sideNavIsVisible}")

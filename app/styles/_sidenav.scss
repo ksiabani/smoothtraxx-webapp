@@ -1,103 +1,102 @@
-/*
- *  Sidenav
- */
-
-.smx-sidenav {
-
-  &.mdl-layout__drawer {
-    top: 0;
-    width: 100vw;
-    height: calc(100vh);
-    transform: translateX(-100vw);
-    background: black;
-    color: white;
-    border-right: 1px solid black;
-    opacity: 0.96;
-    background: transparent;
-    z-index: 30000;
-
-    .mdl-list__item {
-      color: white;
-    }
-  }
-
-  &.mdl-layout__drawer.is-visible {
-    transform: translateX(0);
-  }
-
-  & ~ .mdl-layout__obfuscator.is-visible {
-    opacity: 0;
-  }
-
-  nav {
-    height: calc(100vh - 24px);
-    width: 100vw;
-    //width: calc(100vh - 200px);
-    //max-width: calc(97.5vw);
-    padding-top: 24px;
-    background: black;
-    opacity: 1;
-  }
-
-  &__title {
-    position: absolute;
-    top: 16px;
-    left: 12px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-
-    i {
-      padding: 4px;
-    }
-
-    span {
-      padding: 4px;
-    }
-  }
-
-  &__close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    flex-shrink: 0;
-    display: block;
-    height: 48px;
-    width: 48px;
-    border: 0;
-    overflow: hidden;
-    text-align: center;
-    cursor: pointer;
-    font-size: 26px;
-    line-height: 56px;
-    font-family: Helvetica, Arial, sans-serif;
-    margin: 4px;
-    color: #fff;
-  }
-
-  //???
-  //&__menu {
-  //  transform: none; // prevent toast from hiding
-  //  background: transparent; // make toast transparent
-  //  width: 100%;
-  //  left: 0; // prevent toast from shrinking in larger screens, e.g. ipad
-  //  z-index: 20000;
-  //
-  //  &__items {
-  //    display: flex;
-  //    justify-content: flex-start;
-  //    padding-left: 8px !important;
-  //    //padding-left: calc(15vw);
-  //    //padding-right: calc(15vw);
-  //    width: 100%;
-  //    z-index: 20000;
-  //
-  //    @include min-screen(768px) {
-  //      min-width: 100%; // prevent toast from shrinking in larger screens, e.g. ipad
-  //    }
-  //
-  //  }
-  //
-  //}
-
-}
+///*
+// *  Sidenav
+// */
+//
+//.smx-sidenav {
+//
+//  &.mdl-layout__drawer {
+//    top: 0;
+//    width: 100vw;
+//    height: calc(100vh);
+//    transform: translateX(-100vw);
+//    color: white;
+//    border-right: 1px solid black;
+//    opacity: 0.96;
+//    background: transparent;
+//    z-index: 30000;
+//
+//    .mdl-list__item {
+//      color: white;
+//    }
+//  }
+//
+//  &.mdl-layout__drawer.is-visible {
+//    transform: translateX(0);
+//  }
+//
+//  & ~ .mdl-layout__obfuscator.is-visible {
+//    opacity: 0;
+//  }
+//
+//  nav {
+//    height: calc(100vh - 24px);
+//    width: 100vw;
+//    //width: calc(100vh - 200px);
+//    //max-width: calc(97.5vw);
+//    padding-top: 24px;
+//    background: black;
+//    opacity: 1;
+//  }
+//
+//  &__title {
+//    position: absolute;
+//    top: 16px;
+//    left: 12px;
+//    text-transform: uppercase;
+//    display: flex;
+//    align-items: center;
+//
+//    i {
+//      padding: 4px;
+//    }
+//
+//    span {
+//      padding: 4px;
+//    }
+//  }
+//
+//  &__close {
+//    position: absolute;
+//    top: 0;
+//    right: 0;
+//    flex-shrink: 0;
+//    display: block;
+//    height: 48px;
+//    width: 48px;
+//    border: 0;
+//    overflow: hidden;
+//    text-align: center;
+//    cursor: pointer;
+//    font-size: 26px;
+//    line-height: 56px;
+//    font-family: Helvetica, Arial, sans-serif;
+//    margin: 4px;
+//    color: #fff;
+//  }
+//
+//  //???
+//  //&__menu {
+//  //  transform: none; // prevent toast from hiding
+//  //  background: transparent; // make toast transparent
+//  //  width: 100%;
+//  //  left: 0; // prevent toast from shrinking in larger screens, e.g. ipad
+//  //  z-index: 20000;
+//  //
+//  //  &__items {
+//  //    display: flex;
+//  //    justify-content: flex-start;
+//  //    padding-left: 8px !important;
+//  //    //padding-left: calc(15vw);
+//  //    //padding-right: calc(15vw);
+//  //    width: 100%;
+//  //    z-index: 20000;
+//  //
+//  //    @include min-screen(768px) {
+//  //      min-width: 100%; // prevent toast from shrinking in larger screens, e.g. ipad
+//  //    }
+//  //
+//  //  }
+//  //
+//  //}
+//
+//}

@@ -128,9 +128,15 @@ body, html {
 
 .mdl-layout__drawer--smx-drawer {
   width: calc(80vw);
-  transform: translateX(-80vw);
+  //transform: translateX(-80vw);
+  transform: translateX(0);
   background-color: #222326;
   border-right: #222326;
+  left: calc(100vw);
+
+  &.is-visible {
+    transform: translateX(-80vw);
+  }
 
   &__logo {
     height: 50px;
@@ -185,11 +191,6 @@ body, html {
     padding-bottom: 8px;
   }
 
-}
-
-
-main {
-  //z-index: 6 !important; // So that player is above all
 }
 
 //.smx-grid {

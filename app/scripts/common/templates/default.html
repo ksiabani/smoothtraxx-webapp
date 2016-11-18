@@ -18,8 +18,8 @@
   </head>
   <body>
     <!--.mdl-layout.mdl-js-layout(ngsf-fullscreen='')-->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-      <!--.smx-logo-->
+    <!--.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header-->
+    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <main class="mdl-layout__content" style="height:100%">
         <div ui-view style="height:100%"></div>
       </main>
@@ -49,6 +49,10 @@
     <script src="scripts/home/home.module.js"></script>
     <script src="scripts/home/home.controller.js"></script>
     <script src="scripts/home/home.routes.js"></script>
+    <!-- home-->
+    <script src="scripts/radio/radio.module.js"></script>
+    <script src="scripts/radio/radio.controller.js"></script>
+    <script src="scripts/radio/radio.routes.js"></script>
     <!-- traxx-->
     <script src="scripts/traxx/traxx.module.js"></script>
     <script src="scripts/traxx/traxx.controller.js"></script>
