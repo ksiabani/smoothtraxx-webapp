@@ -3,15 +3,12 @@
 (function () {
     'use strict';
 
-    angular.module('app.core', ['ngTouch', 'ngResource',
-    // 'ngMaterial',
-    'ui.router',
-    // 'duScroll',
-    'angularScreenfull']).run(appRun);
+    angular.module('app.core', ['ngTouch', 'ngResource', 'ui.router', 'angularScreenfull']).run(appRun);
 
     appRun.$inject = ['$rootScope'];
     function appRun($rootScope) {
-        $rootScope.playerIsVisible = false; //player always hidden at startup
+        $rootScope.playerIsVisible = false; // player always hidden at startup
+        $rootScope.sideNavIsVisible = false; // sideNav always hidden at startup
     }
 
     // .config(function($mdThemingProvider) {
