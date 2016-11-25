@@ -45,14 +45,14 @@
       </main>
       <div class="smx-player" ng-show="playerIsVisible" ng-class="{'is-full': playerIsFull}" ng-controller="PlayerController as vm">
         <div class="smx-player__header">
-          <div class="smx-player__header__icon" ng-click="vm.hideFullPlayer()"><i class="material-icons md-36">keyboard_arrow_down</i></div>
           <div class="smx-player__header__title">Now playing</div>
+          <div class="smx-player__header__icon" ng-click="vm.hideFullPlayer()"><i class="material-icons md-24">keyboard_arrow_down</i></div>
         </div>
         <div class="smx-player__cover"><img ng-src="{{vm.covers[0]}}"></div>
         <div class="smx-player__info">
           <div class="smx-player__info__title">Do it right (feat. Tkay maidza)</div>
           <div class="smx-player__info__more">Martin Solveig - Do it right (feat. Tkay maidza)</div>
-          <!--.smx-player__info__meta Defected Recordings - Soulful House -2014-->
+          <div class="smx-player__info__meta">Soulful House | 2014 | Defected</div>
         </div>
         <div class="smx-player__controls"><i class="material-icons md-24">add</i><i class="material-icons md-24">skip_previous</i><i class="material-icons md-36">play_arrow</i><i class="material-icons md-24">skip_next</i><i class="material-icons md-24">more_vert</i></div>
         <div class="smx-player__playing-from">playing from soulful house radio</div>
