@@ -9,7 +9,7 @@
     function appRun($rootScope, $state) {
         $rootScope.playerIsVisible = false; // player always hidden at startup
         $rootScope.sideNavIsVisible = false; // sideNav always hidden at startup
-        $rootScope.navTitle = "";
+        $rootScope.navTitle = '';
 
         $rootScope.$on('$stateChangeStart', function () {
             $rootScope.stateIsLoading = true;
