@@ -49,7 +49,7 @@
     img {
       width: auto;
       height: 90%;
-      border-radius: 3px;
+      border-radius: 1px;
     }
   }
 
@@ -60,7 +60,7 @@
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     &__title {
@@ -82,7 +82,7 @@
   }
 
   &__controls {
-    height: calc(15vh);
+    height: calc(17vh);
     //border: 1px solid red;
     color: white;
     display: flex;
@@ -92,7 +92,7 @@
   }
 
   &__playing-from {
-    height: calc(10vh);
+    height: calc(8vh);
     //border: 1px solid red;
     display: flex;
     justify-content: center;
