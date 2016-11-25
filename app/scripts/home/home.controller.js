@@ -47,7 +47,7 @@
             })
         });
 
-        $rootScope.navTitle = "home";
+        $rootScope.navTitle = 'home';
         var vm = this;
 
         //TODO: Must rename these two to sth most appropriate
