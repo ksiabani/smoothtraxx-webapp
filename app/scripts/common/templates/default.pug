@@ -1,5 +1,5 @@
 doctype html
-html(ng-app='app')
+html(ng-app='app', ng-cloak)
     head
         meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
         // <meta name="theme-color" content="#212121">
@@ -15,15 +15,16 @@ html(ng-app='app')
         // Mdl needs this to show icons
         link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
         link(rel='stylesheet', href='styles/main.css')
-    body
+    body(ng-cloak)
         //.mdl-layout.mdl-js-layout(ngsf-fullscreen='')
         //.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
-        .mdl-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
+        .mdl-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header(ng-cloak)
             block header
             block sidenav
             main.mdl-layout__content(style='height:100%')
                 div(ui-view, style='height:100%')
             block player
+        block loader
 
         script(src='/bower_components/screenfull/dist/screenfull.min.js')
 

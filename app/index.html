@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" ng-cloak>
   <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- <meta name="theme-color" content="#212121">-->
@@ -16,27 +16,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body>
+  <body ng-cloak>
     <!--.mdl-layout.mdl-js-layout(ngsf-fullscreen='')-->
     <!--.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header-->
-    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row"><span class="mdl-layout-title">Home</span>
+    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header" ng-cloak>
+      <header class="mdl-layout__header smx-header" ng-cloak>
+        <div class="mdl-layout__header-row"><span class="mdl-layout-title" ng-cloak>{{navTitle}}</span>
           <div class="mdl-layout-spacer"></div>
         </div>
       </header>
-      <div class="smx-burger mdl-button mdl-button--icon" ng-click="sideNavIsVisible = !sideNavIsVisible"><i class="material-icons">menu</i></div>
+      <div class="smx-burger" ng-click="sideNavIsVisible = !sideNavIsVisible" ng-class="{'is-open': sideNavIsVisible}"><span>line</span></div>
       <div class="mdl-layout__drawer mdl-layout__drawer--smx-drawer" ng-class="{'is-visible': sideNavIsVisible}">
         <div class="mdl-layout__drawer--smx-drawer__logo"></div>
         <nav class="ul mdl-list">
-          <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">home</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Home</a></span></li>
-          <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">radio</i><a ui-sref="radio" ng-click="sideNavIsVisible = !sideNavIsVisible">Radio</a></span></li>
-          <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">new_releases</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">New</a></span></li>
-          <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">library_music</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Your Music</a></span></li>
+          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'home'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">home</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Home</a></span></li>
+          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'radio'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">radio</i><a ui-sref="radio" ng-click="sideNavIsVisible = !sideNavIsVisible">Radio</a></span></li>
+          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'new'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">new_releases</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">New</a></span></li>
+          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'your music'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">library_music</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Your Music</a></span></li>
           <li class="mdl-list__item-divider"></li>
-          <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">settings</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Settings</a></span></li>
-          <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">info</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">About</a></span></li>
-          <li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">feedback</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Send feedback</a></span></li>
+          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'settings'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">settings</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Settings</a></span></li>
+          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'about'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">info</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">About</a></span></li>
+          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'send feedback'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">feedback</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Send feedback</a></span></li>
         </nav>
       </div>
       <div class="mdl-layout__obfuscator" ng-class="{'is-visible': sideNavIsVisible}"></div>
@@ -66,6 +66,7 @@
         </div>
       </div>
     </div>
+    <div class="smx-loader mdl-progress mdl-js-progress mdl-progress__indeterminate" ng-show="stateIsLoading"></div>
     <script src="/bower_components/screenfull/dist/screenfull.min.js"></script>
     <!-- build:js scripts/vendor.js-->
     <!-- bower:js-->

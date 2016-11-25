@@ -6,6 +6,7 @@
 @import "home";
 @import "player";
 @import "genres";
+@import "loader";
 
 //#e46a6b;
 
@@ -57,7 +58,7 @@ body, html {
   width: 100vw;
   height: 55px;
   background-image: url(/images/logo.svg);
-  background-size: 40%;
+  background-size: 30%;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 3;
@@ -139,10 +140,10 @@ body, html {
   }
 
   &__logo {
-    height: 50px;
+    height: 56px;
     width: auto;
     background-image: url(/images/logo.svg);
-    background-size: 50%;
+    background-size: 40%;
     background-position: left center;
     background-repeat: no-repeat;
     margin-left: 12px;
