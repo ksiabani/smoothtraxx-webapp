@@ -20,7 +20,8 @@
     <!--.mdl-layout.mdl-js-layout(ngsf-fullscreen='')-->
     <!--.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header-->
     <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header" ng-cloak>
-      <main class="mdl-layout__content" style="height:100%">
+      <!--(ng-class="{'is-pushed': sideNavIsVisible}")-->
+      <main class="mdl-layout__content">
         <div ui-view style="height:100%"></div>
       </main>
     </div>
@@ -45,6 +46,8 @@
     <script src="scripts/common/common.module.js"></script>
     <script src="scripts/common/player/player.module.js"></script>
     <script src="scripts/common/player/player.controller.js"></script>
+    <script src="scripts/common/tuner/tuner.module.js"></script>
+    <script src="scripts/common/tuner/tuner.controller.js"></script>
     <!-- home-->
     <script src="scripts/home/home.module.js"></script>
     <script src="scripts/home/home.controller.js"></script>

@@ -7,6 +7,8 @@
 @import "player";
 @import "genres";
 @import "loader";
+@import "radio";
+@import "tuner";
 
 //#e46a6b;
 
@@ -33,7 +35,18 @@ body, html {
  */
 
 #snackbar {
-  z-index: 30000;
+  z-index: 30000; //?
+}
+
+main.mdl-layout__content {
+  height: 100%;
+  //overflow: visible !important;
+  //z-index: 6; //?
+
+
+  //&.is-pushed {
+  //  z-index: 0; //?
+  //}
 }
 
 .mdl-layout__header,
@@ -134,6 +147,7 @@ body, html {
   background-color: #222326;
   border-right: #222326;
   left: calc(100vw);
+  z-index: 5;
 
   &.is-visible {
     transform: translateX(-80vw);
@@ -192,6 +206,10 @@ body, html {
     padding-bottom: 8px;
   }
 
+}
+
+.mdl-layout__obfuscator {
+  z-index: 4;
 }
 
 //.smx-grid {

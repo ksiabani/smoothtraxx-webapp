@@ -5,6 +5,7 @@
         'app.core',
         'app.common',
         'app.player',
+        'app.tuner',
         'app.home',
         'app.radio',
         'app.traxx',

@@ -40,7 +40,8 @@
         </nav>
       </div>
       <div class="mdl-layout__obfuscator" ng-class="{'is-visible': sideNavIsVisible}"></div>
-      <main class="mdl-layout__content" style="height:100%">
+      <!--(ng-class="{'is-pushed': sideNavIsVisible}")-->
+      <main class="mdl-layout__content">
         <div ui-view style="height:100%"></div>
       </main>
       <div class="smx-player" ng-show="playerIsVisible" ng-class="{'is-full': playerIsFull}" ng-controller="PlayerController as vm">
@@ -64,6 +65,11 @@
           </div>
           <div class="smx-player-mini__more"><i class="material-icons md-24">more_vert</i></div>
         </div>
+      </div>
+      <div class="smx-tuner" ng-class="{'is-visible': tunerIsVisible}">
+        <div class="smx-tuner__header"><span class="smx-tuner__header__title">choose & mix</span><i class="material-icons md-24" ng-click="tunerIsVisible = !tunerIsVisible">close</i></div>
+        <div class="smx-tuner__bg"></div>
+        <div class="smx-tuner__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna metus, maximus in dolor quis, volutpat imperdiet purus. In condimentum enim id iaculis fermentum. Duis tristique, tellus eu gravida volutpat, sem sem finibus ante, eu ultricies nunc ligula porta augue. Mauris vitae neque accumsan, aliquam lorem at, consectetur metus. Mauris imperdiet ornare est, eu blandit leo vehicula ut. Vestibulum tincidunt, lorem gravida congue malesuada, purus enim congue velit, ut auctor urna mauris eu erat. Phasellus non ex fringilla, lacinia erat ac, bibendum ante.</div>
       </div>
     </div>
     <div class="smx-loader mdl-progress mdl-js-progress mdl-progress__indeterminate" ng-show="stateIsLoading"></div>
@@ -89,6 +95,8 @@
     <script src="scripts/common/common.module.js"></script>
     <script src="scripts/common/player/player.module.js"></script>
     <script src="scripts/common/player/player.controller.js"></script>
+    <script src="scripts/common/tuner/tuner.module.js"></script>
+    <script src="scripts/common/tuner/tuner.controller.js"></script>
     <!-- home-->
     <script src="scripts/home/home.module.js"></script>
     <script src="scripts/home/home.controller.js"></script>

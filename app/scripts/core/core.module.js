@@ -15,6 +15,7 @@
         $rootScope.playerIsVisible = false; // player always hidden at startup
         $rootScope.sideNavIsVisible = false; // sideNav always hidden at startup
         $rootScope.navTitle = '';
+        $rootScope.tunerIsVisible = false;
 
 
         $rootScope.$on('$stateChangeStart', function () {

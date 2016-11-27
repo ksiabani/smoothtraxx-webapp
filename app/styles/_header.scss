@@ -49,10 +49,6 @@
   }
 
   & span, &:after, &:before {
-    -webkit-transition: top, bottom, opacity, transform .225s cubic-bezier(.25, .46, .45, .94);
-    -ms-transition: top, bottom, opacity, transform .225s cubic-bezier(.25, .46, .45, .94);
-    -o-transition: top, bottom, opacity, transform .225s cubic-bezier(.25, .46, .45, .94);
-    -transition: top, bottom, opacity, transform .225s cubic-bezier(.25, .46, .45, .94);
     transition: top, bottom, opacity, transform .225s cubic-bezier(.25, .46, .45, .94);
     background-color: white;
     content: ' ';

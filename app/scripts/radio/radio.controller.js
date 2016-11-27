@@ -78,7 +78,11 @@
         vm.genresDrawerIsVisible = false;
         vm.hideSidenav = hideSidenav;
         vm.showPlayer = showPlayer;
+        // vm.hidePlayer = hidePlayer;
         $rootScope.playerIsFull = false; //player never full at startup
+
+        vm.showTuner = showTuner;
+        vm.hideTuner = hideTuner;
 
 
         vm.covers= [
@@ -124,6 +128,13 @@
             $rootScope.playerIsVisible = true;
         }
 
+        function showTuner() {
+            $rootScope.tunerIsVisible = true;
+        }
+
+        function hideTuner() {
+            $rootScope.tunerIsVisible = false;
+        }
 
 
         function hideSidenav() {

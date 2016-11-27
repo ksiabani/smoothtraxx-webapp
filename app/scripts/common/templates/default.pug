@@ -21,9 +21,11 @@ html(ng-app='app', ng-cloak)
         .mdl-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header(ng-cloak)
             block header
             block sidenav
-            main.mdl-layout__content(style='height:100%')
+            //(ng-class="{'is-pushed': sideNavIsVisible}")
+            main.mdl-layout__content
                 div(ui-view, style='height:100%')
             block player
+            block tuner
         block loader
 
         script(src='/bower_components/screenfull/dist/screenfull.min.js')
@@ -49,6 +51,8 @@ html(ng-app='app', ng-cloak)
         script(src='scripts/common/common.module.js')
         script(src='scripts/common/player/player.module.js')
         script(src='scripts/common/player/player.controller.js')
+        script(src='scripts/common/tuner/tuner.module.js')
+        script(src='scripts/common/tuner/tuner.controller.js')
         // home
         script(src='scripts/home/home.module.js')
         script(src='scripts/home/home.controller.js')
