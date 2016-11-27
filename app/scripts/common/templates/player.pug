@@ -19,10 +19,12 @@
         i.material-icons.md-24 more_vert
     .smx-player__playing-from playing from soulful house radio
     .smx-player-mini(ng-click="vm.showFullPlayer()", ng-hide="playerIsFull")
-        .smx-player-mini__play-btn
-            i.material-icons.md-24 play_arrow
+        //.smx-player-mini__more
+        //    i.material-icons.md-24 more_vert
+        .smx-player-mini__cover
+            img(ng-src="{{vm.covers[0]}}")
         .smx-player-mini__info
             .smx-player-mini__info__title I would like
             .smx-player-mini__info__more Zara Larsson - I would like - Single
-        .smx-player-mini__more
-            i.material-icons.md-24 more_vert
+        .smx-player-mini__play-btn
+            i.material-icons.md-24 play_arrow

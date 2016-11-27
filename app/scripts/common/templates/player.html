@@ -13,11 +13,13 @@
   <div class="smx-player__controls"><i class="material-icons md-24">add</i><i class="material-icons md-24">skip_previous</i><i class="material-icons md-36">play_arrow</i><i class="material-icons md-24">skip_next</i><i class="material-icons md-24">more_vert</i></div>
   <div class="smx-player__playing-from">playing from soulful house radio</div>
   <div class="smx-player-mini" ng-click="vm.showFullPlayer()" ng-hide="playerIsFull">
-    <div class="smx-player-mini__play-btn"><i class="material-icons md-24">play_arrow</i></div>
+    <!--.smx-player-mini__more-->
+    <!--    i.material-icons.md-24 more_vert-->
+    <div class="smx-player-mini__cover"><img ng-src="{{vm.covers[0]}}"/></div>
     <div class="smx-player-mini__info">
       <div class="smx-player-mini__info__title">I would like</div>
       <div class="smx-player-mini__info__more">Zara Larsson - I would like - Single</div>
     </div>
-    <div class="smx-player-mini__more"><i class="material-icons md-24">more_vert</i></div>
+    <div class="smx-player-mini__play-btn"><i class="material-icons md-24">play_arrow</i></div>
   </div>
 </div>

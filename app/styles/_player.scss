@@ -148,12 +148,25 @@
 
     }
 
-    &__more {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 48px;
-      height: 48px
+    //&__more {
+    //  display: flex;
+    //  justify-content: center;
+    //  align-items: center;
+    //  width: 48px;
+    //  height: 48px
+    //}
+
+    &__cover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
     }
   }
 
