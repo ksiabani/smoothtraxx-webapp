@@ -26,6 +26,8 @@
         var vm = this;
         vm.showFullPlayer = showFullPlayer;
         vm.hideFullPlayer = hideFullPlayer;
+        vm.showPool = showPool;
+
         vm.covers= [
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b488229f3931d8843405bfc1998359bd.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b20af0e974b8ad98d04db3e655f39a25.jpeg',
@@ -39,6 +41,10 @@
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/532089d6b7aff7b98b80eba86ff35dee.jpeg'
         ];
 
+        vm.track = {
+            title: "hello"
+        };
+
 
         //
         function showFullPlayer() {
@@ -47,6 +53,10 @@
 
         function hideFullPlayer() {
             $rootScope.playerIsFull = false;
+        }
+
+        function showPool() {
+            $rootScope.poolIsVisible = true;
         }
 
     }

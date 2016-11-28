@@ -1,8 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('app.player', [
+    angular.module('app.tuner', [
         'app.core'
-        // ,'app.common'
     ]);
 })();
