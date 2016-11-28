@@ -1,1 +1,0 @@
-{"version":3,"sources":["common/tuner/player.module.js"],"names":[],"mappings":";;AAAA,CAAC,YAAW;AACR;;AAEA,YAAQ,MAAR,CAAe,YAAf,EAA6B,CACzB,UADyB,CAA7B;AAGH,CAND","file":"common/tuner/player.module.js","sourcesContent":["(function() {\n    'use strict';\n\n    angular.module('app.player', [\n        'app.core'\n    ]);\n})();\n"],"sourceRoot":"/source/"}

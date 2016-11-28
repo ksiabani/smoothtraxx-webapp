@@ -3,6 +3,8 @@
 (function () {
     'use strict';
 
-    angular.module('app.player', ['app.core']);
+    angular.module('app.player', ['app.core'
+    // ,'app.common'
+    ]);
 })();
 //# sourceMappingURL=player.module.js.map

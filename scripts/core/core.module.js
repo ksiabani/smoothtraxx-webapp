@@ -11,6 +11,7 @@
         $rootScope.sideNavIsVisible = false; // sideNav always hidden at startup
         $rootScope.navTitle = '';
         $rootScope.tunerIsVisible = false;
+        $rootScope.poolIsVisible = false;
 
         $rootScope.$on('$stateChangeStart', function () {
             $rootScope.stateIsLoading = true;
