@@ -42,7 +42,7 @@
         ];
 
         vm.track = {
-            title: "hello"
+            title: 'hello'
         };
 
 
