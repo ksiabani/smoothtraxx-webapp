@@ -24,7 +24,7 @@
       position: absolute;
       right: 0;
       bottom: 0;
-      color: white;
+      color: $light;
       padding: 15px;
       text-align: end;
 
@@ -46,8 +46,8 @@
 
       &__btn {
         float: right;
-        color: white;
-        border: 1px solid white;
+        color: $light;
+        border: 1px solid $light;
         border-radius: 15px;
         width: 120px;
         padding: 5px 3px;
@@ -57,7 +57,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(255, 255, 255, .1);
+        background-color: $dark;
 
         span {
           font-size: 1rem;
@@ -67,7 +67,7 @@
         }
 
         i {
-          color: rgba(255, 255, 255, .7);
+          color: $dark;
         }
       }
 
@@ -76,29 +76,33 @@
   }
 
   &-new, &-collection {
-    color: white;
+    color: $light;
     padding-bottom: 6px;
 
     &__title {
+      font-family: $secondary-font;
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 50px;
       height: 50px;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      padding-left: 16px;
+      //letter-spacing: 3px;
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      &:after {
-        content: '>';
-      }
+      //&:after {
+      //  content: '>';
+      //}
     }
 
   }
 
   &-popular {
-    color: white;
+    color: $light;
     width: 100%;
-    background-color: #222326;
+    background-color: $primary;
 
     &__title {
       font-size: 1rem;
@@ -119,13 +123,13 @@
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: #222326;
+      background-color: $primary;
 
       &__cell {
         width: calc(33.3% - 4px);
         float: left;
         margin: 3px;
-        background-color: #222326;
+        background-color: $primary;
         padding-bottom: 16px;
 
         &:nth-of-type(3n+1) {

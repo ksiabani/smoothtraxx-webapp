@@ -1,11 +1,11 @@
 .smx-pool {
-  color: white;
+  color: $light;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 0;
-  background: #212121;
+  background: $primary;
   transition: all .225s cubic-bezier(.25, .46, .45, .94);
   overflow: hidden;
   z-index: 7;
@@ -62,7 +62,7 @@
 
         &__title, &__more, &__meta {
           width: 95%;
-          white-space: nowrap;
+          $light-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
@@ -98,7 +98,7 @@
     z-index: 6;
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    background-color: rgba(0, 0, 0, .5);
+    background-color: $secondary;
     opacity: 0;
     transition-property: opacity;
     visibility: visible;
@@ -107,7 +107,7 @@
     &.is-visible {
       pointer-events: auto;
       opacity: 1;
-      background-color: rgba(0, 0, 0, .5);
+      background-color: $secondary;
       visibility: visible;
     }
   }

@@ -1,6 +1,7 @@
 // bower:scss
 @import "bower_components/sass-mediaqueries/_media-queries.scss";
 // endbower
+@import "variables";
 @import "header";
 @import "sidenav";
 @import "home";
@@ -11,19 +12,17 @@
 @import "tuner";
 @import "pool";
 
-
-//#e46a6b;
-
 //TODO: check z-indexes
 //TODO: change font size to rem
 
 body, html {
   height: 100%;
-  //background-color: #212121;
-  background-color: #121314;
+  background-color: $secondary;
   //font-family: 'Open Sans', sans-serif;
   //font-family: 'Roboto', sans-serif;
-  font-family: 'Work Sans', sans-serif;
+  //font-family: 'Work Sans', sans-serif;
+  //font-family: 'Roboto Slab', serif;
+  font-family: $primary-font;
 }
 
 //.browserupgrade {
@@ -46,7 +45,6 @@ main.mdl-layout__content {
   //overflow: visible !important;
   //z-index: 6; //?
 
-
   //&.is-pushed {
   //  z-index: 0; //?
   //}
@@ -54,8 +52,8 @@ main.mdl-layout__content {
 
 .mdl-layout__header,
 .mdl-layout__drawer-button {
-  color: white;
-  background-color: #222326;
+  color: $light;
+  background-color: $primary;
 }
 
 .mdl-layout__drawer-button {
@@ -80,6 +78,10 @@ main.mdl-layout__content {
   z-index: 3;
 }
 
+.mdl-list__item {
+  font-family: $primary-font;
+}
+
 // Modifiers
 .mdl-list--smx-list {
   padding-top: 0;
@@ -88,17 +90,17 @@ main.mdl-layout__content {
 
   .mdl-list__item {
     //font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
+    font-family: $primary-font;
     padding-left: 0;
     margin-left: 16px;
-    color: white;
-    border-bottom: 1px solid #222326;
+    color: $light;
+    border-bottom: 1px solid $primary;
 
     &--two-line {
       font-size: 1.1rem;
       font-weight: 400;
       height: 50px;
-      color: white;
+      color: $light;
 
       .mdl-list__item-primary-content {
         .mdl-list__item-sub-title {
@@ -106,7 +108,7 @@ main.mdl-layout__content {
           font-weight: 400;
           letter-spacing: 0;
           line-height: 20px;
-          color: #88898c; //from spotify
+          color: $dark; //from spotify
           text-transform: capitalize;
         }
       }
@@ -120,7 +122,7 @@ main.mdl-layout__content {
         font-weight: 400;
         letter-spacing: 0;
         //line-height: 20px;
-        color: #88898c; //from spotify
+        color: $dark; //from spotify
         text-transform: capitalize;
       }
     }
@@ -132,13 +134,13 @@ main.mdl-layout__content {
     height: 40px;
     width: 40px;
     box-sizing: border-box;
-    background-color: #757575;
+    background-color: $dark;
     font-size: 40px;
     margin-right: 16px;
   }
 
   .mdl-list__item-secondary-action {
-    color: white;
+    color: $light;
   }
 
 }
@@ -147,8 +149,8 @@ main.mdl-layout__content {
   width: calc(80vw);
   //transform: translateX(-80vw);
   transform: translateX(0);
-  background-color: #222326;
-  border-right: #222326;
+  background-color: $primary;
+  border-right: $primary;
   left: calc(100vw);
   z-index: 5;
 
@@ -167,10 +169,12 @@ main.mdl-layout__content {
   }
 
   a {
-    color: white;
+    color: $light;
     font-size: 1rem;
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    font-family: $secondary-font;
+    font-weight: 400;
 
     &:hover, &:visited, &:active {
       text-decoration: none;
@@ -181,31 +185,31 @@ main.mdl-layout__content {
     height: 44px;
 
     &.is-active {
-      border-left: 5px solid #e46a6b;
+      border-left: 5px solid $accent;
       padding-left: 11px;
     }
 
   }
 
   .mdl-navigation .mdl-navigation__link {
-    color: white;
+    color: $light;
     padding: 8px 40px;
     font-size: 1.2rem;
   }
 
   .mdl-navigation .mdl-navigation__link:hover {
-    background-color: #222326;
+    background-color: $primary;
   }
 
   .mdl-list__item-icon, .mdl-list__item-icon.material-icons {
-    color: white;
+    color: $light;
   }
 
   .mdl-list__item-divider {
     display: block;
     width: 100%;
     height: 6px;
-    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-top: 1px solid $dark;
     padding-bottom: 8px;
   }
 
@@ -253,7 +257,7 @@ main.mdl-layout__content {
   position: absolute;
   top: 0;
   right: 0;
-  color: white;
+  color: $light;
   display: block;
   height: 48px;
   width: 48px;
@@ -312,18 +316,18 @@ main.mdl-layout__content {
 
 /* Rules for using icons as black on a light background. */
 .material-icons.md-dark {
-  color: rgba(0, 0, 0, 0.54);
+  color: $secondary;
 }
 
 .material-icons.md-dark.md-inactive {
-  color: rgba(0, 0, 0, 0.26);
+  color: $primary;
 }
 
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light {
-  color: rgba(255, 255, 255, 1);
+  color: $light
 }
 
 .material-icons.md-light.md-inactive {
-  color: rgba(255, 255, 255, 0.3);
+  color: $dark;
 }
