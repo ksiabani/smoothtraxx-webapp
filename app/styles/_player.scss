@@ -11,10 +11,10 @@
   height: calc(100vh);
   max-height: calc(100vh);
   transition: all 0.2s ease-out;
-  background: $secondary;
+  background: $primary-color;
 
   &__header {
-    color: $light;
+    color: $light-color;
     background: transparent;
     height: 56px;
     display: flex;
@@ -57,7 +57,7 @@
   &__info {
     height: calc(15vh);
     //border: 1px solid red;
-    color: $light;
+    color: $light-color;
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
@@ -71,13 +71,13 @@
     &__more {
       //padding-bottom: 8px;
       //font-weight: 200;
-      color: $dark;
+      color: $dark-color;
     }
 
     &__meta {
       padding-bottom: 8px;
       font-weight: 200;
-      color: $dark;
+      color: $dark-color;
       font-size: 0.85rem;
     }
   }
@@ -85,7 +85,7 @@
   &__controls {
     height: calc(17vh);
     //border: 1px solid red;
-    color: $light;
+    color: $light-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,7 +99,7 @@
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    color: $dark;
+    color: $dark-color;
     font-size: 0.9rem;
     font-weight: 300;
     font-family: $secondary-font;
@@ -111,13 +111,13 @@
   }
 
   &-mini {
-    color: $light;
+    color: $light-color;
     position: absolute;
     top: 0;
     left: 0;
     height: 48px;
     width: 100%;
-    background: $primary;
+    background: $primary-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -145,7 +145,7 @@
       &__more {
         padding-bottom: 8px;
         //font-weight: 200;
-        color: $dark;
+        color: $dark-color;
       }
 
     }

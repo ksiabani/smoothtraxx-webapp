@@ -1,15 +1,17 @@
 .smx-radio-dropdown(ng-click="vm.showTuner()")
     span all genres
     i.material-icons.md-18 keyboard_arrow_down
-.smx-home-featured(style="background-image: url({{vm.covers[0]}});")
+.smx-home-featured(style="background-image: url(http://geo.static.traxsource.com/files/images/683372_large.jpg);")
     .smx-home-featured__info
-        .smx-home-featured__info__title Now playing on radio1
-        .smx-home-featured__info__subtitle Belong - Ananda project
+        .smx-home-featured__info__title Now playing on radio
+        .smx-home-featured__info__subtitle Brothers & Sisters (Original Mix) - Roland Clark, ANT LaROCK
         .smx-home-featured__info__btn(ng-click="vm.showPlayer()")
             span Listen now
             i.material-icons play_circle_filled
 .smx-home-new
-    .smx-home-new__title Recently added
+    .smx-home-new__title
+        span Recently added
+        i.material-icons keyboard_arrow_right
     ul.mdl-list.mdl-list--smx-list
         li.mdl-list__item.mdl-list__item--two-line
             span.mdl-list__item-primary-content
@@ -53,7 +55,9 @@
                 a.mdl-list__item-secondary-action(href='#')
                     i.material-icons more_vert
 .smx-home-popular
-    .smx-home-popular__title Popular
+    .smx-home-popular__title
+        span Popular
+        i.material-icons keyboard_arrow_right
     .smx-home-popular__grid
         .smx-home-popular__grid__cell
             img(ng-src="{{vm.covers[7]}}")
@@ -80,7 +84,9 @@
             span.smx-home-popular__grid__cell__title Lunatic
             span.smx-home-popular__grid__cell__artist Garden of Eden
 .smx-home-collection
-    .smx-home-collection__title Your music
+    .smx-home-collection__title
+        span Your music
+        i.material-icons keyboard_arrow_right
     ul.mdl-list.mdl-list--smx-list
         li.mdl-list__item.mdl-list__item--two-line
             span.mdl-list__item-primary-content

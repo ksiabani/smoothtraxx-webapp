@@ -17,16 +17,16 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.1) 60%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.1) 60%);
     }
 
     &__info {
       position: absolute;
-      right: 0;
+      left: 0;
       bottom: 0;
-      color: $light;
+      color: $primary-color;
       padding: 15px;
-      text-align: end;
+      text-align: start;
 
       &__title {
         text-transform: uppercase;
@@ -34,41 +34,44 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 1;
+        font-family: $secondary-font;
       }
 
       &__subtitle {
         padding: 5px 0;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         text-transform: capitalize;
         font-weight: 100;
         line-height: 1.4;
+        font-family: $primary-font;
       }
 
       &__btn {
-        float: right;
-        color: $light;
-        border: 1px solid $light;
-        border-radius: 15px;
-        width: 120px;
-        padding: 5px 3px;
+        float: left;
+        color: $primary-color;
+        //border: 1px solid $primary-color;
+        border-radius: 5px;
+        //width: 100px;
+        padding: 8px 12px;
         margin: 5px 0;
         text-align: center;
         text-transform: uppercase;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $dark;
+        background-color: $accent-color;
 
         span {
+          font-family: $secondary-font;
           font-size: 1rem;
-          font-weight: 300;
-          margin-right: 8px;
+          font-weight: 400;
+          //margin-right: 8px;
           line-height: 1;
         }
 
-        i {
-          color: $dark;
-        }
+        //i {
+        //  color: $dark-color;
+        //}
       }
 
     }
@@ -76,17 +79,16 @@
   }
 
   &-new, &-collection {
-    color: $light;
+    color: $light-color;
     padding-bottom: 6px;
 
     &__title {
       font-family: $secondary-font;
       font-size: 1rem;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 50px;
       height: 50px;
       text-transform: uppercase;
-      //letter-spacing: 3px;
       padding: 0 16px;
       display: flex;
       justify-content: space-between;
@@ -100,22 +102,25 @@
   }
 
   &-popular {
-    color: $light;
+    color: $light-color;
     width: 100%;
-    background-color: $primary;
+    background-color: $primary-color;
 
     &__title {
+      font-family: $secondary-font;
       font-size: 1rem;
       font-weight: 400;
       line-height: 50px;
       height: 50px;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      padding-left: 16px;
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      &:after {
-        content: '>';
-      }
+      //&:after {
+      //  content: '>';
+      //}
     }
 
     &__grid {
@@ -123,13 +128,13 @@
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: $primary;
+      background-color: $primary-color;
 
       &__cell {
         width: calc(33.3% - 4px);
         float: left;
         margin: 3px;
-        background-color: $primary;
+        background-color: $primary-color;
         padding-bottom: 16px;
 
         &:nth-of-type(3n+1) {

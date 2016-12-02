@@ -6,7 +6,7 @@
   height: 2px;
 
   &-overlay {
-    background-color: $secondary;
+    background-color: $secondary-color;
     position: absolute;
     top: 0;
     left: 0;
@@ -17,7 +17,7 @@
 }
 
 .mdl-progress.mdl-progress__indeterminate>.bar1 {
-  background-color: $primary;
+  background-color: $primary-color;
 }
 
 

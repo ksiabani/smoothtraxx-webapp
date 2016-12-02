@@ -16,7 +16,7 @@
   }
 
   .mdl-list__item-icon {
-    color: $light;
+    color: $light-color;
   }
 
   .smx-logo {
@@ -46,7 +46,7 @@
 
   & span, &:after, &:before {
     transition: top, bottom, opacity, transform .225s cubic-bezier(.25, .46, .45, .94);
-    background-color: $accent;
+    background-color: $accent-color;
     content: ' ';
     display: block;
     height: 2px;

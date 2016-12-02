@@ -1,9 +1,11 @@
 
-<div class="smx-home-featured" style="background-image: url({{vm.covers[0]}})">
+<div class="smx-home-featured" style="background-image: url({{vm.covers[1]}})">
   <div class="smx-home-featured__info">
-    <div class="smx-home-featured__info__title">Now playing on radio</div>
-    <div class="smx-home-featured__info__subtitle">Belong - Ananda project</div>
-    <div class="smx-home-featured__info__btn" ng-click="vm.showPlayer()"><span>Listen now</span><i class="material-icons">play_circle_filled</i></div>
+    <div class="smx-home-featured__info__title">Now on radio</div>
+    <div class="smx-home-featured__info__subtitle">Keep Pushing - Full Intention</div>
+    <div class="smx-home-featured__info__btn" ng-click="vm.showPlayer()"><span>tune in</span>
+      <!--i.material-icons play_circle_filled-->
+    </div>
   </div>
 </div>
 <div class="smx-home-new">
@@ -17,7 +19,7 @@
   </ul>
 </div>
 <div class="smx-home-popular">
-  <div class="smx-home-popular__title">Popular</div>
+  <div class="smx-home-popular__title"><span>Popular</span><i class="material-icons">keyboard_arrow_right</i></div>
   <div class="smx-home-popular__grid">
     <div class="smx-home-popular__grid__cell"><img ng-src="{{vm.covers[7]}}"/><span class="smx-home-popular__grid__cell__title">Trust</span><span class="smx-home-popular__grid__cell__artist">Thulane da producer</span></div>
     <div class="smx-home-popular__grid__cell"><img ng-src="{{vm.covers[8]}}"/><span class="smx-home-popular__grid__cell__title">Good stuff</span><span class="smx-home-popular__grid__cell__artist">Semitone</span></div>
@@ -28,7 +30,7 @@
   </div>
 </div>
 <div class="smx-home-collection">
-  <div class="smx-home-collection__title">Your music</div>
+  <div class="smx-home-collection__title"><span>Your music</span><i class="material-icons">keyboard_arrow_right</i></div>
   <ul class="mdl-list mdl-list--smx-list">
     <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[8]}}"/><span>Bryan Cranston</span><span class="mdl-list__item-sub-title">Fool I am</span></span><span class="mdl-list__item-secondary-content"><span class="mdl-list__item-secondary-info"></span><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
     <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[7]}}"/><span>Aaron Ross</span><span class="mdl-list__item-sub-title">Lady finger</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
