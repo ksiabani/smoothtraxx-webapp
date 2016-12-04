@@ -88,8 +88,59 @@ main.mdl-layout__content {
   padding-bottom: 0;
   margin: 0;
 
+  .smx-list__item {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color-dark;
+
+    &__info {
+      flex: 1;
+      padding-top: 3px;
+
+      &__title {
+        line-height: 1.2;
+        color: $dark-color;
+        overflow: hidden;
+        text-overflow: clip;
+        max-height: 32px;
+        text-transform: capitalize;
+      }
+
+      &__artist {
+        font-size: 0.9rem;
+        width: 65vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: capitalize;
+      }
+
+    }
+
+    &__img {
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px 16px 3px 0;
+
+      img {
+        height: 40px;
+        width: auto;
+      }
+    }
+
+    &__action {
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
   .mdl-list__item {
-    //font-family: 'Open Sans', sans-serif;
     font-family: $primary-font;
     padding-left: 0;
     margin-left: 16px;
@@ -99,7 +150,7 @@ main.mdl-layout__content {
     &--two-line {
       font-size: 1.1rem;
       font-weight: 400;
-      height: 50px;
+      //height: 50px;
       color: $light-color;
 
       .mdl-list__item-primary-content {
@@ -108,7 +159,7 @@ main.mdl-layout__content {
           font-weight: 400;
           letter-spacing: 0;
           line-height: 20px;
-          color: $dark-color; //from spotify
+          color: $dark-color;
           text-transform: capitalize;
         }
       }
@@ -122,8 +173,9 @@ main.mdl-layout__content {
         font-weight: 400;
         letter-spacing: 0;
         //line-height: 20px;
-        color: $dark-color; //from spotify
+        color: $dark-color;
         text-transform: capitalize;
+        height: 36px;
       }
     }
 
@@ -137,6 +189,7 @@ main.mdl-layout__content {
     background-color: $dark-color;
     font-size: 40px;
     margin-right: 16px;
+    margin-top: 5px;
   }
 
   .mdl-list__item-secondary-action {
@@ -144,6 +197,115 @@ main.mdl-layout__content {
   }
 
 }
+
+////////////////////
+.smx-list {
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color-dark;
+
+    &__img {
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px 16px 3px 0;
+
+      img {
+        height: 40px;
+        width: auto;
+      }
+
+      &--rounded {
+        img {
+          border-radius: 50%;
+        }
+      }
+
+      &--rounded-left {
+        img {
+          border-radius: 50% 0 0 50%;
+        }
+      }
+
+      &--rounded-right {
+        img {
+          border-radius: 0 50% 50% 0;
+        }
+      }
+
+    }
+
+    &__rank {
+      color: $light-color;
+      font-size: 2rem;
+      font-weight: 100;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px 16px 3px 0;
+    }
+
+    &__info {
+      flex: 1;
+      //padding-top: 3px;
+      padding: 3px 0;
+
+      &__title {
+        line-height: 1.2;
+        color: $dark-color;
+        overflow: hidden;
+        text-overflow: clip;
+        max-height: 32px;
+        text-transform: capitalize;
+
+        &--one-line {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 65vw;
+        }
+      }
+
+      &__artist {
+        font-size: 0.9rem;
+        width: 65vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: capitalize;
+        //line-height: 1.7;
+      }
+
+      &__meta {
+        font-size: 0.8rem;
+        width: 65vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: capitalize;
+        line-height: 1.1;
+      }
+
+    }
+
+    &__action {
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+}
+
+////////////////////
 
 .mdl-layout__drawer--smx-drawer {
   width: calc(80vw);

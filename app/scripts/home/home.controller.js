@@ -95,6 +95,16 @@
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/532089d6b7aff7b98b80eba86ff35dee.jpeg'
         ];
 
+        vm.labels= [
+            'http://geo.static.traxsource.com/files/labels/52.jpg',
+            'http://geo.static.traxsource.com/files/labels/8126.png',
+            'http://geo.static.traxsource.com/files/labels/23707.jpg',
+            'http://geo.static.traxsource.com/files/labels/5305.jpg',
+            'http://geo.static.traxsource.com/files/labels/18346.jpg',
+            'http://geo.static.traxsource.com/files/labels/22.jpg',
+            'http://geo.static.traxsource.com/files/labels/10821.jpg'
+        ];
+
 
         $interval(checkNowPlaying, 3000);
 

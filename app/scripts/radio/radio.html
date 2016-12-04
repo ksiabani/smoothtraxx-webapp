@@ -10,33 +10,106 @@
   </div>
 </div>
 <div class="smx-home-new">
-  <div class="smx-home-new__title"><span>Up next</span><i class="material-icons">keyboard_arrow_right</i></div>
-  <ul class="mdl-list mdl-list--smx-list">
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[1]}}"/><span>Bryan Cranston</span><span class="mdl-list__item-sub-title">Fool I am</span></span><span class="mdl-list__item-secondary-content"><span class="mdl-list__item-secondary-info"></span><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[2]}}"/><span>Aaron Ross</span><span class="mdl-list__item-sub-title">Lady finger</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[3]}}"/><span>Bob Odenkirk</span><span class="mdl-list__item-sub-title">Sure thing</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[4]}}"/><span>Bob Odenkirk</span><span class="mdl-list__item-sub-title">Sure thing</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[5]}}"/><span>Bob Odenkirk</span><span class="mdl-list__item-sub-title">Sure thing</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
+  <div class="smx-home-new__title"><span>Up next</span>
+    <div class="smx-home-new__title__action"><i class="material-icons">keyboard_arrow_right</i></div>
+  </div>
+  <ul class="smx-list">
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-right"><img ng-src="{{vm.covers[3]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title smx-list__item__info__title--one-line">Never Get Enough (Miguel Migs All Night Rub)</div>
+        <div class="smx-list__item__info__artist">Da Sunlounge, Mikey V</div>
+        <div class="smx-list__item__info__meta">In a minute</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-right"><img ng-src="{{vm.covers[2]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title smx-list__item__info__title--one-line">I Choose You (Louie Vega Chosen Dub)</div>
+        <div class="smx-list__item__info__artist">3 Winans Brothers, Karen Clark Sheard</div>
+        <div class="smx-list__item__info__meta">In around 5 minutes</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-right"><img ng-src="{{vm.covers[1]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title smx-list__item__info__title--one-line">the nose</div>
+        <div class="smx-list__item__info__artist">kapote</div>
+        <div class="smx-list__item__info__meta">In around 10 minutes</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-right"><img ng-src="{{vm.covers[4]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title smx-list__item__info__title--one-line">London Headache</div>
+        <div class="smx-list__item__info__artist">Anabel Englund</div>
+        <div class="smx-list__item__info__meta">In around 15 minutes</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-right"><img ng-src="{{vm.covers[6]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title">Oscar Sulley, The Uhuru Dance Band</div>
+        <div class="smx-list__item__info__artist">Bukom Mashie</div>
+        <div class="smx-list__item__info__meta">Later this hour</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
   </ul>
 </div>
 <div class="smx-home-popular">
-  <div class="smx-home-popular__title"><span>Popular</span><i class="material-icons">keyboard_arrow_right</i></div>
-  <div class="smx-home-popular__grid">
-    <div class="smx-home-popular__grid__cell"><img ng-src="{{vm.covers[7]}}"/><span class="smx-home-popular__grid__cell__title">Trust</span><span class="smx-home-popular__grid__cell__artist">Thulane da producer</span></div>
-    <div class="smx-home-popular__grid__cell"><img ng-src="{{vm.covers[8]}}"/><span class="smx-home-popular__grid__cell__title">Good stuff</span><span class="smx-home-popular__grid__cell__artist">Semitone</span></div>
-    <div class="smx-home-popular__grid__cell"><img ng-src="{{vm.covers[9]}}"/><span class="smx-home-popular__grid__cell__title">Lunatic</span><span class="smx-home-popular__grid__cell__artist">Garden of Eden</span></div>
-    <div class="smx-home-popular__grid__cell"><img ng-src="{{vm.covers[6]}}"/><span class="smx-home-popular__grid__cell__title">Trust</span><span class="smx-home-popular__grid__cell__artist">Thulane da producer</span></div>
-    <div class="smx-home-popular__grid__cell"><img ng-src="{{vm.covers[5]}}"/><span class="smx-home-popular__grid__cell__title">Good stuff</span><span class="smx-home-popular__grid__cell__artist">Semitone</span></div>
-    <div class="smx-home-popular__grid__cell"><img ng-src="{{vm.covers[4]}}"/><span class="smx-home-popular__grid__cell__title">Lunatic</span><span class="smx-home-popular__grid__cell__artist">Garden of Eden</span></div>
+  <div class="smx-home-new__title"><span>earlier this hour</span>
+    <div class="smx-home-new__title__action"><i class="material-icons">keyboard_arrow_right</i></div>
   </div>
-</div>
-<div class="smx-home-collection">
-  <div class="smx-home-collection__title"><span>Your music</span><i class="material-icons">keyboard_arrow_right</i></div>
-  <ul class="mdl-list mdl-list--smx-list">
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[8]}}"/><span>Bryan Cranston</span><span class="mdl-list__item-sub-title">Fool I am</span></span><span class="mdl-list__item-secondary-content"><span class="mdl-list__item-secondary-info"></span><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[7]}}"/><span>Aaron Ross</span><span class="mdl-list__item-sub-title">Lady finger</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[6]}}"/><span>Bob Odenkirk</span><span class="mdl-list__item-sub-title">Sure thing</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[5]}}"/><span>Aaron Ross</span><span class="mdl-list__item-sub-title">Lady finger</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
-    <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-img" ng-src="{{vm.covers[4]}}"/><span>Bob Odenkirk</span><span class="mdl-list__item-sub-title">Sure thing</span></span><span class="mdl-list__item-secondary-content"><a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">more_vert</i></a></span></li>
+  <ul class="smx-list">
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-left"><img ng-src="{{vm.covers[3]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title smx-list__item__info__title--one-line">Never Get Enough (Miguel Migs All Night Rub)</div>
+        <div class="smx-list__item__info__artist">Da Sunlounge, Mikey V</div>
+        <div class="smx-list__item__info__meta">A few minutes ago</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-left"><img ng-src="{{vm.covers[2]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title smx-list__item__info__title--one-line">I Choose You (Louie Vega Chosen Dub)</div>
+        <div class="smx-list__item__info__artist">3 Winans Brothers, Karen Clark Sheard</div>
+        <div class="smx-list__item__info__meta">5 minutes ago</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-left"><img ng-src="{{vm.covers[1]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title smx-list__item__info__title--one-line">the nose</div>
+        <div class="smx-list__item__info__artist">kapote</div>
+        <div class="smx-list__item__info__meta">10 minutes ago</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-left"><img ng-src="{{vm.covers[4]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title smx-list__item__info__title--one-line">London Headache</div>
+        <div class="smx-list__item__info__artist">Anabel Englund</div>
+        <div class="smx-list__item__info__meta">15 minutes ago</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
+    <li class="smx-list__item">
+      <div class="smx-list__item__img smx-list__item__img--rounded-left"><img ng-src="{{vm.covers[6]}}"/></div>
+      <div class="smx-list__item__info">
+        <div class="smx-list__item__info__title">Oscar Sulley, The Uhuru Dance Band</div>
+        <div class="smx-list__item__info__artist">Bukom Mashie</div>
+        <div class="smx-list__item__info__meta">Earlier this hour</div>
+      </div>
+      <div class="smx-list__item__action"><i class="material-icons">more_vert</i></div>
+    </li>
   </ul>
 </div>
