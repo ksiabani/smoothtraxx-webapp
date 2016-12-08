@@ -3,17 +3,23 @@
 (function () {
     'use strict';
 
-    angular.module('app.core', ['ngTouch', 'ngResource', 'ui.router', 'angularScreenfull']).run(appRun);
+    angular.module('app.core', ['ngTouch', 'ngResource', 'ui.router'
+    // 'angularScreenfull'
+    ]).run(appRun);
 
-    appRun.$inject = ['$rootScope', '$state'];
-    function appRun($rootScope, $state) {
+    appRun.$inject = ['$rootScope', '$state', '$stateParams'];
+    function appRun($rootScope, $state, $stateParams) {
         $rootScope.playerIsVisible = false; // player always hidden at startup
         $rootScope.sideNavIsVisible = false; // sideNav always hidden at startup
         $rootScope.navTitle = '';
         $rootScope.tunerIsVisible = false;
         $rootScope.poolIsVisible = false;
+        $rootScope.headerIsTransparent = false;
 
-        $rootScope.$on('$stateChangeStart', function () {
+        // $rootScope.$state = $state;
+        // $rootScope.$stateParams = $stateParams;
+
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
             $rootScope.stateIsLoading = true;
         });
 

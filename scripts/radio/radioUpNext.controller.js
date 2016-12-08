@@ -3,24 +3,14 @@
 (function () {
     'use strict';
 
-    angular.module('app.home').controller('HomeController', HomeController);
+    angular.module('app.radio').controller('RadioUpNextController', RadioUpNextController);
 
-    HomeController.$inject = ['$scope', '$rootScope', '$timeout',
-    // '$mdSidenav',
-    '$log', '$interval', '$sce', '$document',
-    // '$mdDialog',
-    // '$mdMedia',
-    'Icecast', 'Track', 'homeResolve'];
+    RadioUpNextController.$inject = ['$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$log', '$interval', '$sce', '$document', 'Icecast', 'Track'];
 
     //TODO: is it safe to use document to choose DOM elements in comparison to angular.element
 
     /* @ngInject */
-    function HomeController($scope, $rootScope, $timeout,
-    // $mdSidenav,
-    $log, $interval, $sce, $document,
-    // $mdDialog,
-    // $mdMedia,
-    Icecast, Track, homeResolve) {
+    function RadioUpNextController($scope, $rootScope, $timeout, $state, $stateParams, $log, $interval, $sce, $document, Icecast, Track) {
 
         // For MDL to work
         // http://stackoverflow.com/questions/31278781/material-design-lite-integration-with-angularjs
@@ -29,8 +19,7 @@
                 componentHandler.upgradeAllRegistered();
             });
         });
-
-        $rootScope.navTitle = 'home';
+        $rootScope.navTitle = '';
         var vm = this;
 
         //TODO: Must rename these two to sth most appropriate
@@ -48,7 +37,7 @@
         vm.chlFullTitle = '';
         vm.slfFullTitle = '';
         // vm.chl = homeResolve.chl;
-        vm.slf = homeResolve.slf;
+        // vm.slf = homeResolve.slf;
         vm.isBuffering = true;
         vm.isPlaying = false;
         vm.play = vm.play;
@@ -61,12 +50,14 @@
         vm.genresDrawerIsVisible = false;
         vm.hideSidenav = hideSidenav;
         vm.showPlayer = showPlayer;
+        // vm.hidePlayer = hidePlayer;
         $rootScope.playerIsFull = false; //player never full at startup
-        $rootScope.headerIsTransparent = false;
+        $rootScope.headerIsTransparent = true;
+
+        vm.showTuner = showTuner;
+        vm.hideTuner = hideTuner;
 
         vm.covers = ['https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b488229f3931d8843405bfc1998359bd.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b20af0e974b8ad98d04db3e655f39a25.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/7c86b420bcbd1ba579024c13c086d13c.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/fc33041ca442d2efddd992406401b1e8.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/d07f79afbdf459970d7663ceb189f004.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/c4be736a8aacd2f237445bc7eec32730.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/a17cc0cb2a60ae8eb2dfd13e4b60542c.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/693e9af84d3dfcc71e640e005bdc5e2e.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/36bb368aafe7b2e40c90d16c056a722e.jpeg', 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/532089d6b7aff7b98b80eba86ff35dee.jpeg'];
-
-        vm.labels = ['http://geo.static.traxsource.com/files/labels/52.jpg', 'http://geo.static.traxsource.com/files/labels/8126.png', 'http://geo.static.traxsource.com/files/labels/23707.jpg', 'http://geo.static.traxsource.com/files/labels/5305.jpg', 'http://geo.static.traxsource.com/files/labels/18346.jpg', 'http://geo.static.traxsource.com/files/labels/22.jpg', 'http://geo.static.traxsource.com/files/labels/10821.jpg'];
 
         $interval(checkNowPlaying, 3000);
 
@@ -92,6 +83,14 @@
 
         function showPlayer() {
             $rootScope.playerIsVisible = true;
+        }
+
+        function showTuner() {
+            $rootScope.tunerIsVisible = true;
+        }
+
+        function hideTuner() {
+            $rootScope.tunerIsVisible = false;
         }
 
         function hideSidenav() {
@@ -199,4 +198,4 @@
         }
     }
 })();
-//# sourceMappingURL=home.controller.js.map
+//# sourceMappingURL=radioUpNext.controller.js.map

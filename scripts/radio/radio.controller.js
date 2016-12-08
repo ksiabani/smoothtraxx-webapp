@@ -5,22 +5,12 @@
 
     angular.module('app.radio').controller('RadioController', RadioController);
 
-    RadioController.$inject = ['$scope', '$rootScope', '$timeout',
-    // '$mdSidenav',
-    '$log', '$interval', '$sce', '$document',
-    // '$mdDialog',
-    // '$mdMedia',
-    'Icecast', 'Track'];
+    RadioController.$inject = ['$scope', '$rootScope', '$timeout', '$state', '$stateParams', '$log', '$interval', '$sce', '$document', 'Icecast', 'Track'];
 
     //TODO: is it safe to use document to choose DOM elements in comparison to angular.element
 
     /* @ngInject */
-    function RadioController($scope, $rootScope, $timeout,
-    // $mdSidenav,
-    $log, $interval, $sce, $document,
-    // $mdDialog,
-    // $mdMedia,
-    Icecast, Track) {
+    function RadioController($scope, $rootScope, $timeout, $state, $stateParams, $log, $interval, $sce, $document, Icecast, Track) {
 
         // For MDL to work
         // http://stackoverflow.com/questions/31278781/material-design-lite-integration-with-angularjs
@@ -62,6 +52,7 @@
         vm.showPlayer = showPlayer;
         // vm.hidePlayer = hidePlayer;
         $rootScope.playerIsFull = false; //player never full at startup
+        $rootScope.headerIsTransparent = false;
 
         vm.showTuner = showTuner;
         vm.hideTuner = hideTuner;
