@@ -8,13 +8,12 @@
     RadioController.$inject = ['$scope',
         '$rootScope',
         '$timeout',
-        // '$mdSidenav',
+        '$state',
+        '$stateParams',
         '$log',
         '$interval',
         '$sce',
         '$document',
-        // '$mdDialog',
-        // '$mdMedia',
         'Icecast',
         'Track'
     ];
@@ -24,18 +23,16 @@
 
     /* @ngInject */
     function RadioController($scope,
-                            $rootScope,
-                            $timeout,
-                            // $mdSidenav,
-                            $log,
-                            $interval,
-                            $sce,
-                            $document,
-                            // $mdDialog,
-                            // $mdMedia,
-                            Icecast,
-                            Track
-    ) {
+                             $rootScope,
+                             $timeout,
+                             $state,
+                             $stateParams,
+                             $log,
+                             $interval,
+                             $sce,
+                             $document,
+                             Icecast,
+                             Track) {
 
 
         // For MDL to work
@@ -50,11 +47,10 @@
 
         //TODO: Must rename these two to sth most appropriate
         var snackbarContainer = document.querySelector('#snackbar');
-        var handler = function(event) {
+        var handler = function (event) {
             // showSnackbarButton.style.backgroundColor = '';
             vm.voteDownDisabled = false;
         };
-
 
 
         vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
@@ -80,12 +76,13 @@
         vm.showPlayer = showPlayer;
         // vm.hidePlayer = hidePlayer;
         $rootScope.playerIsFull = false; //player never full at startup
+        $rootScope.headerIsTransparent = false;
 
         vm.showTuner = showTuner;
         vm.hideTuner = hideTuner;
 
 
-        vm.covers= [
+        vm.covers = [
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b488229f3931d8843405bfc1998359bd.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b20af0e974b8ad98d04db3e655f39a25.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/7c86b420bcbd1ba579024c13c086d13c.jpeg',
@@ -97,9 +94,6 @@
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/36bb368aafe7b2e40c90d16c056a722e.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/532089d6b7aff7b98b80eba86ff35dee.jpeg'
         ];
-
-
-
 
 
         $interval(checkNowPlaying, 3000);
@@ -114,12 +108,12 @@
         // }, false);
 
 
-        vm.play = function() {
+        vm.play = function () {
             vm.audio.play();
             vm.isPlaying = true;
         };
 
-        vm.pause = function() {
+        vm.pause = function () {
             vm.audio.pause();
             vm.isPlaying = false;
         };
@@ -139,10 +133,10 @@
 
         function hideSidenav() {
             angular
-                .element( document.querySelector('.smx-sidenav') )
+                .element(document.querySelector('.smx-sidenav'))
                 .removeClass('is-visible');
             angular
-                .element( document.querySelector('.mdl-layout__obfuscator') )
+                .element(document.querySelector('.mdl-layout__obfuscator'))
                 .removeClass('is-visible');
 
         }

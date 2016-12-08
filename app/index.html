@@ -25,8 +25,8 @@
     <!--.mdl-layout.mdl-js-layout(ngsf-fullscreen='')-->
     <!--.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header-->
     <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header" ng-cloak>
-      <header class="mdl-layout__header smx-header" ng-cloak>
-        <div class="mdl-layout__header-row"><span class="mdl-layout-title" ng-cloak>{{navTitle}}</span>
+      <header class="mdl-layout__header smx-header" ng-cloak ng-class="{'is-transparent': headerIsTransparent}">
+        <div class="mdl-layout__header-row"><span class="mdl-layout-title" ng-cloak><a class="smx-header-backbtn" ui-sref="radio.onair" ng-if="headerIsTransparent"><i class="material-icons">arrow_back</i></a>{{navTitle}}</span>
           <div class="mdl-layout-spacer"></div>
         </div>
       </header>
@@ -42,7 +42,7 @@
         </div>
         <nav class="ul mdl-list">
           <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'home'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">home</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Home</a></span></li>
-          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'radio'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">radio</i><a ui-sref="radio" ng-click="sideNavIsVisible = !sideNavIsVisible">Radio</a></span></li>
+          <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'radio'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">radio</i><a ui-sref="radio.onair" ng-click="sideNavIsVisible = !sideNavIsVisible">Radio</a></span></li>
           <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'new'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">new_releases</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">New</a></span></li>
           <li class="mdl-list__item" ng-class="{'is-active': navTitle === 'your music'}"><span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">library_music</i><a ui-sref="home" ng-click="sideNavIsVisible = !sideNavIsVisible">Your Music</a></span></li>
           <li class="mdl-list__item-divider"></li>
@@ -52,7 +52,6 @@
         </nav>
       </div>
       <div class="mdl-layout__obfuscator" ng-class="{'is-visible': sideNavIsVisible}"></div>
-      <!--(ng-class="{'is-pushed': sideNavIsVisible}")-->
       <main class="mdl-layout__content">
         <div ui-view style="height:100%"></div>
       </main>
@@ -162,9 +161,10 @@
     <script src="scripts/home/home.module.js"></script>
     <script src="scripts/home/home.controller.js"></script>
     <script src="scripts/home/home.routes.js"></script>
-    <!-- home-->
+    <!-- radio-->
     <script src="scripts/radio/radio.module.js"></script>
     <script src="scripts/radio/radio.controller.js"></script>
+    <script src="scripts/radio/radioUpNext.controller.js"></script>
     <script src="scripts/radio/radio.routes.js"></script>
     <!-- traxx-->
     <script src="scripts/traxx/traxx.module.js"></script>

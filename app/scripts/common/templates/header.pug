@@ -1,6 +1,9 @@
-header.mdl-layout__header.smx-header(ng-cloak)
+header.mdl-layout__header.smx-header(ng-cloak, ng-class="{'is-transparent': headerIsTransparent}")
     .mdl-layout__header-row
-        span.mdl-layout-title(ng-cloak) {{navTitle}}
+        span.mdl-layout-title(ng-cloak)
+            a(ui-sref="radio.onair").smx-header-backbtn(ng-if="headerIsTransparent")
+                i.material-icons arrow_back
+            | {{navTitle}}
         .mdl-layout-spacer
 .smx-burger(ng-click="sideNavIsVisible = !sideNavIsVisible",
             ng-class="{'is-open': sideNavIsVisible}")

@@ -11,6 +11,7 @@
 @import "radio";
 @import "tuner";
 @import "pool";
+@import "upnext";
 
 //TODO: check z-indexes
 //TODO: change font size to rem
@@ -23,6 +24,14 @@ body, html {
   //font-family: 'Work Sans', sans-serif;
   //font-family: 'Roboto Slab', serif;
   font-family: $primary-font;
+}
+
+a,
+a:active,
+a:hover,
+a:visited {
+  text-decoration: none;
+  //color: black;
 }
 
 //.browserupgrade {
@@ -48,6 +57,10 @@ main.mdl-layout__content {
   //&.is-pushed {
   //  z-index: 0; //?
   //}
+}
+
+.smx-header.is-transparent ~ .mdl-layout__content {
+  margin-top: -56px;
 }
 
 .mdl-layout__header,

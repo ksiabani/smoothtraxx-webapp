@@ -2,41 +2,37 @@
     'use strict';
 
     angular
-        .module('app.home')
-        .controller('HomeController', HomeController);
+        .module('app.radio')
+        .controller('RadioUpNextController', RadioUpNextController);
 
-    HomeController.$inject = ['$scope',
+    RadioUpNextController.$inject = ['$scope',
         '$rootScope',
         '$timeout',
-        // '$mdSidenav',
+        '$state',
+        '$stateParams',
         '$log',
         '$interval',
         '$sce',
         '$document',
-        // '$mdDialog',
-        // '$mdMedia',
         'Icecast',
-        'Track',
-        'homeResolve'
+        'Track'
     ];
 
 
     //TODO: is it safe to use document to choose DOM elements in comparison to angular.element
 
     /* @ngInject */
-    function HomeController($scope,
-                            $rootScope,
-                            $timeout,
-                            // $mdSidenav,
-                            $log,
-                            $interval,
-                            $sce,
-                            $document,
-                            // $mdDialog,
-                            // $mdMedia,
-                            Icecast,
-                            Track,
-                            homeResolve) {
+    function RadioUpNextController ($scope,
+                             $rootScope,
+                             $timeout,
+                             $state,
+                             $stateParams,
+                             $log,
+                             $interval,
+                             $sce,
+                             $document,
+                             Icecast,
+                             Track) {
 
 
         // For MDL to work
@@ -46,17 +42,15 @@
                 componentHandler.upgradeAllRegistered();
             })
         });
-
-        $rootScope.navTitle = 'home';
+        $rootScope.navTitle = '';
         var vm = this;
 
         //TODO: Must rename these two to sth most appropriate
         var snackbarContainer = document.querySelector('#snackbar');
-        var handler = function(event) {
+        var handler = function (event) {
             // showSnackbarButton.style.backgroundColor = '';
             vm.voteDownDisabled = false;
         };
-
 
 
         vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
@@ -67,7 +61,7 @@
         vm.chlFullTitle = '';
         vm.slfFullTitle = '';
         // vm.chl = homeResolve.chl;
-        vm.slf = homeResolve.slf;
+        // vm.slf = homeResolve.slf;
         vm.isBuffering = true;
         vm.isPlaying = false;
         vm.play = vm.play;
@@ -80,10 +74,15 @@
         vm.genresDrawerIsVisible = false;
         vm.hideSidenav = hideSidenav;
         vm.showPlayer = showPlayer;
+        // vm.hidePlayer = hidePlayer;
         $rootScope.playerIsFull = false; //player never full at startup
-        $rootScope.headerIsTransparent = false;
+        $rootScope.headerIsTransparent = true;
 
-        vm.covers= [
+        vm.showTuner = showTuner;
+        vm.hideTuner = hideTuner;
+
+
+        vm.covers = [
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b488229f3931d8843405bfc1998359bd.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/b20af0e974b8ad98d04db3e655f39a25.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/7c86b420bcbd1ba579024c13c086d13c.jpeg',
@@ -94,16 +93,6 @@
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/693e9af84d3dfcc71e640e005bdc5e2e.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/36bb368aafe7b2e40c90d16c056a722e.jpeg',
             'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/532089d6b7aff7b98b80eba86ff35dee.jpeg'
-        ];
-
-        vm.labels= [
-            'http://geo.static.traxsource.com/files/labels/52.jpg',
-            'http://geo.static.traxsource.com/files/labels/8126.png',
-            'http://geo.static.traxsource.com/files/labels/23707.jpg',
-            'http://geo.static.traxsource.com/files/labels/5305.jpg',
-            'http://geo.static.traxsource.com/files/labels/18346.jpg',
-            'http://geo.static.traxsource.com/files/labels/22.jpg',
-            'http://geo.static.traxsource.com/files/labels/10821.jpg'
         ];
 
 
@@ -119,12 +108,12 @@
         // }, false);
 
 
-        vm.play = function() {
+        vm.play = function () {
             vm.audio.play();
             vm.isPlaying = true;
         };
 
-        vm.pause = function() {
+        vm.pause = function () {
             vm.audio.pause();
             vm.isPlaying = false;
         };
@@ -133,14 +122,21 @@
             $rootScope.playerIsVisible = true;
         }
 
+        function showTuner() {
+            $rootScope.tunerIsVisible = true;
+        }
+
+        function hideTuner() {
+            $rootScope.tunerIsVisible = false;
+        }
 
 
         function hideSidenav() {
             angular
-                .element( document.querySelector('.smx-sidenav') )
+                .element(document.querySelector('.smx-sidenav'))
                 .removeClass('is-visible');
             angular
-                .element( document.querySelector('.mdl-layout__obfuscator') )
+                .element(document.querySelector('.mdl-layout__obfuscator'))
                 .removeClass('is-visible');
 
         }

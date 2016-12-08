@@ -26,7 +26,6 @@ html(ng-app='app', ng-cloak)
         .mdl-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header(ng-cloak)
             block header
             block sidenav
-            //(ng-class="{'is-pushed': sideNavIsVisible}")
             main.mdl-layout__content
                 div(ui-view, style='height:100%')
             block player
@@ -63,9 +62,10 @@ html(ng-app='app', ng-cloak)
         script(src='scripts/home/home.module.js')
         script(src='scripts/home/home.controller.js')
         script(src='scripts/home/home.routes.js')
-        // home
+        // radio
         script(src='scripts/radio/radio.module.js')
         script(src='scripts/radio/radio.controller.js')
+        script(src='scripts/radio/radioUpNext.controller.js')
         script(src='scripts/radio/radio.routes.js')
         // traxx
         script(src='scripts/traxx/traxx.module.js')

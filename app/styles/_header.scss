@@ -23,6 +23,22 @@
 
   }
 
+  &.is-transparent {
+    background: transparent;
+    box-shadow: none;
+
+    .mdl-layout__header-row {
+      color: $primary-color;
+    }
+
+    .mdl-layout-title {
+
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+
 }
 
 .smx-burger {
@@ -59,12 +75,12 @@
   &.is-open {
 
     &:before {
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 27px;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 27px;
     }
 
     &:after {
