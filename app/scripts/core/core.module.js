@@ -6,7 +6,6 @@
             'ngTouch',
             'ngResource',
             'ui.router'
-            // 'angularScreenfull'
         ])
         .run(appRun);
 

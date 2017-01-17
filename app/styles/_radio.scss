@@ -9,3 +9,23 @@
   height: 44px;
 }
 
+.smx-radio-tabs {
+
+  &__tab {
+    width: 50%;
+
+    &.is-active:after {
+      background: $accent-color !important;
+    }
+  }
+
+  &__panel{
+
+    &.is-fixed {
+      overflow: scroll;
+      height: 30vh;
+    }
+  }
+
+}
+

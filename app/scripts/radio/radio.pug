@@ -11,7 +11,198 @@
         span
         .smx-home-featured__info__btn(ng-click="vm.showPlayer()")
             span Listen now
-.smx-home-new
+.smx-radio-tabs.mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+    .mdl-tabs__tab-bar
+        a.smx-radio-tabs__tab.mdl-tabs__tab.is-active(href='#up-next') Up Next
+        a.smx-radio-tabs__tab.mdl-tabs__tab(href='#earlier') Earlier this hour
+    #up-next.smx-radio-tabs__panel.mdl-tabs__panel.is-active
+        ul.smx-list
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[3]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line Never Get Enough (Miguel Migs All Night Rub)
+                    .smx-list__item__info__artist Da Sunlounge, Mikey V
+                    .smx-list__item__info__meta In a minute
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[2]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line I Choose You (Louie Vega Chosen Dub)
+                    .smx-list__item__info__artist 3 Winans Brothers, Karen Clark Sheard
+                    .smx-list__item__info__meta In around 5 minutes
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[1]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line the nose
+                    .smx-list__item__info__artist kapote
+                    .smx-list__item__info__meta In around 10 minutes
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[4]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line London Headache
+                    .smx-list__item__info__artist Anabel Englund
+                    .smx-list__item__info__meta In around 15 minutes
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[6]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title Oscar Sulley, The Uhuru Dance Band
+                    .smx-list__item__info__artist Bukom Mashie
+                    .smx-list__item__info__meta Later this hour
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[3]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line Never Get Enough (Miguel Migs All Night Rub)
+                    .smx-list__item__info__artist Da Sunlounge, Mikey V
+                    .smx-list__item__info__meta In a minute
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[2]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line I Choose You (Louie Vega Chosen Dub)
+                    .smx-list__item__info__artist 3 Winans Brothers, Karen Clark Sheard
+                    .smx-list__item__info__meta In around 5 minutes
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[1]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line the nose
+                    .smx-list__item__info__artist kapote
+                    .smx-list__item__info__meta In around 10 minutes
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[4]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line London Headache
+                    .smx-list__item__info__artist Anabel Englund
+                    .smx-list__item__info__meta In around 15 minutes
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-right
+                    img(ng-src="{{vm.covers[6]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title Oscar Sulley, The Uhuru Dance Band
+                    .smx-list__item__info__artist Bukom Mashie
+                    .smx-list__item__info__meta Later this hour
+                .smx-list__item__action
+                    i.material-icons more_vert
+    #earlier.mdl-tabs__panel
+        ul.smx-list
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[3]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line Never Get Enough (Miguel Migs All Night Rub)
+                    .smx-list__item__info__artist Da Sunlounge, Mikey V
+                    .smx-list__item__info__meta A few minutes ago
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[2]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line I Choose You (Louie Vega Chosen Dub)
+                    .smx-list__item__info__artist 3 Winans Brothers, Karen Clark Sheard
+                    .smx-list__item__info__meta 5 minutes ago
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[1]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line the nose
+                    .smx-list__item__info__artist kapote
+                    .smx-list__item__info__meta 10 minutes ago
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[4]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line London Headache
+                    .smx-list__item__info__artist Anabel Englund
+                    .smx-list__item__info__meta 15 minutes ago
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[6]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title Oscar Sulley, The Uhuru Dance Band
+                    .smx-list__item__info__artist Bukom Mashie
+                    .smx-list__item__info__meta Earlier this hour
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[3]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line Never Get Enough (Miguel Migs All Night Rub)
+                    .smx-list__item__info__artist Da Sunlounge, Mikey V
+                    .smx-list__item__info__meta A few minutes ago
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[2]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line I Choose You (Louie Vega Chosen Dub)
+                    .smx-list__item__info__artist 3 Winans Brothers, Karen Clark Sheard
+                    .smx-list__item__info__meta 5 minutes ago
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[1]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line the nose
+                    .smx-list__item__info__artist kapote
+                    .smx-list__item__info__meta 10 minutes ago
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[4]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title.smx-list__item__info__title--one-line London Headache
+                    .smx-list__item__info__artist Anabel Englund
+                    .smx-list__item__info__meta 15 minutes ago
+                .smx-list__item__action
+                    i.material-icons more_vert
+            li.smx-list__item
+                .smx-list__item__img.smx-list__item__img--rounded-left
+                    img(ng-src="{{vm.covers[6]}}")
+                .smx-list__item__info
+                    .smx-list__item__info__title Oscar Sulley, The Uhuru Dance Band
+                    .smx-list__item__info__artist Bukom Mashie
+                    .smx-list__item__info__meta Earlier this hour
+                .smx-list__item__action
+                    i.material-icons more_vert
+
+
+
+//.smx-home-new
     .smx-home-new__title
         span Up next
         a(ui-sref="radio.upnext").smx-home-new__title__action
@@ -62,7 +253,7 @@
                 .smx-list__item__info__meta Later this hour
             .smx-list__item__action
                 i.material-icons more_vert
-.smx-home-popular
+//.smx-home-popular
     .smx-home-new__title
         span earlier this hour
         .smx-home-new__title__action

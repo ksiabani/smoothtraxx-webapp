@@ -43,6 +43,7 @@
             })
         });
         $rootScope.navTitle = 'radio';
+
         var vm = this;
 
         //TODO: Must rename these two to sth most appropriate
@@ -51,7 +52,6 @@
             // showSnackbarButton.style.backgroundColor = '';
             vm.voteDownDisabled = false;
         };
-
 
         vm.imgUrl = 'https://s3.eu-central-1.amazonaws.com/smx-static/RaiNAS_1/RaiNAS/music/live/covers/';
 
