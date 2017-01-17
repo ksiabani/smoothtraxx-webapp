@@ -20,6 +20,7 @@
             });
         });
         $rootScope.navTitle = 'radio';
+
         var vm = this;
 
         //TODO: Must rename these two to sth most appropriate

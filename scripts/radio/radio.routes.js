@@ -4,19 +4,28 @@
     'use strict';
 
     angular.module('app.radio').config(function ($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('radio', {
+        $stateProvider
+        // .state('radio', {
+        //     url: '/radio',
+        //     abstract: true,
+        //     template: '<ui-view/>'
+        // })
+        // .state('radio.onair', {
+        //     url: '',
+        //     templateUrl: 'scripts/radio/radio.html',
+        //     controller: 'RadioController',
+        //     controllerAs: 'vm'
+        // })
+        // .state('radio.upnext', {
+        //     url: '/upnext',
+        //     templateUrl: 'scripts/radio/upnext.html',
+        //     controller: 'RadioUpNextController',
+        //     controllerAs: 'vm'
+        // })
+        .state('radio', {
             url: '/radio',
-            abstract: true,
-            template: '<ui-view/>'
-        }).state('radio.onair', {
-            url: '',
             templateUrl: 'scripts/radio/radio.html',
             controller: 'RadioController',
-            controllerAs: 'vm'
-        }).state('radio.upnext', {
-            url: '/upnext',
-            templateUrl: 'scripts/radio/upnext.html',
-            controller: 'RadioUpNextController',
             controllerAs: 'vm'
         });
     });

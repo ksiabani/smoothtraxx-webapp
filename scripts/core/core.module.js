@@ -3,9 +3,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.core', ['ngTouch', 'ngResource', 'ui.router'
-    // 'angularScreenfull'
-    ]).run(appRun);
+    angular.module('app.core', ['ngTouch', 'ngResource', 'ui.router']).run(appRun);
 
     appRun.$inject = ['$rootScope', '$state', '$stateParams'];
     function appRun($rootScope, $state, $stateParams) {
