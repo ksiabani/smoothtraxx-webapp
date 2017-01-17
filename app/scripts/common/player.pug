@@ -1,0 +1,30 @@
+.smx-player(ng-show="playerIsVisible"
+            ng-class="{'is-full': playerIsFull}"
+            ng-controller="PlayerController as vm")
+    .smx-player__header
+        .smx-player__header__title Now playing
+        .smx-player__header__icon(ng-click="vm.hideFullPlayer()")
+            i.material-icons.md-24 keyboard_arrow_down
+    .smx-player__cover
+        img(ng-src="{{vm.covers[0]}}")
+    .smx-player__info
+        .smx-player__info__title Do it right (feat. Tkay maidza)
+        .smx-player__info__more Martin Solveig - Do it right (feat. Tkay maidza)
+        .smx-player__info__meta Soulful House | 2014 | Defected
+    .smx-player__controls
+        i.material-icons.md-24 add
+        i.material-icons.md-24 skip_previous
+        i.material-icons.md-36 play_arrow
+        i.material-icons.md-24 skip_next
+        i.material-icons.md-24(ng-click="vm.showPool()") more_vert
+    .smx-player__playing-from playing from soulful house radio
+    .smx-player-mini(ng-click="vm.showFullPlayer()", ng-hide="playerIsFull")
+        //.smx-player-mini__more
+        //    i.material-icons.md-24 more_vert
+        .smx-player-mini__cover
+            img(src="{{vm.covers[0]}}")
+        .smx-player-mini__info
+            .smx-player-mini__info__title I Choose You (Louie Vega Chosen Dub)
+            .smx-player-mini__info__more 3 Winans Brothers, Karen Clark Sheard
+        .smx-player-mini__play-btn
+            i.material-icons.md-24 play_arrow
