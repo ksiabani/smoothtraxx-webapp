@@ -52,6 +52,7 @@ a:visited {
 
 main.mdl-layout__content {
   height: 100%;
+  margin-top: -56px;
   //overflow: visible !important;
   //z-index: 6; //?
 
@@ -64,7 +65,7 @@ main.mdl-layout__content {
   margin-top: -56px;
 }
 
-.mdl-layout__header,
+//.mdl-layout__header,
 .mdl-layout__drawer-button {
   color: $light-color;
   background-color: $primary-color;
@@ -325,13 +326,13 @@ main.mdl-layout__content {
   width: calc(80vw);
   //transform: translateX(-80vw);
   transform: translateX(0);
-  background-color: $primary-color;
+  background-color: transparent;
   border-right: $primary-color;
   left: calc(100vw);
   z-index: 5;
 
   &.is-visible {
-    transform: translateX(-80vw);
+    transform: translateX(-100vw);
   }
 
   &__logo {
@@ -344,24 +345,27 @@ main.mdl-layout__content {
     padding-left: 12px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid $border-color-dark;
+    //border-bottom: 1px solid $border-color-dark;
 
     svg {
       width: 50%;
 
       g path {
-        fill: $light-color;
+        //fill: $light-color;
+        //fill: $primary-color;
+        fill: $accent-color;
       }
 
       path {
-        fill: $accent-color;
+        //fill: $accent-color;
+        fill: $primary-color;
       }
     }
 
   }
 
   a {
-    color: $light-color;
+    color: $primary-color;
     font-size: 1rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -394,7 +398,7 @@ main.mdl-layout__content {
   }
 
   .mdl-list__item-icon, .mdl-list__item-icon.material-icons {
-    color: $light-color;
+    color: $primary-color;
   }
 
   .mdl-list__item-divider {
@@ -409,6 +413,7 @@ main.mdl-layout__content {
 
 .mdl-layout__obfuscator {
   z-index: 4;
+  background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
 //.smx-grid {
