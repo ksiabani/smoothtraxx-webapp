@@ -37,6 +37,9 @@
         // vm.showPlayer = showPlayer;
         vm.chlFullTitle = '';
         vm.slfFullTitle = '';
+        vm.title = '';
+        vm.artist = '';
+
         // vm.chl = homeResolve.chl;
         // vm.slf = homeResolve.slf;
         vm.isBuffering = true;
@@ -165,6 +168,11 @@
 
                 if (vm.slfFullTitle !== data.icestats.source[1].title) {
                     vm.slfFullTitle = data.icestats.source[1].title;
+                    //
+                    vm.title = vm.slfFullTitle.split('__')[0];
+                    vm.artist = vm.slfFullTitle.split('__')[1];
+                    console.log(vm.slfFullTitle, vm.title, vm.artist);
+                    //
                     getTrackInfo('slf', vm.slfFullTitle);
                 }
             });

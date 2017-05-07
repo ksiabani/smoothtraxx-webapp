@@ -190,6 +190,7 @@
                         vm.slf = info[0];
                         if (info[0]) {
                             vm.slf.coverUrl = coverUrl;
+                            console.log(vm.slf);
                         }
                         break;
                     default:
