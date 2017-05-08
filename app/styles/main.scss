@@ -46,6 +46,14 @@ a:visited {
  *  MDL overrides
  */
 
+//.mdl-button--colored {
+//  color: $accent-color !important;
+//}
+
+.mdl-button--primary {
+  color: $primary-color !important;
+}
+
 #snackbar {
   z-index: 30000; //?
 }
