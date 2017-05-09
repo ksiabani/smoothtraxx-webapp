@@ -54,6 +54,11 @@ a:visited {
   color: $primary-color !important;
 }
 
+.smx-info button {
+  //font-family: $secondary-font !important;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 #snackbar {
   z-index: 30000; //?
 }
